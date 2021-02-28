@@ -12,9 +12,9 @@ hostname = ymz.iphonezhuan.com
  */
 const $ = new Env('羊毛赚');
 
-
-
-
+adtimes = [];
+vediotimes = [];
+result = [];
 !(async() => {
     await all();
 
@@ -22,26 +22,56 @@ const $ = new Env('羊毛赚');
 .catch((e) => $.logErr(e))
 .finally(() => $.done())
 
-
-
-
-
 async function all() {
 
     let ymzck = require('./ymzck.json');
     UserIDsArr = ymzck.UserIDs.split('&');
+	
+	
     for (let i = 1; i <= UserIDsArr.length; i++) {
-        watchadckArr = ymzck[`watchadck${i}`].split('&&');
-        watchvediockArr = ymzck[`watchvediock${i}`].split('&&');
-		moneybody=`channelID=2&uid=${UserIDsArr[i-1]-10000000}&ver=104`,
-        console.log(`\n============ 【羊毛赚${UserIDsArr[i-1]}】=============`);
-        await watchad(0);
-        await $.wait(3000);
-        await watchvedio(0);
-        await $.wait(3000);
-		await moneyinfo();
-		
+        result[i] = 200;
+        adtimes[i] = 0;
+    }
+    adwatch = 1; //广告触发器
+    while (adwatch) {
+        adwatch = 0;
+        for (let i = 1; i <= UserIDsArr.length; i++) {
+            watchadckArr = ymzck[`watchadck${i}`].split('&&');
+            if (result[i] == 200) {
+                result[i] = await watchad(i);
+                if (result[i] == 200)
+                    adwatch = 1;
+            }
+        }
+        console.log('\n即将观看下一个广告，请等待30秒...\n');
+        await $.wait(30000);
+    }
+    for (let i = 1; i <= UserIDsArr.length; i++) {
+        result[i] = 200;
+        vediotimes[i] = 0;
+    }
+    console.log('广告观看结束，即将观看视频，请等待30秒...\n');
+    await $.wait(30000);
+    vediowatch = 1; //视频触发器
+    while (vediowatch) {
+        vediowatch = 0;
+        for (let i = 1; i <= UserIDsArr.length; i++) {
+            watchvediockArr = ymzck[`watchvediock${i}`].split('&&');
+            if (result[i] == 200) {
+                result[i] = await watchvedio(i);
+                if (result[i] == 200)
+                    vediowatch = 1;
+            }
+        }
+        console.log('\n即将观看下一个视频，请等待30秒...\n');
+        await $.wait(30000);
+    }
 
+		console.log('视频观看结束，任务执行完毕\n');
+
+    for (let i = 1; i <= UserIDsArr.length; i++) {
+        moneybody = `channelID=2&uid=${UserIDsArr[i-1]-10000000}&ver=104`,
+        await moneyinfo(i);
     }
 
 }
@@ -59,13 +89,13 @@ function watchad(i) {
             try {
                 const result = JSON.parse(data)
                     if (result.statuscode == 200) {
-                        console.log(`【广告任务】:观看广告${i+1}成功 ` + result.msg);
-                        i++;
-                        await $.wait(3000);
-                        await watchad(i);
+                        console.log(`【羊毛赚${UserIDsArr[i-1]}】:观看广告${adtimes[i]+1}成功 ` + result.msg);
+                        adtimes[i]++;
                     }
                     if (result.statuscode == 400 || result.statuscode == 410)
-                        console.log(`【广告任务】:观看广告${i+1}失败 ` + result.msg);
+                        console.log(`【羊毛赚${UserIDsArr[i-1]}】:观看广告${adtimes[i]+1}失败 ` + result.msg);
+
+                    resolve(result.statuscode);
             } catch (e) {}
             finally {
                 resolve();
@@ -88,15 +118,14 @@ function watchvedio(i) {
                 const result = JSON.parse(data)
 
                     if (result.statuscode == 200) {
-                        console.log(`【视频任务】:观看视频${i+1}成功 ` + result.msg);
-                        i++;
-                        await $.wait(3000);
-                        await watchvedio(i);
+                        console.log(`【羊毛赚${UserIDsArr[i-1]}】:观看视频${vediotimes[i]+1}成功 ` + result.msg);
+                        vediotimes[i]++;
+
                     }
 
-                    if (result.statuscode == 400 || result.statuscode == 410) {
-                        console.log(`【视频任务】:观看视频${i+1}失败 ` + result.msg);
-                    }
+                    if (result.statuscode == 400 || result.statuscode == 410)
+                        console.log(`【羊毛赚${UserIDsArr[i-1]}】:观看视频${vediotimes[i]+1}失败 ` + result.msg);
+                    resolve(result.statuscode);
 
             } catch (e) {}
             finally {
@@ -106,7 +135,7 @@ function watchvedio(i) {
     })
 }
 //余额信息
-function moneyinfo() {
+function moneyinfo(i) {
     return new Promise((resolve) => {
         let url = {
             url: 'http://ymz.iphonezhuan.com/gettask',
@@ -119,10 +148,8 @@ function moneyinfo() {
                 const result = JSON.parse(data)
 
                     if (result.statuscode == 200) {
-                        console.log('【用户信息】:账户余额 ' + result.integral/100+'元');
+                        console.log(`【${UserIDsArr[i-1]}】:账户余额 ` + result.integral / 100 + '元');
                     }
-
-                   
 
             } catch (e) {}
             finally {
