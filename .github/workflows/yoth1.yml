@@ -27,3 +27,8 @@ jobs:
         run: |
           cd ~/js   
           node Task/youth1.js
+      - name: '运行 【youthshare】'
+        run: |
+          cd ~/js   
+          node Task/youthshare.js
+
