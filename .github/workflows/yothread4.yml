@@ -2,8 +2,6 @@ name: 中青阅读4
  
 on:
   workflow_dispatch:
-  watch:
-    types: started
   schedule:
        - cron: '30 0-21/3 * * *'
 jobs:
