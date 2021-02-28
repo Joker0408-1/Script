@@ -1,8 +1,6 @@
 name: 机场&书旗&羊毛赚
 on:
   workflow_dispatch:
-  watch:
-    types: started
   schedule:
     - cron: '0 21 * * *'
 jobs:
