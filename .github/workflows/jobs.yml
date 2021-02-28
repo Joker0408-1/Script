@@ -1,4 +1,4 @@
-name: 机场&书旗&羊毛赚
+name: 书旗&羊毛赚
 on:
   workflow_dispatch:
   schedule:
