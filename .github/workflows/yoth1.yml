@@ -23,11 +23,5 @@ jobs:
           npm install request
           npm install md5-node
       - name: '运行 【中青看点1】'
-        run: |
-          cd ~/js   
-          node Task/youth1.js
-      - name: '运行 【youthshare】'
-        run: |
-          cd ~/js   
-          node Task/youthshare.js
+      
 
