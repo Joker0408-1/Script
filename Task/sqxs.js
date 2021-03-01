@@ -162,25 +162,30 @@ function readbook() {
         };
         $.post(request, async(error, request, data) => {
             try {
-                const result = JSON.parse(data)
-                    //$.log(data);
-                    if (result.status == 200) {
-                        ReadTimes++;
-                        $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
-                        await $.wait(5000);
-                        await readbook();
-                    } else {
-
-                        if (result.message != '领取达到每日上限，请明天再来') {
-                            $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
+                if (error) {
+                    $.log("阅读请求失败,再次尝试阅读");
+                    await $.wait(5000);
+                    await readbook();
+                } else {
+                    const result = JSON.parse(data)
+                        //$.log(data);
+                        if (result.status == 200) {
+                            ReadTimes++;
+                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
                             await $.wait(5000);
                             await readbook();
-                        } else
-                            $.log("【阅读任务】阅读失败，" + result.message);
+                        } else {
 
-                        //$.log(data);
-                    }
+                            if (result.message != '领取达到每日上限，请明天再来') {
+                                $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
+                                await $.wait(5000);
+                                await readbook();
+                            } else
+                                $.log("【阅读任务】阅读失败，" + result.message);
 
+                            //$.log(data);
+                        }
+                }
             } catch (e) {
                 $.log(e)
             }
@@ -200,15 +205,21 @@ function receivecoin() {
         };
         $.post(request, async(error, request, data) => {
             try {
-                //$.log(data);
-                const result = JSON.parse(data);
-                if (result.status == 200) {
-
-                    $.log("【收集金币】收集阅读金币成功，共获得" + ReadTimes * 3 + "金币");
-
+                if (error) {
+                    $.log("收集阅读金币请求失败,再次尝试收集阅读金币");
+                    await $.wait(5000);
+                    await receivecoin();
                 } else {
-                    $.log("【收集金币】收集阅读金币失败," + result.message);
                     //$.log(data);
+                    const result = JSON.parse(data);
+                    if (result.status == 200) {
+
+                        $.log("【收集金币】收集阅读金币成功，共获得" + ReadTimes * 3 + "金币");
+
+                    } else {
+                        $.log("【收集金币】收集阅读金币失败," + result.message);
+                        //$.log(data);
+                    }
                 }
 
             } catch (e) {
@@ -229,24 +240,30 @@ function vediogoldprize(j) {
         };
         $.post(request, async(error, request, data) => {
             try {
-                const result = JSON.parse(data)
-                    //$.log(data);
-                    if (result.status == 200) {
-                        j++;
-                        $.log("【视频金币】观看第" + j + "个视频成功，获得250金币，等待30s观看下一个视频");
-                        vediogold += 250;
-                        await $.wait(30000);
-                        await vediogoldprize(j);
-                    } else {
-                        if (result.message != '领取达到每日上限，请明天再来') {
-                            $.log("【视频金币】观看失败，" + result.message + ",再次尝试失败");
+                if (error) {
+                    $.log("视频金币请求失败,再次尝试视频金币");
+                    await $.wait(5000);
+                    await vediogoldprize();
+                } else {
+                    const result = JSON.parse(data)
+                        //$.log(data);
+                        if (result.status == 200) {
+                            j++;
+                            $.log("【视频金币】观看第" + j + "个视频成功，获得250金币，等待30s观看下一个视频");
+                            vediogold += 250;
                             await $.wait(30000);
                             await vediogoldprize(j);
-                        } else
-                            $.log("【视频金币】观看失败," + result.message);
-                        //$.log(data);
+                        } else {
+                            if (result.message != '领取达到每日上限，请明天再来') {
+                                $.log("【视频金币】观看失败，" + result.message + ",再次尝试视频金币");
+                                await $.wait(30000);
+                                await vediogoldprize(j);
+                            } else
+                                $.log("【视频金币】观看失败," + result.message);
+                            //$.log(data);
 
-                    }
+                        }
+                }
             } catch (e) {
                 $.log(e)
             }
@@ -266,23 +283,28 @@ function vediodrawprize(k) {
         };
         $.post(request, async(error, request, data) => {
             try {
-                const result = JSON.parse(data)
-                    //$.log(data);
-
-                    if (result.status == 200) {
-                        k++;
-                        $.log("【视频抽奖】观看第" + k + "个视频成功，获得一次抽奖机会");
-                        await $.wait(5000);
-                        await draw(k);
-                    } else {
-                        if (result.message != '领取达到每日上限，请明天再来') {
-                            $.log("【视频抽奖】观看失败，" + result.message + ",再次尝试失败");
-                            await $.wait(5000);
-                            await vediodrawprize(k);
-                        } else
-                            $.log("【视频抽奖】观看失败," + result.message);
+                if (error) {
+                    $.log("视频抽奖请求失败,再次尝试视频抽奖");
+                    await $.wait(5000);
+                    await vediogoldprize();
+                } else {
+                    const result = JSON.parse(data)
                         //$.log(data);
-                    }
+                        if (result.status == 200) {
+                            k++;
+                            $.log("【视频抽奖】观看第" + k + "个视频成功，获得一次抽奖机会");
+                            await $.wait(5000);
+                            await draw(k);
+                        } else {
+                            if (result.message != '领取达到每日上限，请明天再来') {
+                                $.log("【视频抽奖】观看失败，" + result.message + ",再次尝试视频抽奖");
+                                await $.wait(5000);
+                                await vediodrawprize(k);
+                            } else
+                                $.log("【视频抽奖】观看失败," + result.message);
+                            //$.log(data);
+                        }
+                }
             } catch (e) {
                 $.log(e)
             }
@@ -302,17 +324,23 @@ function draw(k) {
         };
         $.post(request, async(error, request, data) => {
             try {
-                const result = JSON.parse(data)
-                    //$.log(data);
-                    if (result.status == 200) {
-                        $.log("【抽奖任务】抽奖成功，获得" + result.data.prizeList[0].prizeName);
-                        drawgold += parseInt(result.data.prizeList[0].prizeName);
-                        await $.wait(5000);
-                        await vediodrawprize(k);
-                    } else {
-                        $.log("【抽奖任务】抽奖失败," + result.message);
+                if (error) {
+                    $.log("抽奖任务请求失败,再次尝试视频抽奖");
+                    await $.wait(5000);
+                    await draw();
+                } else {
+                    const result = JSON.parse(data)
                         //$.log(data);
-                    }
+                        if (result.status == 200) {
+                            $.log("【抽奖任务】抽奖成功，获得" + result.data.prizeList[0].prizeName);
+                            drawgold += parseInt(result.data.prizeList[0].prizeName);
+                            await $.wait(5000);
+                            await vediodrawprize(k);
+                        } else {
+                            $.log("【抽奖任务】抽奖失败," + result.message);
+                            //$.log(data);
+                        }
+                }
             } catch (e) {
                 $.log(e)
             }
@@ -331,19 +359,24 @@ function userinfo() {
 
         $.post(request, async(error, request, data) => {
             try {
-                //$.log(data);
-                const result = JSON.parse(data);
-                if (result.status == 200) {
-                    $.log("【阅读任务】本次共获得" + ReadTimes * 3 + "金币");
-                    $.log("【视频任务】本次共获得" + vediogold + "金币");
-                    $.log("【抽奖任务】本次共获得" + drawgold + "金币");
-                    $.log("【金币总数】" + result.data.gold);
-                    $.log("【总计收益】" + result.data.income + "元");
+                if (error) {
+                    $.log("用户信息请求失败,再次尝试用户信息请求");
+                    await $.wait(5000);
+                    await userinfo();
                 } else {
-                    $.log("【金币总数】数据异常," + result.message);
                     //$.log(data);
+                    const result = JSON.parse(data);
+                    if (result.status == 200) {
+                        $.log("【阅读任务】本次共获得" + ReadTimes * 3 + "金币");
+                        $.log("【视频任务】本次共获得" + vediogold + "金币");
+                        $.log("【抽奖任务】本次共获得" + drawgold + "金币");
+                        $.log("【金币总数】" + result.data.gold);
+                        $.log("【总计收益】" + result.data.income + "元");
+                    } else {
+                        $.log("【金币总数】数据异常," + result.message);
+                        //$.log(data);
+                    }
                 }
-
             } catch (e) {
                 $.log(e)
             }
