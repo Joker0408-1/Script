@@ -6,7 +6,7 @@
 15 10 * * * https://raw.githubusercontent.com/age174/-/main/ymz.js, tag=羊毛赚, img-url=https://s3.ax1x.com/2021/02/06/yYzYWR.png, enabled=true
 [rewrite_local]
 http://ymz.iphonezhuan.com/addaction url script-request-body ymzrw.js
-http://ymz.iphonezhuan.com/gettask script-request-body ymzrw.js
+http://ymz.iphonezhuan.com/gettask url script-request-body ymzrw.js
 [MITM]
 hostname = ymz.iphonezhuan.com
  */
