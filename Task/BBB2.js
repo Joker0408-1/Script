@@ -909,6 +909,11 @@ return new Promise((resolve, reject) => {
 }
    $.post(checkredbagid,async(error, response, data) =>{
 $.log('開始查詢首頁紅包ID')
+	     if(error)
+	   {
+		  $.log("请求失败");
+		   resolve();
+	   }
      const code = JSON.parse(data)
       if(code.code == 1) {
       redBagStr = code.nonce_str
@@ -1396,6 +1401,11 @@ return new Promise((resolve, reject) => {
 }
 //$.log('answerQueCallBackBODY:'+answerquecallback.body)
    $.post(answerquecallback,async(error, response, data) =>{
+	     if(error)
+	   {
+		  $.log("请求失败");
+		   resolve();
+	   }
      const answerback = JSON.parse(data)
 $.log('開始翻倍答題金幣')
       if(answerback.code == 1) {
