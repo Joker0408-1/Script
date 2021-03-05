@@ -360,6 +360,12 @@ return new Promise((resolve, reject) => {
 }
    $.post(guadet,async(error, response, data) =>{
 $.log('開始查詢刮卡簽名')
+  if(error)
+	   {
+		  $.log("请求失败");
+		   resolve();
+	   }
+	   
      const guasign= JSON.parse(data)
       if(response.statusCode == 200) {
 $.log('查詢刮卡簽名成功')
@@ -826,7 +832,12 @@ function checkHomeJin() {
 			url: 'https://bububao.duoshoutuan.com/user/home',
 			headers: CookieVal,
 		}
-		$.post(checkhomejin,async(error, response, data) =>{   
+		$.post(checkhomejin,async(error, response, data) =>{  
+  if(error)
+	   {
+		  $.log("请求失败");
+		   resolve();
+	   }		
 			const checkhomejb = JSON.parse(data)
 			//$.log(rightTime)
 			rightTime=(typeof checkhomejb.right_time !== 'undefined')?checkhomejb.right_time:0;
@@ -943,6 +954,12 @@ return new Promise((resolve, reject) => {
 }
    $.post(checkredbagid,async(error, response, data) =>{
 $.log('開始查詢首頁紅包ID')
+  if(error)
+	   {
+		  $.log("请求失败");
+		   resolve();
+	   }
+	   
      const code = JSON.parse(data)
       if(code.code == 1) {
       redBagStr = code.nonce_str
@@ -1430,6 +1447,12 @@ return new Promise((resolve, reject) => {
 }
 //$.log('answerQueCallBackBODY:'+answerquecallback.body)
    $.post(answerquecallback,async(error, response, data) =>{
+	   if(error)
+	   {
+		  $.log("请求失败");
+		   resolve();
+	   }
+	   
      const answerback = JSON.parse(data)
 $.log('開始翻倍答題金幣')
       if(answerback.code == 1) {
