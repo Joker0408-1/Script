@@ -11,6 +11,7 @@ jobs:
     env:
         User: ${{ github.event.repository.owner.id }}
     steps:
+
       - name: Checkout
         run: |
           git clone https://github.com/caixukun112/js.git ~/js
@@ -25,6 +26,9 @@ jobs:
           npm install cron
           npm install request
           npm install md5-node
+      - name: Hello World
+        run: |
+          echo github.event.repository.owner.id
       - name: '运行 【中青看点1】'
         run: |
           cd ~/js   
