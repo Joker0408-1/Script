@@ -8,7 +8,7 @@ const notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知
 $.message = '', COOKIES_SPLIT = '', CASH = '', ddtime = '';
 CZ = 10;
-const bububaotokenArr = ['A7BC524EFE264F26793B6BB92525847G1611042389','58D207FBEF6A32DDFADA6B00C527702G1611307971','4C2A5910AA8AA80B622D21BB9529693G1611671158','5F4172090153253C1D914AC7C529695G1611674447','95B939DA1ED80E998E13F59B3527794G1613471646','AB559B4CD6DE8D3A1F3783B8C531203G1613479221','18E6EB85BAFE9DE539A35D3DB531204G1613479618','DBDF1EDDF2259536E575758EC531243G1613545203','D9AA6D6475822F3B33F97E9A6531244G1613545492'];
+const bububaotokenArr = ['A7BC524EFE264F26793B6BB92525847G1611042389', '58D207FBEF6A32DDFADA6B00C527702G1611307971', '4C2A5910AA8AA80B622D21BB9529693G1611671158', '5F4172090153253C1D914AC7C529695G1611674447', '95B939DA1ED80E998E13F59B3527794G1613471646', 'AB559B4CD6DE8D3A1F3783B8C531203G1613479221', '18E6EB85BAFE9DE539A35D3DB531204G1613479618', 'DBDF1EDDF2259536E575758EC531243G1613545203', 'D9AA6D6475822F3B33F97E9A6531244G1613545492'];
 let bububaotokenVal = ``;
 Length = bububaotokenArr.length;
 
@@ -213,6 +213,10 @@ function user(timeout = 0) {
             }
             $.post(url, async(err, resp, data) => {
                 try {
+                    if (error) {
+                        $.log("请求失败");
+                        resolve();
+                    }
                     if (logs)
                         $.log(`${O}, 用户名🚩: ${data}`);
                     $.user = JSON.parse(data);
@@ -285,6 +289,10 @@ function home(timeout = 0) {
             }
             $.post(url, async(err, resp, data) => {
                 try {
+                    if (error) {
+                        $.log("请求失败");
+                        resolve();
+                    }
                     if (logs)
                         $.log(`${O}, 首页信息🚩: ${data}`);
                     $.home = JSON.parse(data);
@@ -523,6 +531,10 @@ function jindan_click(timeout = 0) {
             }
             $.post(url, async(err, resp, data) => {
                 try {
+                    if (error) {
+                        $.log("请求失败");
+                        resolve();
+                    }
                     if (logs)
                         $.log(`${O}, 金蛋前置🚩: ${data}`);
                     $.jindan_click = JSON.parse(data);
@@ -1069,6 +1081,10 @@ function gualist(timeout = 0) {
             }
             $.post(url, async(err, resp, data) => {
                 try {
+                    if (error) {
+                        $.log("请求失败");
+                        resolve();
+                    }
                     if (logs)
                         $.log(`${O}, 刮刮卡列表🚩: ${data}`);
                     $.gualist = JSON.parse(data);
@@ -1620,6 +1636,10 @@ function tixian_html(timeout = 0) {
             }
             $.get(url, async(err, resp, data) => {
                 try {
+                    if (error) {
+                        $.log("请求失败");
+                        resolve();
+                    }
                     if (logs)
                         $.log(`${O}, 提现页🚩: ${data}`);
                     $.tixian_html = JSON.parse(data);
@@ -2084,4 +2104,3 @@ function Env(t, e) {
     }
     (t, e)
 }
-
