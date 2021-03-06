@@ -412,6 +412,11 @@ return new Promise((resolve, reject) => {
     body: `nonce_str=${guaStr}&tid=6&pos=1&`,
 }
    $.post(guadouble,async(error, response, data) =>{
+	     if(error)
+	   {
+		  $.log("请求失败");
+		   resolve();
+	   }
      const guaka2 = JSON.parse(data)
      $.log('领取刮卡翻倍觀看獎勵')
       if(guaka2.code == 1) {
