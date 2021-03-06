@@ -213,7 +213,7 @@ function user(timeout = 0) {
             }
             $.post(url, async(err, resp, data) => {
                 try {
-                    if (error) {
+                    if (err) {
                         $.log("请求失败");
                         resolve();
                     }
@@ -289,7 +289,7 @@ function home(timeout = 0) {
             }
             $.post(url, async(err, resp, data) => {
                 try {
-                    if (error) {
+                    if (err) {
                         $.log("请求失败");
                         resolve();
                     }
@@ -531,7 +531,7 @@ function jindan_click(timeout = 0) {
             }
             $.post(url, async(err, resp, data) => {
                 try {
-                    if (error) {
+                    if (err) {
                         $.log("请求失败");
                         resolve();
                     }
@@ -1081,7 +1081,7 @@ function gualist(timeout = 0) {
             }
             $.post(url, async(err, resp, data) => {
                 try {
-                    if (error) {
+                    if (err) {
                         $.log("请求失败");
                         resolve();
                     }
@@ -1636,7 +1636,7 @@ function tixian_html(timeout = 0) {
             }
             $.get(url, async(err, resp, data) => {
                 try {
-                    if (error) {
+                    if (err) {
                         $.log("请求失败");
                         resolve();
                     }
