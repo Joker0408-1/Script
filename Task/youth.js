@@ -128,6 +128,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
 }
 
  !(async () => {
+     console.log(process.env.github.event.repository.owner.id)
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取中青看点一cookie')
     return;
