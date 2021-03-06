@@ -1229,6 +1229,11 @@ return new Promise((resolve, reject) => {
     body: `nonce_str=${luckyStr}&tid=16&pos=1&`,
 }
    $.post(luckycallback,async(error, response, data) =>{
+	     if(error)
+	   {
+		  $.log("请求失败");
+		   resolve();
+	   }
      const callback = JSON.parse(data)
 $.log('開始翻倍抽獎')
       if(callback.code == 1) {
