@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest 
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-          EncryptKey: ${{secrets.ENCRYPT_KEY}}
+       ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
     steps:
       - name: Checkout
         run: |
