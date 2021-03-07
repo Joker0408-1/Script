@@ -7,8 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest 
     if: github.event.repository.owner.id == github.event.sender.id
-    env:
-       ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
     steps:
       - name: Checkout
         run: |
@@ -29,6 +27,7 @@ jobs:
         run: |
           cd ~/js/Task   
           node sqxs.js
-
+        env:
+          ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
  
 
