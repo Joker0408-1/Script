@@ -1,10 +1,9 @@
 
-const $=Env('登录')
+const $=Env('机场签到')
 let cookie;
  
  
 /*加密*/
-let fs = require('fs');
 const crypto = require('crypto');
 
 
