@@ -19,7 +19,7 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip3 install request
+        run: pip install requests
         
 
     
