@@ -141,10 +141,10 @@ async function all() {
             'tokenstr': `${bububaotokenVal}`,
             'Connection': `keep-alive`,
             'Accept-Encoding': `gzip, deflate, br`,
-            'version': `10`,
+            'version': `18`,
             'idfa': ``,
             'Content-Type': `application/x-www-form-urlencoded`,
-            'User-Agent': `BBB/132 CFNetwork/1206 Darwin/20.1.0`,
+            'User-Agent': ``,
             'platform': `2`,
             'imei': ``,
             'Cookie': ``,
@@ -152,6 +152,30 @@ async function all() {
             'Accept-Language': `zh-cn`,
             'Accept': `*/*`
         };
+		
+	    header2 = {
+            'store': `appstore`,
+            'tokenstr': `${bububaotokenVal}`,
+            'Connection': `keep-alive`,
+            'Accept-Encoding': `gzip, deflate, br`,
+            'version': `18`,
+            'idfa': ``,
+            'Content-Type': `application/x-www-form-urlencoded`,
+            'User-Agent': ``,
+            'platform': `2`,
+            'imei': ``,
+            'Cookie': ``,
+            'Host': `bububao.duoshoutuan.com`,
+            'Accept-Language': `zh-cn`,
+            'Accept': `*/*`
+        };
+		
+		
+		
+		
+		
+		
+		
         O = (`${$.name + (i + 1)}🔔`);
         await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`)
         let cookie_is_live = await user(); //用户名
@@ -1694,7 +1718,7 @@ function tixian(timeout = 0) {
         setTimeout(() => {
             let url = {
                 url: `https://bububao.duoshoutuan.com/user/tixian?`,
-                headers: header,
+                headers: header2,
                 body: `tx=${CASH}&`,
             }
             $.post(url, async(err, resp, data) => {
