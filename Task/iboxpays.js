@@ -64,7 +64,7 @@ iboxpayheaderArr =
         "Host": "veishop.iboxpay.com",
         "User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 4B4F2713-499B-4701-97DF-F48E510FE840)",
         "X-User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 4B4F2713-499B-4701-97DF-F48E510FE840)",
-        "mchtNo": "100529600058887",
+        "mchtNo": "100529600058886",
         "shopkeeperId": "1148855820752977920",
         "source": "VEISHOP_APP_IOS",
         "token": "a4c2da143c63490ca656ddac7af74635",
@@ -79,7 +79,7 @@ iboxpayheaderArr =
         "Host": "veishop.iboxpay.com",
         "User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 4B4F2713-499B-4701-97DF-F48E510FE847)",
         "X-User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 4B4F2713-499B-4701-97DF-F48E510FE847)",
-        "mchtNo": "100529600058887",
+        "mchtNo": "100529600058885",
         "shopkeeperId": "1353091776234577920",
         "source": "VEISHOP_APP_IOS",
         "token": "c57dd64e781f4fa99a7e8bd3ecb5f82d",
@@ -94,7 +94,7 @@ iboxpayheaderArr =
         "Host": "veishop.iboxpay.com",
         "User-Agent": "VeiShop, 1.4.8 (iOS, 12.4.7, zh_CN, Apple, iPhone, C6C2BED7-4CB5-450E-917B-EDF576510879)",
         "X-User-Agent": "VeiShop, 1.4.8 (iOS, 12.4.7, zh_CN, Apple, iPhone, C6C2BED7-4CB5-450E-917B-EDF576510879)",
-        "mchtNo": "100529600058887",
+        "mchtNo": "100529600058884",
         "shopkeeperId": "1352290440102600704",
         "source": "VEISHOP_APP_IOS",
         "token": "44eea9bcc35f497c9e2ab2a1203f39d3",
@@ -109,7 +109,7 @@ iboxpayheaderArr =
         "Host": "veishop.iboxpay.com",
         "User-Agent": "VeiShop, 1.4.8 (iOS, 12.4.7, zh_CN, Apple, iPhone, C6C2BED7-4CB5-450E-917B-EDF576510877)",
         "X-User-Agent": "VeiShop, 1.4.8 (iOS, 12.4.7, zh_CN, Apple, iPhone, C6C2BED7-4CB5-450E-917B-EDF576510877)",
-        "mchtNo": "100529600058887",
+        "mchtNo": "100529600058883",
         "shopkeeperId": "1351911905512841216",
         "source": "VEISHOP_APP_IOS",
         "token": "7a47e220815d4fe592a50a92c3f2842c",
@@ -124,7 +124,7 @@ iboxpayheaderArr =
         "Host": "veishop.iboxpay.com",
         "User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED9)",
         "X-User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED9)",
-        "mchtNo": "100529600058887",
+        "mchtNo": "100529600058882",
         "shopkeeperId": "1270273757360041984",
         "source": "VEISHOP_APP_IOS",
         "token": "541fd3938cc6483fa00a6be48e682b96",
@@ -139,7 +139,7 @@ iboxpayheaderArr =
         "Host": "veishop.iboxpay.com",
         "User-Agent": "VeiShop, 1.4.4 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
         "X-User-Agent": "VeiShop, 1.4.4 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
-        "mchtNo": "100529600058887",
+        "mchtNo": "100529600058881",
         "shopkeeperId": "1148855820752977920",
         "source": "VEISHOP_APP_IOS",
         "token": "3a5ecacea20745edb680b5f6f28f1842",
@@ -149,7 +149,7 @@ iboxpayheaderArr =
         'Connection': `keep-alive`,
         'Accept-Encoding': `gzip, deflate, br`,
         'version': `1.4.4`,
-        'mchtNo': `100529600058887`,
+        'mchtNo': `100529600058877`,
         'Content-Type': `application/json; charset=utf-8`,
         'source': `VEISHOP_APP_IOS`,
         'shopkeeperId': `1148855820752977920`,
@@ -164,7 +164,7 @@ iboxpayheaderArr =
         'Connection': `keep-alive`,
         'Accept-Encoding': `gzip, deflate, br`,
         'version': `1.4.4`,
-        'mchtNo': `100529600058887`,
+        'mchtNo': `100529600058867`,
         'Content-Type': `application/json; charset=utf-8`,
         'source': `VEISHOP_APP_IOS`,
         'shopkeeperId': `1352478788058406912`,
@@ -179,7 +179,7 @@ iboxpayheaderArr =
         'Connection': `keep-alive`,
         'Accept-Encoding': `br, gzip, deflate`,
         'version': `1.4.4`,
-        'mchtNo': `100529600058887`,
+        'mchtNo': `100529600058857`,
         'Content-Type': `application/json; charset=utf-8`,
         'source': `VEISHOP_APP_IOS`,
         'shopkeeperId': `1352464952811118592`,
@@ -194,7 +194,7 @@ iboxpayheaderArr =
         'Connection': `keep-alive`,
         'Accept-Encoding': `gzip, deflate, br`,
         'version': `1.4.4`,
-        'mchtNo': `100529600058887`,
+        'mchtNo': `100529600058847`,
         'Content-Type': `application/json; charset=utf-8`,
         'source': `VEISHOP_APP_IOS`,
         'shopkeeperId': `1352436465475837952`,
@@ -241,7 +241,7 @@ nowTimes = new Date(
 //今天
 Y = nowTimes.getFullYear() + '年';
 M = (nowTimes.getMonth() + 1 < 10 ? '0' + (nowTimes.getMonth() + 1) : nowTimes.getMonth() + 1) + '月';
-D = (nowTimes.getDate()  < 10 ? '0' + nowTimes.getDate() : nowTimes.getDate()) + '日';
+D = (nowTimes.getDate() < 10 ? '0' + nowTimes.getDate() : nowTimes.getDate()) + '日';
 ddtime = Y + M + D;
 console.log(ddtime)
 //当前时间戳
@@ -323,16 +323,26 @@ async function all() {
         await lives(j); //看直播
         await $.wait(1000);
     }
-    await $.wait(30000);
+    /* await $.wait(30000);
     await queryvideoPublishId(0) //视频列表
     for (let i = 0; i < Length; i++) {
-        await play(i) //看视频
-        await $.wait(1000);
-        await video(i);
+    await play(i) //看视频
+    await $.wait(1000);
+    await video(i);
+    }*/
+    for (let i = 0; i < 2; i++) {
+        await $.wait(30000);
+        await accout1Wathchvedio();
+        await $.wait(30000);
+        await accout1Wathchvedio2();
+        await $.wait(30000);
+        await accout1Wathchvedio3();
+        await $.wait(30000);
+        await accout1Wathchvedio4();
+        await $.wait(30000);
+        await accout1Wathchvedio5();
     }
 }
-
-
 
 //通知
 function msgShow() {
@@ -639,7 +649,7 @@ function video(i) {
         }
         $.post(url, async(err, resp, data) => {
             try {
-
+                $.log(data);
                 if (logs)
                     $.log(`${O}, 视频🚩: ${data}`);
                 $.video = JSON.parse(data);
@@ -779,11 +789,11 @@ function sylist(i) {
         }
         $.get(url, async(err, resp, data) => {
             try {
-                
+
                 if (logs)
                     $.log(`${O}, 收益列表🚩: ${data}`);
                 $.sylist = JSON.parse(data);
-				
+
                 if ($.sylist.resultCode == 1) {
                     if (ddtime == $.sylist.data[0].obtainDate) {
                         live = JSON.stringify($.sylist.data[0].coinList).match(/:500,/g);
@@ -858,6 +868,215 @@ function withdraw(i) {
 
     })
 }
+
+//单纯看视频
+
+
+function accout1Wathchvedio() {
+    return new Promise((resolve, reject) => {
+        const url = "https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/give_gold_coin_by_video.json";
+        const headers = {
+            "Content-Length": "298",
+            "Connection": "keep-alive",
+            "Accept-Encoding": "gzip, deflate, br",
+            "version": "1.4.8",
+            "timestamp": "1615437749057",
+            "mchtNo": "100529600058887",
+            "Content-Type": "application/json; charset=utf-8",
+            "source": "VEISHOP_APP_IOS",
+            "shopkeeperId": "1148855820752977920",
+            "User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "signature": "0300DBB3A4F927242A45B9A56B8D74011CD6B4A5D6C67A44FCB7D768FB4F740B",
+            "X-User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "token": "e6fe9ef72a3f4addbab5bd200ac55224",
+            "traceid": "313504258621921607681615435725724a4b82bfa26fc",
+            "Host": "veishop.iboxpay.com",
+            "Accept-Language": "zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7",
+            "Accept": "*/*",
+            "random": "3A561C58-57D9-47B1-9AFC-C45EF5703694"
+        };
+        const body = "{\"type\":1,\"videoList\":[{\"videoId\":\"1368622616414371840\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1351061764828057600\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1360287757656723456\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1355576709984854016\",\"type\":1,\"isFinishWatch\":false}],\"actId\":\"324\"}";
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+
+function accout1Wathchvedio2() {
+    return new Promise((resolve, reject) => {
+        const url = "https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/give_gold_coin_by_video.json";
+        const headers = {
+            "Content-Length": "233",
+            "Connection": "keep-alive",
+            "Accept-Encoding": "gzip, deflate, br",
+            "version": "1.4.8",
+            "timestamp": "1615437785641",
+            "mchtNo": "100529600058887",
+            "Content-Type": "application/json; charset=utf-8",
+            "source": "VEISHOP_APP_IOS",
+            "shopkeeperId": "1148855820752977920",
+            "User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "signature": "B76F0D31D6A0777A68F4535CC47B452E0922CF444932609F357762415B69B7BD",
+            "X-User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "token": "e6fe9ef72a3f4addbab5bd200ac55224",
+            "traceid": "313504258621921607681615435725729a4b82bfa26fc",
+            "Host": "veishop.iboxpay.com",
+            "Accept-Language": "zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7",
+            "Accept": "*/*",
+            "random": "A92EDD76-FEB1-47CF-9AE6-7C6D18B04126"
+        };
+        const body = "{\"type\":1,\"videoList\":[{\"videoId\":\"1355576709984854016\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1353044561679654912\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1349417924769628160\",\"type\":1,\"isFinishWatch\":false}],\"actId\":\"324\"}";
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+
+function accout1Wathchvedio3() {
+    return new Promise((resolve, reject) => {
+        const url = "https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/give_gold_coin_by_video.json";
+        const headers = {
+            "Content-Length": "233",
+            "Connection": "keep-alive",
+            "Accept-Encoding": "gzip, deflate, br",
+            "version": "1.4.8",
+            "timestamp": "1615437819316",
+            "mchtNo": "100529600058887",
+            "Content-Type": "application/json; charset=utf-8",
+            "source": "VEISHOP_APP_IOS",
+            "shopkeeperId": "1148855820752977920",
+            "User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "signature": "2E1F8E66A118FDEC179AA3A9BBE7ACCC2E572024CB8606B1F34CA769724A8D5B",
+            "X-User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "token": "e6fe9ef72a3f4addbab5bd200ac55224",
+            "traceid": "313504258621921607681615435725734a4b82bfa26fc",
+            "Host": "veishop.iboxpay.com",
+            "Accept-Language": "zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7",
+            "Accept": "*/*",
+            "random": "A542AB20-93A7-4477-8FFB-CFAA8B19F223"
+        };
+        const body = "{\"type\":1,\"videoList\":[{\"videoId\":\"1349417924769628160\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1354137862440787968\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1346361763609301001\",\"type\":1,\"isFinishWatch\":false}],\"actId\":\"324\"}";
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+
+function accout1Wathchvedio4() {
+    return new Promise((resolve, reject) => {
+        const url = "https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/give_gold_coin_by_video.json";
+        const headers = {
+            "random": "0EF00EA0-FFA9-4540-B5AD-73A3AE225E6E",
+            "Connection": "keep-alive",
+            "Accept-Encoding": "gzip, deflate, br",
+            "version": "1.4.8",
+            "timestamp": "1615437849316",
+            "mchtNo": "100529600058887",
+            "Content-Type": "application/json; charset=utf-8",
+            "source": "VEISHOP_APP_IOS",
+            "shopkeeperId": "1148855820752977920",
+            "User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "signature": "4C93E1576ED1519E5E6670DE354E4CE978967856397A33D6AC2C693CDA6CCDDF",
+            "X-User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "token": "e6fe9ef72a3f4addbab5bd200ac55224",
+            "traceid": "313504258621921607681615435725735a4b82bfa26fc",
+            "Host": "veishop.iboxpay.com",
+            "Accept-Language": "zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7",
+            "Accept": "*/*",
+            "Content-Length": "103"
+        };
+        const body = "{\"type\":1,\"videoList\":[{\"videoId\":\"1346361763609301001\",\"type\":1,\"isFinishWatch\":false}],\"actId\":\"324\"}";
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+
+function accout1Wathchvedio5() {
+    return new Promise((resolve, reject) => {
+        const url = "https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/give_gold_coin_by_video.json";
+        const headers = {
+            "random": "6E1633C4-ACE9-4EA8-992A-FDEB8ED3114C",
+            "Connection": "keep-alive",
+            "Accept-Encoding": "gzip, deflate, br",
+            "version": "1.4.8",
+            "timestamp": "1615437908540",
+            "mchtNo": "100529600058887",
+            "Content-Type": "application/json; charset=utf-8",
+            "source": "VEISHOP_APP_IOS",
+            "shopkeeperId": "1148855820752977920",
+            "User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "signature": "CD9E0A7F46D41723BB29DD21FC093743B9BA26C2ECED35038CF7FD4C08A6570A",
+            "X-User-Agent": "VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2ED8)",
+            "token": "e6fe9ef72a3f4addbab5bd200ac55224",
+            "traceid": "313504258621921607681615435725745a4b82bfa26fc",
+            "Host": "veishop.iboxpay.com",
+            "Accept-Language": "zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7",
+            "Accept": "*/*",
+            "Content-Length": "361"
+        };
+        const body = "{\"type\":2,\"videoList\":[{\"videoId\":\"1346361763609301001\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1349421256464678912\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1357518055947673600\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"1352317360923496448\",\"type\":1,\"isFinishWatch\":false},{\"videoId\":\"15937608892285327\",\"type\":1,\"isFinishWatch\":false}],\"actId\":\"324\"}";
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+
 // prettier-ignore
 function Env(t, e) {
     class s {
