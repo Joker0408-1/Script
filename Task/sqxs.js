@@ -90,9 +90,13 @@ async function all() {
         let decrypted = await aesDecrypt(encrypted, key);
         sqxsck = JSON.parse(decrypted);
         //let sqxsck = require('./sqxsck.json');
-        let CountNumber = sqxsck.settings[1].val;
+        let CountNumber = 1;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
-        for (let i = 0; i < CountNumber; i++) {
+       // for (let i = 0; i < CountNumber; i++) {
+		   
+		   
+		   let i=(new Date).getHours();
+		   
             if (sqxsck.datas[0 + 6 * i].val) {
                 readckArr = sqxsck.datas[0 + 6 * i].val.split('&&');
                 receivecoinckArr = sqxsck.datas[1 + 6 * i].val.split('&&');
@@ -122,7 +126,7 @@ async function all() {
                 //个人信息
                 await userinfo();
             }
-        }
+       // }
 
     }
     //QX运行
