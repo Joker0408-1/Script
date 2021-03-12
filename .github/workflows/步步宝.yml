@@ -26,3 +26,5 @@ jobs:
         run: |
           cd ~/js   
           node Task/bububao.js
+    env:
+          ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
