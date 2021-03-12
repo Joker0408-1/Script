@@ -1,14 +1,38 @@
 
 
 const $ = Env("步步宝");
-
 const notify = $.isNode() ? require("./sendNotify") : ``;
+
+let Eecrypt = 1; //加密
+
+/*ck解密*/
+let fs = require('fs');
+const crypto = require('crypto');
+
+function aesDecrypt(encrypted, key) {
+    const decipher = crypto.createDecipher('aes192', key);
+    let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+    decrypted += decipher.final('utf8');
+    return decrypted;
+}
+
 const logs = 0; // 0为关闭日志，1为开启
 const notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知
 $.message = '', COOKIES_SPLIT = '', CASH = '0.3', ddtime = '';
 CZ = 10;
-const bububaotokenArr = ['A7BC524EFE264F26793B6BB92525847G1611042389', '58D207FBEF6A32DDFADA6B00C527702G1611307971', '4C2A5910AA8AA80B622D21BB9529693G1611671158', '5F4172090153253C1D914AC7C529695G1611674447', '95B939DA1ED80E998E13F59B3527794G1613471646', 'AB559B4CD6DE8D3A1F3783B8C531203G1613479221', '18E6EB85BAFE9DE539A35D3DB531204G1613479618', 'DBDF1EDDF2259536E575758EC531243G1613545203', 'D9AA6D6475822F3B33F97E9A6531244G1613545492'];
+
+if (Eecrypt) {
+    //加密版
+    let encrypted = '17e517443806c3e6d77c76c9d784ff1c875d91cdc1d691898f24d66585f8e4af44157e9f411f49cee69bb25167d0bcf01d5dd2becbb579024f5031824bf3140aa7c52ee060565aac7722060a914dbf885574dc0fed06e998d16e631219e6aab32f0c97bd0368f6aecc74a47c1e964c85442365760f055df67da7d2c9e0741fd7e4e21e1ea1d4cfaafebd532f3f23f98ee9dc2d47cfb05f89db727f40c880b7851114a5be3058f8a64e4acbb97ed3aa45658eb44320cef7b2de209c0381f8d53bb0a90fb583810a726956d7884cba346ef73ced54c7d62a97dd7420747e2ccbc9f5b306984b8a57ca189a2851ad7433b6e9eabc84ad59f59495438217f38f92e491d38bcd632e2979297e189901506ef4a6d5bcf9e759a15c78799cb62968b263b2947a9833588638d0851687226e4f80359867e6a9eddfe01eb018d835ceee28adf938460ae963285e7651b04ebdbb04ea7167d7f3c1b1c8e8a43adb49453d8c7077f87bff8baec8f3878c30c145b7bee0f544b3dd6f2b75718cbef6b714f0c7fb8a8d39ce97669f8b0dfb2d768fdc1a';
+    key = process.env.ENCRYPT_KEY;
+    let decrypted = aesDecrypt(encrypted, key);
+    bububaotokenArr = decrypted.split(',');
+} else {
+    //非加密版
+    bububaotokenArr = [];
+}
+
 let bububaotokenVal = ``;
 Length = bububaotokenArr.length;
 
@@ -135,7 +159,7 @@ async function all() {
     for (let i = 0; i < Length; i++) {
 
         bububaotokenVal = bububaotokenArr[i];
-
+        console.log(bububaotokenVal);
         header = {
             'store': `appstore`,
             'tokenstr': `${bububaotokenVal}`,
@@ -152,8 +176,8 @@ async function all() {
             'Accept-Language': `zh-cn`,
             'Accept': `*/*`
         };
-		
-	    header2 = {
+
+        header2 = {
             'store': `appstore`,
             'tokenstr': `${bububaotokenVal}`,
             'Connection': `keep-alive`,
@@ -169,13 +193,7 @@ async function all() {
             'Accept-Language': `zh-cn`,
             'Accept': `*/*`
         };
-		
-		
-		
-		
-		
-		
-		
+
         O = (`${$.name + (i + 1)}🔔`);
         await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`)
         let cookie_is_live = await user(); //用户名
@@ -1685,20 +1703,20 @@ function tixian_html(timeout = 0) {
 
                         if (!day_tixian_tip && ($.user.wx_username != "" || $.user.is_weixin == 1)) {
                             await tixian() //提现
-                          /*  if (CASH > 49 && CASH <= 200 && $.user.money >= CASH) {
-                                await tixian() //提现
+                            /*  if (CASH > 49 && CASH <= 200 && $.user.money >= CASH) {
+                            await tixian() //提现
                             }
                             if (CASH == 888) {
-                                if ($.user.money >= 200 && fenshu5 > 0) {
-                                    CASH = 200
-                                } else if ($.user.money >= 100 && fenshu4 > 0) {
-                                    CASH = 100
-                                } else if ($.user.money >= 50 && fenshu5 > 0) {
-                                    CASH = 50
-                                }
-                                if (CASH != 888) {
-                                    await tixian() //提现
-                                }
+                            if ($.user.money >= 200 && fenshu5 > 0) {
+                            CASH = 200
+                            } else if ($.user.money >= 100 && fenshu4 > 0) {
+                            CASH = 100
+                            } else if ($.user.money >= 50 && fenshu5 > 0) {
+                            CASH = 50
+                            }
+                            if (CASH != 888) {
+                            await tixian() //提现
+                            }
                             }*/
                         }
                     }
