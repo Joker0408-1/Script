@@ -43,7 +43,7 @@ fs.writeFile("./sqxsck.txt", encrypted, function(err) {
 
 /*
 		let encrypted=fs.readFileSync('./sqxsck.txt', 'utf8')
-		key = '31557344';
+		key = '21356512';
 		let decrypted = aesDecrypt(encrypted, key);
 		sqxsck=JSON.parse(decrypted);
 */
