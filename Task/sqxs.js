@@ -95,7 +95,7 @@ async function all() {
        // for (let i = 0; i < CountNumber; i++) {
 		   
 		   
-		   let i=(new Date).getHours();
+		   let i=(new Date).getHours()-1;
 		   
             if (sqxsck.datas[0 + 6 * i].val) {
                 readckArr = sqxsck.datas[0 + 6 * i].val.split('&&');
