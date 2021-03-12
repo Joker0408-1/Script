@@ -26,4 +26,5 @@ jobs:
         run: |
           cd ~/js   
           node Task/iboxpays.js
-
+    env:
+          ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
