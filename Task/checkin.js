@@ -1,9 +1,10 @@
 
-const $=Env('机场签到')
+const $=Env('登录')
 let cookie;
  
  
 /*加密*/
+let fs = require('fs');
 const crypto = require('crypto');
 
 
@@ -17,10 +18,18 @@ function aesDecrypt(encrypted, key) {
 } 
  
  
-let encrypted="da6030b09dec3f19f4290f2f85e2ef4a36d59ac83b18bd506f4e17d173e63a087bca2c989ffe41160a0d694836cadd5aea47401b0270997d860464e6b77938f3"
-let key =process.env.ENCRYPT_KEY;
-let body = aesDecrypt(encrypted, key); 
+encrypted="da6030b09dec3f19f4290f2f85e2ef4a36d59ac83b18bd506f4e17d173e63a087bca2c989ffe41160a0d694836cadd5aea47401b0270997d860464e6b77938f3";
+key =process.env.ENCRYPT_KEY;
+body = aesDecrypt(encrypted, key); 
  
+encrypted="0721e95e0b7305f6f925a7bd219325136edb73b13bfaae8fb0a090aeb01e9b2c";
+url1=aesDecrypt(encrypted, key);
+$.log(url1); 
+encrypted="0721e95e0b7305f6f925a7bd219325131dfb41f4134f19efe1ae0356f344019f";
+url2=aesDecrypt(encrypted, key);
+
+encrypted="0721e95e0b7305f6f925a7bd2193251397978a9e37c0e29646d56d25890b08c7ff8e3193cfe5874dd849506254eb2a70";
+url3=aesDecrypt(encrypted, key);
 
 
 !(async () => {
@@ -39,7 +48,8 @@ let body = aesDecrypt(encrypted, key);
   
   
 async function all() {	
-	cookie= await login();  
+	cookie= await login(); 
+	
 	if (cookie!= 0){
 		$.log("正在签到..."); 
 		await checkin();
@@ -50,7 +60,7 @@ async function all() {
 function login() {
  return new Promise((resolve, reject) => {
 	const request = {
-      url: "https://j01.best/signin",
+      url: url1,
       headers: {"Content-Type":"application/json;charset=utf-8"},
       body: body,
 	  timeout: 60000,
@@ -74,7 +84,7 @@ function login() {
 function checkin() {
   return new Promise((resolve, reject) => {
 	const request = {
-      url: "https://j01.best/user/checkin",
+      url: url2,
       headers: cookie,
       body: "",
 	  timeout: 60000,
@@ -93,7 +103,7 @@ function checkin() {
 function traquery() {
   return new Promise((resolve, reject) => {
   const request = {
-      url: "https://j01.best/xiaoma/get_user",
+      url: url3,
       headers: cookie,
       timeout: 60000,
   };
