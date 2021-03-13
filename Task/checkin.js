@@ -24,7 +24,7 @@ body = aesDecrypt(encrypted, key);
  
 encrypted="0721e95e0b7305f6f925a7bd219325136edb73b13bfaae8fb0a090aeb01e9b2c";
 url1=aesDecrypt(encrypted, key);
-$.log(url1); 
+
 encrypted="0721e95e0b7305f6f925a7bd219325131dfb41f4134f19efe1ae0356f344019f";
 url2=aesDecrypt(encrypted, key);
 
