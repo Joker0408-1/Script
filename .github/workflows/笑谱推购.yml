@@ -6,16 +6,16 @@ on:
     - cron: '*/30 0-12 * * *'
 jobs:
   build:
-    runs-on: ubuntu-latest    
+    runs-on: windows-latest  
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
         run: |
           git clone https://github.com/caixukun112/js.git ~/js
-     # - name: Use Node.js 14.x
-      #  uses: actions/setup-node@v1
-       # with:
-        #  node-version: 14.x
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
       - name: npm install
         run: |
           cd ~/js
