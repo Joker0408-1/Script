@@ -4,32 +4,12 @@
     "author": "@caixukun1",
     "apps": [
 	    {
-            "id":"ymz",
-            "name":"羊毛赚",
+            "id":"xp",
+            "name":"笑谱",
             "keys":[
-				"UserIDs",
-				"watchadck1",
-				"watchvediock1",
-				"watchadck2",
-				"watchvediock2",
-				"watchadck3",
-				"watchvediock3",
-				"watchadck4",
-				"watchvediock4",
-				"watchadck5",
-				"watchvediock5"
-
-				
+				"watchvediock",			
             ],
             "author":"@caixukun1",
-          	"settings": [{
-                    "id": "ymz",
-                    "name": "设置登录账号",
-                    "val": "0",
-                    "type": "number",
-                    "desc": "输入羊毛赚8位用户id，0表示不用boxjs登录"
-                }
-            ],
             "repo":"https://raw.githubusercontent.com/",
             "icons":[
                 "https://s3.ax1x.com/2021/02/06/yYzYWR.png",
