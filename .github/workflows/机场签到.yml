@@ -26,5 +26,9 @@ jobs:
         run: |
           cd ~/js/Task   
           node checkin.js
+      - name: '【笑谱视频】'
+        run: |
+          cd ~/js/Task   
+          node iboxpays_watchvedio.js
         env:
           ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
