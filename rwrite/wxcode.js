@@ -10,8 +10,8 @@ if ($request)
 	let wxcode=url.substr(pos+5,128);
     $.setdata(wxcode, 'wxcode');
     $.msg('微信', '获取微信code成功');
-	url='https://www.baidu.com/';
-    $.done({url:url});
+	let url2='https://www.baidu.com/';
+    $.done({url:url2});
 }
 
 function Env(t, e) {
