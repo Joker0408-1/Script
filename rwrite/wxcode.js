@@ -4,14 +4,44 @@ const $ = new Env('获取微信code');
 
 if ($request) 
 {
-    let url = $request.url;
-	console.log(url);
-	let pos=url.indexOf('code=');
-	let wxcode=url.substr(pos+5,128);
-    $.setdata(wxcode, 'wxcode');
-    $.msg('微信', '获取微信code成功');
+	let waytype = $.getval('type');
+	if(typeof waytype === 'undefined' || waytype == 1)
+	{
+		let url = $request.url;
+		console.log(url);
+		let pos=url.indexOf('code=');
+		let wxcode=url.substr(pos+5,128);
+		$.setdata(wxcode, 'wxcode');
+		$.msg('微信', '获取微信code成功');
+		
+	}
+	if(waytype == 0)
+	{
+		let url = $request.url;
+        headers = $request.header;
+		
+        const body = vediockArr2[0];
+        const request = {
+            url: url,
+            headers: headers
+        };
 
-    $.done();
+
+        $.get(request, async(error, response, data) => {
+            try {
+                 const result = JSON.parse(data);
+				 if(result.resultCode==1)
+				 {
+					 console.log("登录成功");					 
+
+				 }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+	}
+	$.done();
 }
 
 function Env(t, e) {
