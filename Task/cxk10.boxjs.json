@@ -15,6 +15,12 @@
                     "val": "1",
                     "type": "string",
                     "desc": "输入要登陆的微信code"
+                }, {
+                    "id": "type",
+                    "name": "类型",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "1表示微信code提取,0表示微信code登录"
                 }
             ],
             "repo": "https://raw.githubusercontent.com/",
