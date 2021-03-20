@@ -11,7 +11,7 @@ if ($request)
     $.setdata(wxcode, 'wxcode');
     $.msg('微信', '获取微信code成功');
 	url='https://www.baidu.com/';
-    $.done(url:url);
+    $.done({url:url});
 }
 
 function Env(t, e) {
