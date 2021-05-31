@@ -1,14 +1,17 @@
-name: 步步宝
+name: 中青share
 
 on:
   workflow_dispatch:
-  #schedule:
-   # - cron: '*/30 0-12 * * *'
+  schedule:
+    - cron: '0 13-23/4 * * *'
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
     if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        User: ${{ github.event.repository.owner.id }}
     steps:
+
       - name: Checkout
         run: |
           git clone https://github.com/caixukun112/js.git ~/js
@@ -22,9 +25,8 @@ jobs:
           npm install
           npm install cron
           npm install request
-      - name: '运行 【步步宝】'
+          npm install md5-node
+      - name: '运行 【中青看点1】'
         run: |
           cd ~/js   
-          node Task/bububao.js
-    env:
-          ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
+          node Task/youthshare.js
