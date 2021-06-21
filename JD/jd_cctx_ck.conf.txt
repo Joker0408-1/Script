@@ -1,3 +1,3 @@
 hostname = api.m.jd.com
 
-https://api.m.jd.com/client.action url script-request-body https://raw.githubusercontent.com/Joker0408-1/Script/main/Self/jd_cctx.js
+https://api.m.jd.com/client.action url script-request-body https://raw.githubusercontent.com/Joker0408-1/Script/main/JD/jd_cctx.js
