@@ -1,6 +1,6 @@
 [task_local]
 #直播间抽奖
-0 19 */5 * * https://raw.githubusercontent.com/WhiteSmallPure/Sunert/main/Task/live_lottery_social.js, tag=直播间抽奖,  enabled=true
+0 19 * * 1 https://raw.githubusercontent.com/Joker0408-1/Script/main/JD/jd_zbjcj.js, tag=直播间抽奖,  enabled=true
 const $ = new Env('直播间抽奖');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [
