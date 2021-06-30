@@ -1,0 +1,249 @@
+{
+  "id": "cenbomin.app.sub",
+  "name": "CenBomin.Script",
+  "author": "@cenbomin",
+  "icon": "https://avatars0.githubusercontent.com/u/75375782?s=400&u=86eee41f7f138c5d0187aa10d2242bfc9799182e&v=4",
+  "repo": "https://github.com/CenBoMin/GithubSync",
+  "apps": [{
+    "id": "PushBoxjsTask",
+    "name": "V2pTask",
+    "keys": ["v2purl", "v2token", "v2pblacklist"],
+    "settings": [{
+        "id": "v2ptaskupdate",
+        "name": "V2P上传任务",
+        "val": false,
+        "type": "boolean",
+        "desc": "打开才会上传定时任务,用来刚开始使用的时候"
+      },
+      {
+        "id": "jdtaskupdate",
+        "name": "京东上传任务",
+        "val": false,
+        "type": "boolean",
+        "desc": "用来打开上传定时任务包含京东系列"
+      },
+      {
+        "id": "v2pblacklist",
+        "name": "上传黑名单",
+        "val": "",
+        "type": "textarea",
+        "desc": "删除你要上传的任务对象"
+      },
+      {
+        "id": "v2purl",
+        "name": "主页地址",
+        "val": "",
+        "type": "text",
+        "desc": "请到设置查询,例子:http://192.168.1.102:12521"
+      },
+      {
+        "id": "v2token",
+        "name": "WEBHOOK TOKEN",
+        "val": "",
+        "type": "text",
+        "desc": "请到设置查询,例子:a8c259b2-67fe-D-7bfdf1f55cb3"
+      }
+    ],
+    "author": "@cenbomin",
+    "repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushTask_elecV2p.js",
+    "icons": ["https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/elecv2p-mini.png", "https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/elecv2p.png"]
+  }, {
+    "id": "PushBoxjsCookie",
+    "name": "V2pCookie",
+    "keys": ["v2purl", "v2token"],
+    "settings": [{
+        "id": "v2pcookieupdate",
+        "name": "V2P上传任务",
+        "val": false,
+        "type": "boolean",
+        "desc": "打开才会上传cookie,用来刚开始使用的时候。"
+      }, {
+        "id": "v2purl",
+        "name": "主页地址",
+        "val": "",
+        "type": "text",
+        "desc": "请到设置查询,例子:http://192.168.1.102:12521"
+      },
+      {
+        "id": "v2token",
+        "name": "WEBHOOK TOKEN",
+        "val": "",
+        "type": "text",
+        "desc": "请到设置查询,例子:a8c259b2-67fe-D-7bfdf1f55cb3"
+      }
+    ],
+    "author": "@cenbomin",
+    "repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCookie_elecV2p.js",
+    "icons": ["https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/elecv2p-mini.png", "https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/elecv2p.png"]
+  }, {
+    "id": "chonghauapp",
+    "name": "加点葱花",
+    "keys": ["uid", "chgetbody_video", "chgetbody_share", "chgetbody_timered", "chgetbody_taskcenter", "chgetbody_sharereward", "logbutton", "tzbutton", "chgetbody_video_index", "cashbody", "cashkey", "callbackkey", "callbackurl"],
+    "settings": [{
+        "id": "chgetbody_video",
+        "name": "请求body",
+        "val": "",
+        "type": "textarea",
+        "autoGrow": false,
+        "rows": 1,
+        "desc": "看视频，倒计时转一圈显示金币到账。。建议看5篇视频,获取请求包"
+      },
+      {
+        "id": "uid",
+        "name": "自己的邀请码",
+        "val": "",
+        "type": "text",
+        "desc": "输入才可查看账户金币明细"
+      },
+      {
+        "id": "chgetbody_video_index",
+        "name": "上次执行位置",
+        "val": "",
+        "type": "textarea",
+        "autoGrow": false,
+        "rows": 1,
+        "desc": "记录上次执行的位置，可以控制从第几个body开始执行"
+      },
+      {
+        "id": "logbutton",
+        "name": "日志开关",
+        "val": "",
+        "type": "number",
+        "desc": "0为关闭日志，1为开启，默认为关闭日志"
+      },
+      {
+        "id": "tzbutton",
+        "name": "安静开关",
+        "val": "",
+        "type": "number",
+        "desc": "0为关闭通知，1为所有通知，默认为关闭通知"
+      }
+    ],
+    "author": "@cenbomin",
+    "repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/CONGHUA/chonghua.js",
+    "icons": ["https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/AutoRead.png",
+      "https://raw.githubusercontent.com/58xinian/icon/master/chsp.png"
+    ]
+  }, {
+    "id": "txstockapp",
+    "name": "自选羊毛股",
+    "keys": ["signheader", "signkey", "taskheader", "taskkey", "userheader", "userkey", "wxtaskkey", "cash", "cashheader"],
+    "settings": [{
+      "id": "cash",
+      "name": "提现开关:0,不自动提现;1，提现1元；5，提现5元",
+      "val": "",
+      "type": "number",
+      "desc": "默认为0,不自动提现"
+    }],
+    "author": "@cenbomin",
+    "repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txstockqx.js",
+    "icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png"]
+  }, {
+    "id": "wlapp",
+    "name": "一毛看点",
+    "keys": ["getdomainbody", "getdomainkey", "userloginbody", "userloginkey", "artlistbody", "artlistkey", "artstationurl", "artstationkey", "readaccountbody", "readaccountkey", "infomebody", "infomekey", "videoartlistbody", "videoartlistkey", "videoreadaccountbody", "videoreadaccountkey", "artdetailbody", "artdetailkey"],
+    "settings": [{
+      "id": "cash",
+      "name": "提现开关:0,不自动提现;1，提现1元；5，提现5元",
+      "val": "",
+      "type": "number",
+      "desc": "默认为0,不自动提现"
+    }],
+    "author": "@cenbomin",
+    "repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/WLAPP/wlapp.js",
+    "icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/WLAPP/IMG_1069.JPG", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/WLAPP/IMG_1068.JPG"]
+  }, {
+    "id": "shuqiapp",
+    "name": "舒淇想说",
+    "keys": ["readuploadbody", "readuploadkey", "boxtaskbody", "boxtaskkey", "loadresourcebody", "loadresourcekey", "sploadresourcebody", "sploadresourcekey", "withdrawbody", "bubblebody", "receivebody", "signinactionbody", "readlotterybody", "videolotterybody", "luckylotterybody", "luckyredurl", "luckyredbody", "sharebody", "booktaskurl", "booktaskbody", "spsigninactionbody", "spreadcoinurl", "spreadcoinbody", "sp1videocoinbody", "sp2videocoinbody", "spsharebody", "lotteryinfourl", "videoinfourl", "spvideoinfourl", "readuploadbody2", "readuploadkey2", "boxtaskbody2", "boxtaskkey2", "loadresourcebody2", "loadresourcekey2", "sploadresourcebody2", "sploadresourcekey2", "withdrawbody2", "bubblebody2", "receivebody2", "signinactionbody2", "readlotterybody2", "videolotterybody2", "luckylotterybody2", "luckyredurl2", "luckyredbody2", "sharebody2", "booktaskurl2", "booktaskbody2", "spsigninactionbody2", "spreadcoinurl2", "spreadcoinbody2", "sp1videocoinbody2", "sp2videocoinbody2", "spsharebody2", "lotteryinfourl2", "videoinfourl2", "spvideoinfourl2", "readuploadbody3", "readuploadkey3", "boxtaskbody3", "boxtaskkey3", "loadresourcebody3", "loadresourcekey3", "sploadresourcebody3", "sploadresourcekey3", "withdrawbody3", "bubblebody3", "receivebody3", "signinactionbody3", "readlotterybody3", "videolotterybody3", "luckylotterybody3", "luckyredurl3", "luckyredbody3", "sharebody3", "booktaskurl3", "booktaskbody3", "spsigninactionbody3", "spreadcoinurl3", "spreadcoinbody3", "sp1videocoinbody3", "sp2videocoinbody3", "spsharebody3", "lotteryinfourl3", "videoinfourl3", "spvideoinfourl3", "readuploadbody4", "readuploadkey4", "boxtaskbody4", "boxtaskkey4", "loadresourcebody4", "loadresourcekey4", "sploadresourcebody4", "sploadresourcekey4", "withdrawbody4", "bubblebody4", "receivebody4", "signinactionbody4", "readlotterybody4", "videolotterybody4", "luckylotterybody4", "luckyredurl4", "luckyredbody4", "sharebody4", "booktaskurl4", "booktaskbody4", "spsigninactionbody4", "spreadcoinurl4", "spreadcoinbody4", "sp1videocoinbody4", "sp2videocoinbody4", "spsharebody4", "lotteryinfourl4", "videoinfourl4", "spvideoinfourl4", "readuploadbody5", "readuploadkey5", "boxtaskbody5", "boxtaskkey5", "loadresourcebody5", "loadresourcekey5", "sploadresourcebody5", "sploadresourcekey5", "withdrawbody5", "bubblebody5", "receivebody5", "signinactionbody5", "readlotterybody5", "videolotterybody5", "luckylotterybody5", "luckyredurl5", "luckyredbody5", "sharebody5", "booktaskurl5", "booktaskbody5", "spsigninactionbody5", "spreadcoinurl5", "spreadcoinbody5", "sp1videocoinbody5", "sp2videocoinbody5", "spsharebody5", "lotteryinfourl5", "videoinfourl5", "spvideoinfourl5"],
+    "settings": [
+
+      {
+        "id": "shuqiappSuffix",
+        "name": "当前抓取ck账号",
+        "val": "1",
+        "type": "number",
+        "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+      }, {
+        "id": "shuqiappCount",
+        "name": "脚本执行账号个数",
+        "val": "1",
+        "type": "number",
+        "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+      }, {
+        "id": "mymaxtime",
+        "name": "阅读时长最大值:阅读挑战赛建议设置360。",
+        "val": "",
+        "type": "text",
+        "desc": "默认180,需要突破限制请添加数字。"
+      }
+    ],
+    "author": "@cenbomin",
+    "repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/SHUQI/shuqi.js",
+    "icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/SHUQI/shuqi-mini.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/SHUQI/shuqi.png"]
+  }, {
+    "id": "dkdvideo",
+    "name": "想看多看点",
+    "keys": ["dkdtokenbody", "dkdtokenkey", "getawardbody", "getawardbody_index", "dkdcashkey", "dkdlottokey"],
+    "settings": [{
+      "id": "getawardbody",
+      "name": "视频请求",
+      "val": "",
+      "type": "textarea",
+      "autoGrow": false,
+      "rows": 1,
+      "desc": "看视频，倒计时转一圈显示金币到账。"
+    }, {
+      "id": "getawardbody_index",
+      "name": "上次执行位置",
+      "val": "",
+      "type": "textarea",
+      "autoGrow": false,
+      "rows": 1,
+      "desc": "记录上次执行的位置，可以控制从第几个视频请求开始执行"
+    }, {
+      "id": "myselfcash",
+      "name": "自定义未满50元的提现金额,1,3,5,15",
+      "val": "",
+      "type": "text",
+      "desc": "默认1,即未满50提现1元。"
+    }],
+    "author": "@cenbomin",
+    "repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkdvideo.js",
+    "icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkd.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/DKDVIDEO/dkd.png"]
+  }, {
+    "id": "runstep",
+    "name": "不走会亏钱",
+    "keys": ["version", "runsteptoken", "runstepkey", "txtoken", "txkey", "wxtxtoken", "runsteptoken2", "runstepkey2", "txtoken2", "txkey2", "wxtxtoken2", "runsteptoken3", "runstepkey3", "txtoken3", "txkey3", "wxtxtoken3", "runsteptoken4", "runstepkey4", "txtoken4", "txkey4", "wxtxtoken4", "runsteptoken5", "runstepkey5", "txtoken5", "txkey5", "wxtxtoken5", "runsteptoken6", "runstepkey6", "txtoken6", "txkey6", "wxtxtoken6", "runsteptoken7", "runstepkey7", "txtoken7", "txkey7", "wxtxtoken7"],
+    "settings": [{
+      "id": "version",
+      "name": "APP版本号:更新软件,请更改。",
+      "val": "",
+      "type": "text",
+      "desc": "默认1.5.1,更新APP软件,请更改。"
+    }, {
+      "id": "runstepSuffix",
+      "name": "当前抓取ck账号",
+      "val": "1",
+      "type": "number",
+      "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+    }, {
+      "id": "runstepCount",
+      "name": "脚本执行账号个数",
+      "val": "1",
+      "type": "number",
+      "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+    }],
+    "author": "@cenbomin",
+    "repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+    "script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep.js",
+    "icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep120X120.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/runstep120X120.png"]
+  }]
+}
