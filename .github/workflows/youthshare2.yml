@@ -30,4 +30,3 @@ jobs:
         run: |
           cd ~/js   
           node Task/youthshare2.js
-© 2021 GitHub, Inc.
