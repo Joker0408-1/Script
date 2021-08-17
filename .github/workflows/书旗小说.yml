@@ -1,8 +1,8 @@
 name: 书旗
 on:
   workflow_dispatch:
-  #schedule:
-  #  - cron: '*/30 0-11/1 * * *'
+  schedule:
+    - cron: '*/30 0-23 * * *'
 jobs:
   build:
     runs-on: macos-latest
@@ -26,7 +26,7 @@ jobs:
       - name: '【书旗小说】'
         run: |
           cd ~/js/Task   
-          node sqxs.js
+          node sq1.js
         env:
           ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
  
