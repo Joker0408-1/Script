@@ -26,7 +26,7 @@ jobs:
           npm install cron
           npm install request
           npm install md5-node
-      - name: '运行 【中青看点3】'
+      - name: '运行 【中青share3】'
         run: |
           cd ~/js   
           node Task/youthshare3.js
