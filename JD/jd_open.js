@@ -8,16 +8,16 @@ hostname = draw.jdfcloud.com
 
 ===========Surge=================
 [Script]
-jd_appopen = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/openUpgrade, max-size=0, script-path=jd_appopen.js
+jd_appopen = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/openUpgrade, max-size=0, script-path= https://raw.githubusercontent.com/Joker0408-1/Script/main/JD/jd_open.js
 
 ===================Quantumult X=====================
 [rewrite_local]
 # jd_appopen
-^https:\/\/api\.m\.jd\.com\/openUpgrade url script-request-header jd_appopen.js
+^https:\/\/api\.m\.jd\.com\/openUpgrade url script-request-header https://raw.githubusercontent.com/Joker0408-1/Script/main/JD/jd_open.js
 
 =====================Loon=====================
 [Script]
-http-request ^https:\/\/api\.m\.jd\.com\/openUpgrade script-path=jd_appopen.js, timeout=3600, tag=jd_appopen
+http-request ^https:\/\/api\.m\.jd\.com\/openUpgrade script-path= https://raw.githubusercontent.com/Joker0408-1/Script/main/JD/jd_open.js, timeout=3600, tag=京东Cookie获取
 
 */
 
