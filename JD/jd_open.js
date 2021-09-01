@@ -21,7 +21,7 @@ http-request ^https:\/\/api\.m\.jd\.com\/openUpgrade script-path=jd_appopen.js, 
 
 */
 
-const $ = new Env("app_open")
+const $ = new Env("京东Cookie获取")
 
 let cookie = $request.headers.Cookie
 let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
