@@ -1,4 +1,4 @@
-name: 中青share
+name: 中青share1
 
 on:
   workflow_dispatch:
