@@ -29,4 +29,4 @@ jobs:
       - name: '运行 【中青share1】'
         run: |
           cd ~/js   
-          node Task/youthshare.js
+          node Task/youthshare1.js
