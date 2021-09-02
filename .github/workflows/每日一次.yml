@@ -24,8 +24,8 @@ jobs:
           curl ipinfo.io/json
       - name: '【每日一次】'
         run: |
-          cd ~/js/Task   
-          node checkin.js
+          cd ~/js/Task           
           node cx.js
+          node checkin.js
         env:
           ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
