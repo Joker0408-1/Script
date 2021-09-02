@@ -1,26 +1,3 @@
-/*
-
-杀掉后台后打开京东app获取app_open
-在脚本日志查看值
-
-[MITM]
-hostname = api.m.jd.com
-
-===========Surge=================
-[Script]
-jd_appopen = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/openUpgrade, max-size=0, script-path= https://raw.githubusercontent.com/Joker0408-1/Script/main/JD/jd_open.js
-
-===================Quantumult X=====================
-[rewrite_local]
-# jd_appopen
-^https:\/\/api\.m\.jd\.com\/openUpgrade url script-request-header https://raw.githubusercontent.com/Joker0408-1/Script/main/JD/jd_open.js
-
-=====================Loon=====================
-[Script]
-http-request ^https:\/\/api\.m\.jd\.com\/openUpgrade script-path= https://raw.githubusercontent.com/Joker0408-1/Script/main/JD/jd_open.js, timeout=3600, tag=京东Cookie获取
-
-*/
-
 const $ = new Env("京东Cookie获取")
 
 let cookie = $request.headers.Cookie
