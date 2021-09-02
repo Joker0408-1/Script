@@ -2,7 +2,7 @@ name: 每日一次
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 6 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest 
