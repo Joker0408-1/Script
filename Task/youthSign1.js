@@ -83,7 +83,11 @@ if (isGetCookie = typeof $request !== 'undefined') {
     await endCard();
     await SevCont();
     // await ArticleShare();
-    await TimePaceket();
+    await TimePaceket();//计时红包
+    await TwentyScore();//20篇文章
+    await readFiveMinutes();//阅读5分钟
+    await readSixtyMinute();//阅读60分钟
+    await WatchTenVedio();//观看10个视频
     await openbox();
     await getAdVideo();
     await gameVideo();
@@ -185,6 +189,138 @@ function signInfo() {
         })
     })
 }
+
+
+function readFiveMinutes() {
+    return new Promise((resolve, reject) => {
+         const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=read_time_two_minutes&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630548985";
+         const headers = {
+    "Accept-Encoding": "gzip, deflate, br",
+    "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
+    "Connection": "keep-alive",
+    "Content-Type": "",
+    "Accept": "*/*",
+    "Host": "kd.youth.cn",
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+    "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
+    "Accept-Language": "zh-cn",
+    "X-Requested-With": "XMLHttpRequest"
+};
+        const request = {
+            url: url,
+            headers: headers
+        };
+
+        $.get(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+  
+function TwentyScore() {
+    return new Promise((resolve, reject) => {
+         const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=watch_article_reward&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630548722";
+         const headers = {
+    "Accept-Encoding": "gzip, deflate, br",
+    "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
+    "Connection": "keep-alive",
+    "Content-Type": "",
+    "Accept": "*/*",
+    "Host": "kd.youth.cn",
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+    "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
+    "Accept-Language": "zh-cn",
+    "X-Requested-With": "XMLHttpRequest"
+};
+        const request = {
+            url: url,
+            headers: headers
+        };
+
+        $.get(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+  
+
+function WatchTenVedio() {
+    return new Promise((resolve, reject) => {
+         const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=watch_video_reward&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630551199";
+         const headers = {
+    "Accept-Encoding": "gzip, deflate, br",
+    "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630551198; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630551197; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
+    "Connection": "keep-alive",
+    "Content-Type": "",
+    "Accept": "*/*",
+    "Host": "kd.youth.cn",
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+    "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
+    "Accept-Language": "zh-cn",
+    "X-Requested-With": "XMLHttpRequest"
+};
+        const request = {
+            url: url,
+            headers: headers
+        };
+
+        $.get(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+  
+
+function readSixtyMinute() {
+    return new Promise((resolve, reject) => {
+         const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=read_time_sixty_minutes&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630550431";
+         const headers = {
+    "Accept-Encoding": "gzip, deflate, br",
+    "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
+    "Connection": "keep-alive",
+    "Content-Type": "",
+    "Accept": "*/*",
+    "Host": "kd.youth.cn",
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+    "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
+    "Accept-Language": "zh-cn",
+    "X-Requested-With": "XMLHttpRequest"
+};
+        const request = {
+            url: url,
+            headers: headers
+        };
+
+        $.get(request, async(error, response, data) => {
+            try {
+                $.log(data);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+  
+
+
+
+
 
 function TimePaceket() {
     return new Promise((resolve, reject) => {
