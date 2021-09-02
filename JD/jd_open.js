@@ -1,4 +1,4 @@
-const $ = new Env("京东Cookie获取")
+const $ = new Env("京东Open获取")
 let cookie = $request.headers.Cookie
 let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
