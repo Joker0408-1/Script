@@ -2,8 +2,8 @@ const $ = new Env("京东Open获取")
 let cookie = $request.headers.Cookie
 let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
-console.log(`\n=================\n请手动复制此Cookie\n=================\n\n\n${pt_key};${pt_pin};\n\n\n=================`)
-$.msg("京东Open获取成功🎉", "请在运行日志中查看\n=================================")
+console.log(`\n=================\n请手动复制此Cookie\n=================\n\n\n${pt_key};${pt_pin};\n\n\n=================================\n=================================`)
+$.msg("京东Open获取成功🎉", "请在运行日志中查看\n=================================\n=================================")
 
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
@@ -253,8 +253,7 @@ function Env(t, e) {
           }
         }
       };
-      if (this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r))), !this.isMuteLog) {
-        let t = ["", "🔔京东Open获取, 结束!\n================="];
+      if (this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r))), !this.
       }
     }
 
