@@ -22,7 +22,7 @@ jobs:
           npm install cron
           npm install request
           curl ipinfo.io/json
-      - name: '【机场签到】'
+      - name: '【每日一次】'
         run: |
           cd ~/js/Task   
           node checkin.js
