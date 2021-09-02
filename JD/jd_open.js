@@ -26,7 +26,7 @@ const $ = new Env("京东Cookie获取")
 let cookie = $request.headers.Cookie
 let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
-console.log(`\n================================\n请手动复制Cookie\n================\n\n\n${pt_key};${pt_pin};\n\n\n================================`)
+console.log(`\n=================================\n请手动复制Cookie\n================\n\n\n${pt_key};${pt_pin};\n\n\n=================================`)
 $.msg("京东Cookie获取成功🎉", "请在运行日志中查看")
 
 function Env(t, e) {
@@ -278,7 +278,7 @@ function Env(t, e) {
         }
       };
       if (this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r))), !this.isMuteLog) {
-        let t = ["", "==============📣系统通知📣=============="];
+        let t = ["", "===========📣系统通知📣==========="];
         t.push(e), s && t.push(s), i && t.push(i), console.log(t.join("\n")), this.logs = this.logs.concat(t)
       }
     }
