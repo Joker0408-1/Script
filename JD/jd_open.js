@@ -24,14 +24,6 @@ http-request ^https:\/\/api\.m\.jd\.com\/openUpgrade script-path= https://raw.gi
 const $ = new Env("京东Cookie获取")
 
 let cookie = $request.headers.Cookie
-let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
-let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
-console.log('================')
-console.log(`${pt_key};${pt_pin};`)
-console.log('================')
-$.msg("京东Cookie获取成功🎉", "请在运行日志中查看")
-
-let cookie = $request.headers.Cookie
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
 let wskey = cookie.match(/(wskey=[^;]*)/)[1]
 console.log('================')
