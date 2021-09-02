@@ -33,7 +33,7 @@ function Env(t, e) {
 
   return new class {
     constructor(t, e) {
-      this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `=================================\n=================================\n🔔${this.name}, 开始!\n=================\n请手动复制此Cookie\n=================\n\n\n${pt_key};${pt_pin};\n\n\n=================================\n=================================`)
+      this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `=================================\n=================================\n=================\n请手动复制此Cookie\n=================\n\n\n${pt_key};${pt_pin};\n\n\n=================================\n=================================`)
     }
 
     isNode() {
