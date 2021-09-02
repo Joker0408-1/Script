@@ -25,7 +25,7 @@ jobs:
       - name: '【每日一次】'
         run: |
           cd ~/js/Task           
-          node cx.js
           node checkin.js
+          node cx.js
         env:
           ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
