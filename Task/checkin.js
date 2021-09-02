@@ -58,7 +58,7 @@ async function all() {
 	}
 	
 	$.log("【中青3提现】"); 
-	
+	await YouthWithdraw();
 	
 } 
 
