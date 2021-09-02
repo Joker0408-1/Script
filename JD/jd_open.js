@@ -27,7 +27,7 @@ let cookie = $request.headers.Cookie
 let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
 console.log('================')
-console.log(`\n\n${pt_key};${pt_pin};\n\n`)
+console.log(`请手动复制Cookie\n\n\n${pt_key};${pt_pin};\n\n\n`)
 console.log('================')
 $.msg("京东Cookie获取成功🎉", "请在运行日志中查看")
 
