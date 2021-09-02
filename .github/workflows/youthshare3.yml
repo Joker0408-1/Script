@@ -2,8 +2,8 @@ name: 中青share3
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '10 0-23/6 * * *'
+ # schedule:
+   # - cron: '10 0-23/6 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest 
