@@ -4,7 +4,7 @@ let cookie = $request.headers.Cookie
 let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
 console.log(`\n=================================\n请手动复制此Cookie\n=================\n\n\n${pt_key};${pt_pin};\n\n\n=================================`)
-$.msg("京东Cookie获取成功🎉", "请进入运行日志中查看")
+$.msg("京东Cookie获取成功🎉", "请进入运行日志中查看\n=================")
 
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
@@ -35,7 +35,7 @@ function Env(t, e) {
 
   return new class {
     constructor(t, e) {
-      this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `🔔${this.name}, 开始!`)
+      this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `=================\n🔔${this.name}, 开始!`)
     }
 
     isNode() {
