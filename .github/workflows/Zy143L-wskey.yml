@@ -1,0 +1,28 @@
+name: Zy143L-wskey
+on:
+  schedule:
+    - cron: '30 23 */3 * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: Zy143L-wskey
+jobs:
+  repo-sync:
+    env:
+      PAT: ${{ secrets.PAT }} 
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: sync Zy143L-wskey
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/Zy143L/wskey.git"
+          source_branch: "main"
+          destination_branch: "Zy143L-wskey"
+          github_token: ${{ secrets.PAT }}
