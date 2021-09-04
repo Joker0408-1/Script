@@ -84,7 +84,7 @@ function YouthWithdraw() {
 
         $.post(request, async(error, response, data) => {
             try {
-                $.log(data);
+                //$.log(data);
 		let result = JSON.parse(data);
                     $.log(`${result.message}`)
             } catch (e) {
