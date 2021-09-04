@@ -25,6 +25,8 @@ async function all() {
     await DailyCheck();
     await $.wait(randomNum(1000, 20000));
     await ArticelsList();
+    await $.wait(randomNum(1000, 5000));
+    await ArticelsList();
     for (let i = 0; i < articleidarr.length; i++) {
         await ArticleFinish(articleidarr[i]);
         await $.wait(randomNum(30000, 40000));
