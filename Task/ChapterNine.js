@@ -25,8 +25,6 @@ async function all() {
     await DailyCheck();
     await $.wait(randomNum(1000, 20000));
     await ArticelsList();
-    await $.wait(randomNum(1000, 5000));
-    await ArticelsList();
     for (let i = 0; i < articleidarr.length; i++) {
         await ArticleFinish(articleidarr[i]);
         await $.wait(randomNum(30000, 40000));
@@ -36,6 +34,7 @@ async function all() {
         await ArticleShare();
         await $.wait(randomNum(0, 5000));
     }
+    for (let i = 0; i < 3; i++) {
         await TaskAD(8);
         await $.wait(randomNum(120000, 129999));
         await TaskAD(9);
@@ -43,7 +42,7 @@ async function all() {
         await TaskAD(10);
         await $.wait(randomNum(120000, 129999));
         await TaskAD(11);
-   
+    }
 }
 
 
