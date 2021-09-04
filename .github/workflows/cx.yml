@@ -1,8 +1,8 @@
 name: CX签到
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 5-8/2 * * *'
+  # schedule:
+  #  - cron: '0 5-8/2 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest 
