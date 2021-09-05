@@ -26,7 +26,7 @@ const crypto = require('crypto');
 async function all() {
 
   $.log("【九章头条提现】");
-  Token = 'luQipc6Ub-vqAeu92vfuLpnohFAwS5xD';
+  Token = 'msefOIJbedunrX_Avx6P57fs3pHqc7KU';
   await CashAD();
   await $.wait(1000);
   await NineWithDraw();
