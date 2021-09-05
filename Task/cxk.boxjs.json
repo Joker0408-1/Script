@@ -26,6 +26,7 @@
                 }
             ],
             "icons": [
+                "https://z3.ax1x.com/2021/09/05/hWqjcd.png",
                 "https://z3.ax1x.com/2021/09/05/hWqjcd.png"
             ]
         },
@@ -170,12 +171,10 @@
                     "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/",
             "icons": [
                 "https://z3.ax1x.com/2021/09/05/hWqjcd.png",
                 "https://z3.ax1x.com/2021/09/05/hWqjcd.png"
-            ],
-            "script": "https://raw.githubusercontent.com/"
+            ]
         }
     ]
 }
