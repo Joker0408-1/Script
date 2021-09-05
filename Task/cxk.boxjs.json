@@ -1,5 +1,5 @@
 {
-    "id": "cxk.app.sub",
+    "id": "cxk.script.sub",
     "name": "蔡徐坤 脚本订阅",
     "author": "@caixukun",
     "apps": [
@@ -25,12 +25,9 @@
                     "desc": "输入要登陆的微信code"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/",
             "icons": [
-                "https://z3.ax1x.com/2021/09/05/hWqjcd.png",
                 "https://z3.ax1x.com/2021/09/05/hWqjcd.png"
-            ],
-            "script": "https://raw.githubusercontent.com/"
+            ]
         },
         {
             "id": "sqxs",
