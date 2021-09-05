@@ -1,7 +1,7 @@
 {
     "id": "cxk.app.sub",
     "name": "蔡徐坤 脚本订阅",
-    "author": "@caixukun1",
+    "author": "@caixukun",
     "apps": [
         {
             "id": "wx",
@@ -9,7 +9,6 @@
             "keys": [
                 "wxcode"
             ],
-            "author": "@caixukun1",
             "settings": [
                 {
                     "id": "type",
