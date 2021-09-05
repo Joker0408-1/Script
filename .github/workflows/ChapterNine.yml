@@ -2,7 +2,7 @@ name: 九章头条
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0-23/3 * * *'
+    - cron: '0 0-10/2 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest 
