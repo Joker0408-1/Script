@@ -5,7 +5,7 @@ const $ = Env(jobname)
 
 let taskmap = new Map();
 let articleidarr = [];
-let Token ='msefOIJbedunrX_Avx6P57fs3pHqc7KU';
+let TokenArr = ['msefOIJbedunrX_Avx6P57fs3pHqc7KU', 'N_E6q9QOgzFS53i8w4iwm6x0NC49kIgB'];
 !(async () => {
     await all();
 })()
@@ -18,30 +18,32 @@ let Token ='msefOIJbedunrX_Avx6P57fs3pHqc7KU';
 
 async function all() {
     //nodejs运行
+    for (let i = 0; i < TokenArr.length; i++) {
+        $.log(`开始执行第${i+1}个账号`);
+        Token=TokenArr[i];
+        await DailySign();
+        await $.wait(randomNum(1000, 20000));
+        await DailyCheck();
+        await $.wait(randomNum(1000, 20000));
+        await ArticelsList();
+        for (let i = 0; i < articleidarr.length; i++) {
+            await ArticleFinish(articleidarr[i]);
+            await $.wait(randomNum(30000, 40000));
+        }
 
-
-    await DailySign();
-    await $.wait(randomNum(1000, 20000));
-    await DailyCheck();
-    await $.wait(randomNum(1000, 20000));
-    await ArticelsList();
-    for (let i = 0; i < articleidarr.length; i++) {
-        await ArticleFinish(articleidarr[i]);
-        await $.wait(randomNum(30000, 40000));
-    }
-
-    for (let i = 0; i < 5; i++) {
-        await ArticleShare();
-        await $.wait(randomNum(0, 5000));
-    }
-    for (let i = 0; i < 3; i++) {
-        await TaskAD(8);
-        await $.wait(randomNum(120000, 129999));
-        await TaskAD(9);
-        await $.wait(randomNum(120000, 129999));
-        await TaskAD(10);
-        await $.wait(randomNum(120000, 129999));
-        await TaskAD(11);
+        for (let i = 0; i < 5; i++) {
+            await ArticleShare();
+            await $.wait(randomNum(0, 5000));
+        }
+        for (let i = 0; i < 3; i++) {
+            await TaskAD(8);
+            await $.wait(randomNum(120000, 129999));
+            await TaskAD(9);
+            await $.wait(randomNum(120000, 129999));
+            await TaskAD(10);
+            await $.wait(randomNum(120000, 129999));
+            await TaskAD(11);
+        }
     }
 }
 

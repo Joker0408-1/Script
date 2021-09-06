@@ -26,11 +26,16 @@ const crypto = require('crypto');
 async function all() {
 
   $.log("【九章头条提现】");
-  Token = 'msefOIJbedunrX_Avx6P57fs3pHqc7KU';
-  await CashAD();
-  await $.wait(1000);
-  await NineWithDraw();
+  let TokenArr = ['msefOIJbedunrX_Avx6P57fs3pHqc7KU', 'N_E6q9QOgzFS53i8w4iwm6x0NC49kIgB'];
 
+  for (let i = 0; i < TokenArr.length; i++) {
+    $.log(`开始执行第${i + 1}个账号`);
+    Token = TokenArr[i];
+    await CashAD();
+    await $.wait(1000);
+    await NineWithDraw();
+    await $.wait(1000);
+  }
   $.log("【中青3提现】");
   await YouthWithdraw();
 
