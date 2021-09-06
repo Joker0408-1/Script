@@ -13,7 +13,7 @@ if ($request.url.match(/\/TaskCenter\/(sign|getSign)/)) {
     $.log(`${$.name} 获取Cookie: 成功,signheaderVal: ${signheaderVal}`);
     $.msg($.name, `获取Cookie: 成功🎉`, ``);
 }
-else if ($request.url.match(/\/article\/complete/)) {
+else if ($request.url.match(/article/complete)) {
     $.setdata(articlebodyVal, 'articlebodyVal');
     $.log(`${$.name} 获取Cookie: 成功,articlebodyVal: ${articlebodyVal}`);
     $.msg($.name, `获取Cookie: 成功🎉`, ``);
