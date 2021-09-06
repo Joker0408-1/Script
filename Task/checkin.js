@@ -18,11 +18,6 @@ const crypto = require('crypto');
     $.done();
   })
 
-
-
-
-
-
 async function all() {
 
   $.log("【九章头条提现】");
