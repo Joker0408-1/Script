@@ -1,4 +1,10 @@
 
+/*
+
+https://kd.youth.cn/TaskCenter/sign url script-request-header https://raw.githubusercontent.com/caixukun112/js/master/rwrite/getck.js
+
+hostname:kd.youth.cn
+*/
 const $ = new Env('Ck Collection');
 
 let url = $request.url;
