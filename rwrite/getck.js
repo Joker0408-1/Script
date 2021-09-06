@@ -3,17 +3,21 @@
 
 https://kd.youth.cn/TaskCenter/sign url script-request-header https://raw.githubusercontent.com/caixukun112/js/master/rwrite/getck.js
 
+https://ios.baertt.com/v5/article/complete.json url script-request-header https://raw.githubusercontent.com/caixukun112/js/master/rwrite/getck.js
 hostname:kd.youth.cn
 */
 const $ = new Env('Ck Collection');
 
-let url = $request.url;
 if ($request.url.match(/\/TaskCenter\/(sign|getSign)/)) {
     $.setdata(signheaderVal, 'signheaderVal');
     $.log(`${$.name} 获取Cookie: 成功,signheaderVal: ${signheaderVal}`);
     $.msg($.name, `获取Cookie: 成功🎉`, ``);
 }
-
+else if ($request.url.match(/\/article\/complete/)) {
+    $.setdata(articlebodyVal, 'articlebodyVal');
+    $.log(`${$.name} 获取Cookie: 成功,articlebodyVal: ${articlebodyVal}`);
+    $.msg($.name, `获取Cookie: 成功🎉`, ``);
+   }
 $.done();
 
 
