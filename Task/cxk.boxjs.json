@@ -11,22 +11,6 @@
                 "articlebodyVal",
                 "timebodyVal"
             ],
-            "settings": [
-                {
-                    "id": "type",
-                    "name": "操作方法",
-                    "val": "1",
-                    "type": "number",
-                    "desc": "1表示微信code提取,0表示微信code登录"
-                },
-                {
-                    "id": "logincode",
-                    "name": "微信登录code",
-                    "val": "1",
-                    "type": "string",
-                    "desc": "输入要登陆的微信code"
-                }
-            ],
             "icons": [
                 "https://z3.ax1x.com/2021/09/05/hWqjcd.png",
                 "https://z3.ax1x.com/2021/09/05/hWqjcd.png"
