@@ -54,7 +54,6 @@ async function all() {
 
 }
 
-
 function vedioreward426() {
     return new Promise((resolve, reject) => {
         const url = "https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/";
