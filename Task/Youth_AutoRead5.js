@@ -1,5 +1,5 @@
 
-const $ = new Env("中青看点4")
+const $ = new Env("中青看点5")
 
 let articlebody = require("./Youth_read5.json");
 let AddTimeBody = articlebody.staybody;
