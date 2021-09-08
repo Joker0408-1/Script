@@ -5,7 +5,7 @@ const $ = Env(jobname)
 
 let taskmap = new Map();
 let articleidarr = [];
-let TokenArr = ['msefOIJbedunrX_Avx6P57fs3pHqc7KU', 'N_E6q9QOgzFS53i8w4iwm6x0NC49kIgB'];
+let TokenArr = ['lYj5N1IgwRVkrQ6Wneiztc9CPkSeUAo2', 'N_E6q9QOgzFS53i8w4iwm6x0NC49kIgB'];
 !(async () => {
     await all();
 })()

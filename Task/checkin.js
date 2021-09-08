@@ -21,7 +21,7 @@ const crypto = require('crypto');
 async function all() {
 
   $.log("【九章头条提现】");
-  let TokenArr = ['msefOIJbedunrX_Avx6P57fs3pHqc7KU', 'N_E6q9QOgzFS53i8w4iwm6x0NC49kIgB'];
+  let TokenArr = ['lYj5N1IgwRVkrQ6Wneiztc9CPkSeUAo2', 'N_E6q9QOgzFS53i8w4iwm6x0NC49kIgB'];
 
   for (let i = 0; i < TokenArr.length; i++) {
     $.log(`开始执行第${i + 1}个账号`);
@@ -60,6 +60,70 @@ async function all() {
 
 
 }
+
+
+function taskget() {
+  return new Promise((resolve, reject) => {
+       const url = "http://user.gaoqingdianshi.com/api/v3/user/info";
+       const headers = {
+  "Accept-Encoding": "gzip, deflate",
+  "AppVerCode": "236",
+  "userid": "62d5897fae73120cda6cae02e53f6739",
+  "language": "zh_CN",
+  "Host": "user.gaoqingdianshi.com",
+  "AppVerName": "1.96",
+  "hwModel": "iPhone11,2",
+  "hwBrand": "iPhone",
+  "countryCode": "CN",
+  "ssid": "f051e12e-b7d5-4381-84e8-e28c4f2ff5a9",
+  "Connection": "close",
+  "uuid": "b963e558667e44ea908663230a232e82",
+  "Cache-Control": "no-cache",
+  "ispId": "",
+  "Accept-Language": "zh-Hans;q=1",
+  "User-Agent": "Dsj/Client1.2",
+  "MarketChannelName": "Iphone",
+  "hwMac": "",
+  "Generation": "com.dianshijia.mobile.ios",
+  "Accept": "*/*",
+  "Authorization": "T1RWaE56VTJZelk1TnpneU16QXhNMkprWkRNMllXUm1ZekE0Tm1GbU4yRT18MTYzMDk5MDgxMzc4MTA0MzA1OHw0MjMxMDkyMmFmZDVjYjFlZjM2YjkzODMzYmM4MzZiZDM2N2U3NmNi",
+  "appId": "19227f89ea1a166451593601eb8a1b4f",
+  "cityCode": "420100",
+  "erid": "93363",
+  "routerMac": "f88c215fb96d",
+  "ethMac": "",
+  "areaCode": "420000",
+  "cuuid": "adcda99dee6aa9d7981c962071150ba9",
+  "gpsCityCode": "420100"
+};
+      const request = {
+          url: url,
+          headers: headers
+      };
+
+      $.get(request, async(error, response, data) => {
+          try {
+              $.log(data);
+          } catch (e) {
+              $.log(e)
+          }
+          resolve();
+      })
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function NineWithDraw() {
   return new Promise((resolve, reject) => {
