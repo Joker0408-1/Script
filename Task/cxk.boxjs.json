@@ -4,6 +4,19 @@
     "author": "@caixukun",
     "apps": [
         {
+            "id": "Youth",
+            "name": "中青",
+            "keys": [
+                "signheaderVal",
+                "articlebodyVal",
+                "timebodyVal"
+            ],
+            "icons": [
+                "https://z3.ax1x.com/2021/09/05/hWqjcd.png",
+                "https://z3.ax1x.com/2021/09/05/hWqjcd.png"
+            ]
+        },
+        {
             "id": "wx",
             "name": "微信code",
             "keys": [
