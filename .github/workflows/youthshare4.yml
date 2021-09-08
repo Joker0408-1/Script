@@ -1,4 +1,4 @@
-name: 中青share3
+name: 中青share4
 
 on:
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
           npm install cron
           npm install request
           npm install md5-node
-      - name: '运行 【中青share3】'
+      - name: '运行 【中青share4】'
         run: |
           cd ~/js   
-          node Task/youthshare3.js
+          node Task/youthshare4.js
