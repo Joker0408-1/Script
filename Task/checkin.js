@@ -21,7 +21,7 @@ const crypto = require('crypto');
 async function all() {
 
   $.log("【九章头条提现】");
-  let TokenArr = ['lYj5N1IgwRVkrQ6Wneiztc9CPkSeUAo2', 'BXpKAZrCgX8vIx_XFYrwQjziaX2eRxJv'];
+  let TokenArr = ['lYj5N1IgwRVkrQ6Wneiztc9CPkSeUAo2', 'BXpKAZrCgX8vIx_XFYrwQjziaX2eRxJv','g9szPKNsn7r17kq9lmWMa1YWvz3lvums'];
 
   for (let i = 0; i < TokenArr.length; i++) {
     $.log(`开始执行第${i + 1}个账号`);
