@@ -9,8 +9,7 @@ $.jdCkFlag = 1 // 京东ck是否全部在json格式串中， 0-否、1-是
 !(async () => {
   if ($.isRewrite && $request.method != 'OPTIONS') {
     if ($request.url.match(/^https?:\/\/(wq|api\.m|un\.m|plogin\.m)\.jd\.com/)) {
-      await GetJDCookie('京东Cookie');
-    } 
+      await GetJDCookie('京东Cookie'); 
   } else if ($.isTask) {
     // 整理京东Cookie
     let ckArr = [$.getdata('CookieJD'), $.getdata('CookieJD2')];
