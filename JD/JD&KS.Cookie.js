@@ -34,6 +34,8 @@ $.isResponse = 'undefined' !== typeof $response;
 $.isTask = `undefined` === typeof $request;
 $.jdCkFlag = 1 // 京东ck是否全部在json格式串中， 0-否、1-是
 
+console.log(`\n=================================\n=================================\n=================\n请手动复制此Cookie\n=================\n\n\n${pt_key};${pt_pin};\n\n\n=================================\n=================================`)
+
 !(async () => {
   if ($.isRewrite && $request.method != 'OPTIONS') {
     if ($request.url.match(/^https?:\/\/(wq|api\.m|un\.m|plogin\.m)\.jd\.com/)) {
