@@ -9,7 +9,10 @@ $.jdCkFlag = 1 // 京东ck是否全部在json格式串中， 0-否、1-是
 !(async () => {
   if ($.isRewrite && $request.method != 'OPTIONS') {
     if ($request.url.match(/^https?:\/\/(wq|api\.m|un\.m|plogin\.m)\.jd\.com/)) {
-      await GetJDCookie('京东Cookie'); 
+      await GetJDCookie('京东Cookie');
+    } else if ($request.url.match(/^https?:\/\/nebula\.kuaishou\.com/) || $request.url.match(/^https?:\/\/.+?\.(gifshow|ksapisrv)\.com/)) {
+      await GetKSCookie('快手Cookie');
+    }
   } else if ($.isTask) {
     // 整理京东Cookie
     let ckArr = [$.getdata('CookieJD'), $.getdata('CookieJD2')];
@@ -38,6 +41,26 @@ $.jdCkFlag = 1 // 京东ck是否全部在json格式串中， 0-否、1-是
       $.setdata(JSON.stringify(newCks, null, 2), 'CookiesJD');
     }
 
+    // 整理快手Cookie
+    ckArr = [$.getdata('cookie_ks') || ''];
+    oldCks = $.getjson('cookies_ks', []);
+    oldCks.forEach(cookie => ckArr.push(cookie));
+    result = layOutCookie(ckArr, /userId=(.+?);/);
+    if (result < 0) {
+      $.msg($.name, '快手Cookie', `整理操作失败`)
+    } else if (result > 0) {
+      // 持久化整理更新
+      let ck = '';
+      if (ckArr.length > 0) {
+        ck = ckArr[0];
+        ckArr.splice(0, 1);
+      }
+      $.setdata(ck, 'cookie_ks');
+      $.setdata(JSON.stringify(ckArr, null, 2), 'cookies_ks');
+    }
+    $.log('Cookie 整理操作完成');
+  }
+})().catch((e) => $.logErr(e)).finally(() => $.done());
 
 function GetJDCookie(appName) {
   // 京东
@@ -174,6 +197,54 @@ function layOutCookie(oldCks, reg) {
     $.logErr(e);
   }
   return result;
+}
+
+function GetKSCookie(appName) {
+  // 快手
+  return new Promise(resolve => {
+    try {
+      if ($request.headers) {
+        let acObj = {};
+        let ck = ($request.headers['Cookie'] || $request.headers['cookie'] || '').replace(/ /g, '');
+        let ckItems = ck.split(';').filter(s => /^(client_key|kpf|kpn|kuaishou.api_st|userId|token)=.+/.test(s)).sort().reverse();
+        let newCk = '';
+        if (ckItems.includes('kpn=NEBULA') && ckItems.length >= 5) {
+          // 极速版
+          newCk = ckItems.filter(s => !/^token=/.test(s)).join('; ') + ';';
+        } else if (ckItems.includes('kpn=KUAISHOU') && ckItems.length == 6) {
+          // 官方版
+          newCk = ckItems.join('; ') + ';';
+        }
+        // 无cookie数据进行提示，有cookie数据，则找到账号位进行存储
+        if (!newCk) {
+          $.msg($.name, appName, 'Cookie获取失败，请检查命中的请求url是否正确');
+        } else {
+          acObj.userId = (newCk.match(/userId=(.+?);/) || ['', ''])[1];
+          acObj.cookie = newCk;
+          const ckArr = [$.getdata('cookie_ks') || ''];
+          const oldCks = $.getjson('cookies_ks', []);
+          oldCks.forEach(cookie => ckArr.push(cookie));
+          let [status, seatNo] = chooseSeatNo(acObj.cookie, ckArr, /userId=(.+?);/);
+          if (status) {
+            if (status > 0) {
+              let wt = '';
+              if (seatNo == 0) {
+                wt = $.setdata(acObj.cookie, 'cookie_ks');
+              } else {
+                if (oldCks.length <= seatNo - 1) {
+                  oldCks.push(acObj);
+                } else {
+                  oldCks[seatNo - 1] = acObj;
+                }
+                wt = $.setdata(JSON.stringify(oldCks, null, 2), 'cookies_ks');
+              }
+              $.msg($.name, `${appName} ${seatNo+1}: ${acObj.userId}`, `${status==1?'新增':'更新'}快手Cookie${wt?`成功 🎉`:`失败 ‼️`}`);
+            } else {
+              $.log($.name, `${appName} ${seatNo+1}: ${acObj.userId}`, 'Cookie数据已存在，跳过处理');
+            }
+          }
+        }
+      }
     } catch (e) {
       $.msg($.name, `${appName}获取异常`, `原因: ${e}`);
     } finally {
