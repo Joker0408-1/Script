@@ -10,6 +10,9 @@ https://ios.baertt.com/v5/article/complete.json url script-request-body https://
 hostname:kd.youth.cn
 */
 const $ = new Env('Ck Collection');
+$.idx =$.getval('sqxs');
+if(typeof $.idx === 'undefined')
+	$.idx=1;
 
 if ($request.url.indexOf('/NewTaskIos/getSign') != -1) {
     var headers = $request.headers;
@@ -33,6 +36,34 @@ else if ($request.url.indexOf('/user/stay.json') != -1) {
         $.setdata(body, 'timebodyVal');
     }
 
+}
+
+else if ($request.url.indexOf('/v5/signInAction') != -1) {
+    var body = $request.body;
+	if(body)
+	{
+		$.msg('书旗小说极速版'+ $.idx,'获取阅读ck成功(共3个ck)');
+		let theSignCK=body;
+		$.setdata(theSignCK ,'theSignCK'+ $.idx)	
+	}		
+}
+else if ($request.url.indexOf('/pendant/lottery') != -1) {
+    var body = $request.body;
+	if(body)
+	{
+		$.msg('书旗小说极速版'+ $.idx,'获取阅读ck成功(共3个ck)');
+		let theReadCK=body;
+		$.setdata(theReadCK ,'theReadCK'+ $.idx)	
+	}		
+}
+else if ($request.url.indexOf('/task/reward') != -1) {
+    var body = $request.body;
+	if(body)
+	{
+		$.msg('书旗小说极速版'+ $.idx,'获取阅读ck成功(共3个ck)');
+		let theTotherCK=body;
+		$.setdata(theTotherCK ,'theTotherCK'+ $.idx)	
+	}		
 }
 $.done();
 
