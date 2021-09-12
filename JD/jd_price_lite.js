@@ -152,7 +152,7 @@ function lowerMsgs(data) {
     return lowerMsg;
 }
 
-/*function priceSummary(data) {
+function priceSummary(data) {
     let summary = "";
     let listPriceDetail = data.PriceRemark.ListPriceDetail.slice(0, 4);
     let list = listPriceDetail.concat(historySummary(data.single));
@@ -163,12 +163,10 @@ function lowerMsgs(data) {
             item.Name = "六一八价格";
         }
         let price = String(parseInt(item.Price.substr(1)));
-        summary += `\n${item.Name}   ${isNaN(price) ? "-" : "¥" + price}   ${item.Date}   ${
-            item.Difference
-        }`;
+        summary += ;
     });
     return summary;
-}*/
+}
 
 function historySummary(single) {
     const rexMatch = /\[.*?\]/g;
