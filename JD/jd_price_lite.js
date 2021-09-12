@@ -145,17 +145,17 @@ if (url.indexOf(path2) != -1 || url.indexOf(path4) != -1) {
         });
 }
 
-/*function lowerMsgs(data) {
+function lowerMsgs(data) {
     const lower = data.lowerPriceyh;
     const lowerDate = dateFormat(data.lowerDateyh);
     const lowerMsg = ;
     return lowerMsg;
-}*/
+}
 
-function priceSummary(data) {
-/*    let summary = "";
+/*function priceSummary(data) {
+    let summary = "";
     let listPriceDetail = data.PriceRemark.ListPriceDetail.slice(0, 4);
-    let list = listPriceDetail.concat(historySummary(data.single));*/
+    let list = listPriceDetail.concat(historySummary(data.single));
     list.forEach((item, index) => {
         if (item.Name == "双11价格") {
             item.Name = "双十一价格";
@@ -168,7 +168,7 @@ function priceSummary(data) {
         }`;
     });
     return summary;
-}
+}*/
 
 function historySummary(single) {
     const rexMatch = /\[.*?\]/g;
