@@ -145,17 +145,17 @@ if (url.indexOf(path2) != -1 || url.indexOf(path4) != -1) {
         });
 }
 
-function lowerMsgs(data) {
+/*function lowerMsgs(data) {
     const lower = data.lowerPriceyh;
     const lowerDate = dateFormat(data.lowerDateyh);
-    const lowerMsg = "京东助手";
+    const lowerMsg = ;
     return lowerMsg;
-}
+}*/
 
 function priceSummary(data) {
-    let summary = "";
+/*    let summary = "";
     let listPriceDetail = data.PriceRemark.ListPriceDetail.slice(0, 4);
-    let list = listPriceDetail.concat(historySummary(data.single));
+    let list = listPriceDetail.concat(historySummary(data.single));*/
     list.forEach((item, index) => {
         if (item.Name == "双11价格") {
             item.Name = "双十一价格";
@@ -363,7 +363,7 @@ function convert(url, isOriginJXURL) {
                         let r = {};
                         let scheme = autoChoose ? autoScheme : chooseScheme;
                         if (data.data.promotionUrl) {
-                            r.msg = `💰返点比率：${data.data.wlCommissionShare} %    预计返利：¥ ${data.data.wlCommission}`;
+                            r.msg = `"京东助手",💰返点比率：${data.data.wlCommissionShare} %    预计返利：¥ ${data.data.wlCommission}`;
                             r.convertURL =
                                 scheme == "browser"
                                     ? chooseBrowser + data.data.promotionUrl
