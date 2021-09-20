@@ -1,8 +1,7 @@
 const $ = new Env("京东助手")
 let cookie = $request.headers.Cookie
-let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
-let wskey = cookie.match(/(wskey=.+?;)/)[1]
+let wskey = cookie.match(/(wskey=[^;]*)/)[1]
 console.log(`\n=================================\n=================================\n=================\n请手动复制此Cookie\n=================\n\n\n${pt_pin};${wskey};\n\n\n=================================\n=================================`)
 $.msg("京东助手","京东Cookie 1: 请在日志中查看","获取京东Cookie成功🎉")
 
