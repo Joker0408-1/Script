@@ -49,7 +49,7 @@ async function myInfo() {
           num = $.goldNow / 4000 * 0.35
 
           $.log("【可提金额】" + num.toFixed(1))
-          if ($.goldNow >= 4000) {
+          if ($.goldNow >= 5000) {
             $.log("\n=====开始提现=====")
             txnum = $.goldNow / 4000 * 0.35
             txnum = txnum.toFixed(1)
@@ -94,12 +94,10 @@ async function task() {
           if (completeTodayCount >= 25) {
             await taskSeq(1)
           }
-          if (completeTodayCount >= 70) {
-            await taskSeq(2);
-            console.log('【阅读失败】当天达到上限')
+          if (completeTodayCount >= 30) {
+            console.log('【阅读失败】已阅读30篇，明日再来')
             return
           }
-
           const CryptoJS = require('crypto-js')
           var key = CryptoJS.enc.Utf8.parse("5kosc7jy2w0fxx3s")
           var plaintText = `{"taskId":${taskId}}}`
