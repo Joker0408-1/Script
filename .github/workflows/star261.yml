@@ -1,12 +1,12 @@
-name: Zy143L-wskey
+name: star261
 on:
   schedule:
-    - cron: '30 23 * * 1'
+    - cron: '0 */12 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: Zy143L-wskey
+    types: star261-jd
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync Zy143L-wskey
+      - name: sync star261-jd
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/Zy143L/wskey.git"
+          source_repo: "https://github.com/star261/jd.git"
           source_branch: "main"
-          destination_branch: "Zy143L-wskey"
+          destination_branch: "star261"
           github_token: ${{ secrets.PAT }}
