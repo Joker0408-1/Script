@@ -63,7 +63,7 @@ def getData(duplicateID):
     rawData += "]"
     return rawData
 
-def jd_DelRepTask(duplicateID):
+def Joker0408-1_Script_jd_DelRepTask(duplicateID):
     t = round(time.time() * 1000)
     url = "http://%s:5700/api/crons/disable?t=%d" % (ip, t)
     data=json.dumps(duplicateID)
@@ -108,6 +108,6 @@ if __name__ == '__main__':
     if len(duplicateID)==0:
         print("没有重复任务")
     else:
-        jd_DelRepTask(duplicateID)
+        Joker0408-1_Script_jd_DelRepTask(duplicateID)
     send("禁用成功","\n%s\n%s"%(before,after))
         # print("禁用结束！")
