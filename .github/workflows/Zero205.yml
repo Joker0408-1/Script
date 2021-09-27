@@ -1,0 +1,28 @@
+name: zero205
+on:
+  schedule:
+    - cron: '0 */8 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  repository_dispatch:
+    types: zero205-JD_tencent_scf
+jobs:
+  repo-sync:
+    env:
+      PAT: ${{ secrets.PAT }} 
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: sync zero205-JD_tencent_scf
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/zero205/JD_tencent_scf.git"
+          source_branch: "main"
+          destination_branch: "Zero205"
+          github_token: ${{ secrets.PAT }}
