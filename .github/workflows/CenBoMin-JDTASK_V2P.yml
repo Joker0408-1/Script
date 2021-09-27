@@ -1,7 +1,7 @@
 name: CenBoMin-JDTASK_V2P
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '30 23 * * 1'
   workflow_dispatch:
   watch:
     types: started
