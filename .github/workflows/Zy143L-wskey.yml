@@ -1,7 +1,7 @@
 name: Zy143L-wskey
 on:
   schedule:
-    - cron: '30 23 */3 * *'
+    - cron: '30 23 * * 1'
   workflow_dispatch:
   watch:
     types: started
