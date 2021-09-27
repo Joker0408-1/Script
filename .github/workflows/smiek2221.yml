@@ -1,7 +1,7 @@
-name: smiek2221-JD
+name: smiek2221
 on:
   schedule:
-    - cron: '30 23 * * *'
+    - cron: '0 */12 * * *'
   workflow_dispatch:
   watch:
     types: started
@@ -24,5 +24,5 @@ jobs:
         with:
           source_repo: "https://github.com/smiek2221/scripts.git"
           source_branch: "master"
-          destination_branch: "smiek2221-JD"
+          destination_branch: "smiek2221"
           github_token: ${{ secrets.PAT }}
