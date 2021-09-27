@@ -1,7 +1,7 @@
-name: Aaron-JD
+name: Aaron
 on:
   schedule:
-    - cron: '30 23 * * *'
+    - cron: '0 */12 * * *'
   workflow_dispatch:
   watch:
     types: started
@@ -24,5 +24,5 @@ jobs:
         with:
           source_repo: "https://github.com/Aaron-lv/sync.git"
           source_branch: "jd_scripts"
-          destination_branch: "Aaron-JD"
+          destination_branch: "Aaron"
           github_token: ${{ secrets.PAT }}
