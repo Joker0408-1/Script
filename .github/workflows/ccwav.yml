@@ -1,7 +1,7 @@
-name: ccwav-QLScript
+name: ccwav
 on:
   schedule:
-    - cron: '30 */8 * * *'
+    - cron: '30 23 * * *'
   workflow_dispatch:
   watch:
     types: started
@@ -24,5 +24,5 @@ jobs:
         with:
           source_repo: "https://github.com/ccwav/QLScript.git"
           source_branch: "main"
-          destination_branch: "ccwav-QLScript"
+          destination_branch: "ccwav"
           github_token: ${{ secrets.PAT }}
