@@ -6,7 +6,7 @@ Author: Curtin
 功能：JD入会开卡领取京豆
 CreateDate: 2021/5/4 下午1:47
 UpdateTime: 2021/6/19
-建议cron: 2 8,15 * * *  python3 jd_OpenCard.py
+cron: 02 8,15 * * *
 new Env('开卡有礼');
 '''
 version = 'v1.2.2'
@@ -185,9 +185,8 @@ today = datetime.datetime.now().strftime('%Y-%m-%d')
 # 获取当前工作目录
 pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
 
-######
-openCardBean = 0
-sleepNum = 0.0
+openCardBean = 20
+sleepNum = 0.5
 record = True
 onlyRecord = False
 memory = True
@@ -655,7 +654,7 @@ def iscookie():
                 pinName = unquote(pinName[0])
                 # 获取账号名
                 ck, nickname = getUserInfo(i, pinName, u)
-                if nickname != False:
+                if nickname != True:
                     cookiesList.append(ck)
                     userNameList.append(nickname)
                     pinNameList.append(pinName)
@@ -1299,4 +1298,3 @@ def start():
     exitCodeFun(0)
 if __name__ == '__main__':
     start()
-
