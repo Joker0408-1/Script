@@ -1,5 +1,5 @@
 """
-new Env('PanDa&京东Wskey');
+new Env('京东Wskey转换');
 """
 # cron:50 11,23 * * *
 
