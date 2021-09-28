@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 '''
-cron: 58 23 * * *
+cron: 58 23 */5 * *
 new Env('禁用重复任务');
 '''
 
@@ -103,11 +103,11 @@ if __name__ == '__main__':
     duplicateID=getDuplicate(taskList)
     before="禁用前数量为：%d"%len(taskList)
     print(before)
-    after="禁用重复任务后，数量为:%d"%(len(taskList)-len(duplicateID))
+    after="禁用后数量为：%d"%(len(taskList)-len(duplicateID))
     print(after)
     if len(duplicateID)==0:
         print("没有重复任务")
     else:
         disableDuplicateTasks(duplicateID)
-    send("禁用成功","\n%s\n%s"%(before,after))
+    send("禁用重复任务成功","\n%s"%(before,after))
         # print("禁用结束！")
