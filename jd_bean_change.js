@@ -5,8 +5,8 @@ Modified time: 2021-09-25 15:25:41
 cron : 0 9,19 * * * https://raw.githubusercontent.com/Joker0408-1/Script/JD/jd_bean_change.js
  */
 
-let common = require("./env/jsdom.ini");
 const $ = new Env('京东资产通知');
+let common = require("./env/jsdom.ini");
 const notify = $.isNode() ? require('./sendNotify') : '';
 const JXUserAgent =  $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_USER_AGENT : ``):``;
 //Node.js用户请在jdCookie.js处填写京东ck;
