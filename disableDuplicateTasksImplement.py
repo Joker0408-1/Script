@@ -109,5 +109,5 @@ if __name__ == '__main__':
         print("没有重复任务")
     else:
         disableDuplicateTasks(duplicateID)
-    send("禁用重复任务成功","\n%s"%(before,after))
+    send("禁用重复任务成功","\n%s\n%s"%(before,after))
         # print("禁用结束！")
