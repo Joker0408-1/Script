@@ -3,12 +3,12 @@
 '''
 项目名称: JD-Script / jd_blueCoin
 Author: Curtin
-功能: 东东超市商品兑换
+new Env(东东超市商品兑换');
 Date: 2021/4/17 上午11:22
 update: 2021/7/24 18:30
 TG交流 https://t.me/topstyle996
 TG频道 https://t.me/TopStyle2021
-建议cron: 59 23 * * *  python3 jd_blueCoin.py
+建议cron: 59 23 * * *
 new Env('东东超市商品兑换');
 '''
 ################【参数】######################
