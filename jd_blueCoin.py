@@ -3,7 +3,6 @@
 '''
 项目名称: JD-Script / jd_blueCoin
 Author: Curtin
-new Env(东东超市商品兑换');
 Date: 2021/4/17 上午11:22
 update: 2021/7/24 18:30
 TG交流 https://t.me/topstyle996
@@ -21,7 +20,7 @@ coinToBeans = '超值京豆包'
 #多账号并发，默认关闭 ENV设置开启： export blueCoin_Cc=True
 blueCoin_Cc = True
 #单击次数，同时发生点击兑换按钮次数，适当调整。
-dd_thread = 10
+dd_thread = 50
 ###############################################
 
 import time, datetime, os, sys, random
