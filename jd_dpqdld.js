@@ -16,7 +16,13 @@ let activityId = ''
 let vender = ''
 let num = 0
 let shopname = ''
-const token =  $.isNode() ? process.env.DPQD :'[]';
+const token = [
+ '4D8A6077CD7068B565EA749C058271E1',
+ 'BBF635BBA70E5B6F3AA0FFD5CE6D63A5',
+ '3A5DA1F4D7BE40E65654C733F7333657',
+ '5988608149D2C71FB2AAE1AA9D35EDE4',
+ '1EAC480603490CE7C45D2FCFBAF4D495',
+]
 //IOS等用户直接用NobyDa的jd cookie
 
 if ($.isNode()) {
