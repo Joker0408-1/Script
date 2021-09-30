@@ -4,7 +4,7 @@
 店铺签到，各类店铺签到，有新的店铺直接添加token即可
 */
 const $ = new Env('店铺签到领豆');
-
+let common = require("./env/jsdom.ini");
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
