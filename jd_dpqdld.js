@@ -5,6 +5,19 @@
 */
 const $ = new Env('店铺签到领豆');
 let common = require("./env/jsdom.ini");
+环境变量:
+DPQDTK: token1&token2
+仓库不再提供token
+*/
+let token = []
+if (process.env.DPQDTK) {
+  token = [...process.env.DPQDTK.split('&'),...token]
+}
+if (!token.length) {
+  console.log('无店铺签到token,不执行.')
+}
+const $ = new Env('店铺签到');
+
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -16,15 +29,6 @@ let activityId = ''
 let vender = ''
 let num = 0
 let shopname = ''
-const token = [
- '4D8A6077CD7068B565EA749C058271E1',
- 'BBF635BBA70E5B6F3AA0FFD5CE6D63A5',
- '3A5DA1F4D7BE40E65654C733F7333657',
- '5988608149D2C71FB2AAE1AA9D35EDE4',
- '1EAC480603490CE7C45D2FCFBAF4D495',
-]
-//IOS等用户直接用NobyDa的jd cookie
-
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
