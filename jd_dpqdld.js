@@ -1,13 +1,11 @@
 
 /*
 0 0 * * *
+环境变量:
+DPQDTK: token1&token2
 */
 const $ = new Env('店铺签到领豆');
 let common = require("./env/jsdom.ini");
-环境变量:
-DPQDTK: token1&token2
-仓库不再提供token
-*/
 let token = []
 if (process.env.DPQDTK) {
   token = [...process.env.DPQDTK.split('&'),...token]
