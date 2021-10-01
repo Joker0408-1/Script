@@ -8,7 +8,7 @@ const $ = new Env('店铺签到领豆');
 let common = require("./env/jsdom.ini");
 let token = []
 if (process.env.DPQDTK) {
-  token = [...process.env.DPQDTK.split('&'),...token]
+  token = [...process.env.DPQDTK.split('|'),...token]
 }
 if (!token.length) {
   console.log('无店铺签到token,不执行.')
