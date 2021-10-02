@@ -169,7 +169,6 @@ initPetTownRes.message === 'success') {
     ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
     }
     }
-    }
     ReturnMessage+=`\n`;
     ReturnMessage+=`${$.message}`;
     allMessage+=ReturnMessage;
