@@ -169,6 +169,7 @@ initPetTownRes.message === 'success') {
     }
     }
     }
+    }
     ReturnMessage+=`\n`;
     ReturnMessage+=`${$.message}`;
     allMessage+=ReturnMessage;
