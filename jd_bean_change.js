@@ -150,12 +150,13 @@ async function showMsg() {
     }
     const response = await await PetRequest('energyCollect');
     const initPetTownRes = await PetRequest('initPetTown');
-    if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
-        $.petInfo = initPetTownRes.result;
+    if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' &&
+initPetTownRes.message === 'success') {
     if (${(response.result.medalPercent).toFixed(0) !> 90){
+        $.petInfo = initPetTownRes.result;
     ReturnMessage += `🐻东东萌宠：(${(response.result.medalPercent).toFixed(2)}%),勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
     }
-  }
+    }
     if (${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100) !> 90){
     ReturnMessage+=`👨🏻‍🌾东东农场：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
     if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
