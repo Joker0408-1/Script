@@ -1,3 +1,4 @@
+const { randomInt } = require('crypto');
 
 
 
@@ -10,19 +11,25 @@ let jszhdArr = [
   { "Accept": "application/json", "Accept-Encoding": "gzip, deflate", "Accept-Language": "zh-cn", "Connection": "close", "Host": "apponlie.sahaj.cn", "Origin": "http://qwe.51haoquan.top", "Referer": "http://qwe.51haoquan.top/", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.13(0x18000d31) NetType/WIFI Language/zh_CN", "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkOGFiZGIzMC1jODUzLTRjYzAtYTcxMi1jZDI2NGY4NTFiYzkiLCJpYXQiOjE2MzIwMzQwMTcsImV4cCI6MTYzNDYyNjAxN30.BCZmL2FkQxG6hCI8lQ_HY3MZNF_mjSBAPS5I42h0xMgpkkFG2dq-0tI0Vm9V4ilPjUGJgVkD3JZNV-NZf5WW8w" },
   { "Accept": "application/json", "Accept-Encoding": "gzip, deflate", "Accept-Language": "zh-cn", "Connection": "close", "Host": "apponlie.sahaj.cn", "Origin": "http://qwe.51haoquan.top", "Referer": "http://qwe.51haoquan.top/?code=081hH5000Z9LrM1le7300ARZC11hH506&openId=oiDdr5_WCQe9zCDiPN8qHIsnmBLU#/", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_5_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.13(0x18000d31) NetType/WIFI Language/zh_CN", "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzNDEwZjIxNy1kNmQ1LTQ0ZTItOTcyMy1mNjUyNjJjNmI0MDIiLCJpYXQiOjE2MzIwMzQ0NjcsImV4cCI6MTYzNDYyNjQ2N30.yPD-IAlB8SPkECb6pM9ju4_QLZftMGHOPtDyBR9p-ticbymucFwMbA_jKTD8WMMiiaBORTSvOqRwGfleD9rKng" },
   { "Accept": "application/json", "Accept-Encoding": "gzip, deflate", "Accept-Language": "zh-cn", "Connection": "close", "Host": "apponlie.sahaj.cn", "Origin": "http://qwe.51haoquan.top", "Referer": "http://qwe.51haoquan.top/?code=041nneGa1tvaMB0jmAIa1KBzcM1nneGG&openId=oiDdr5_WCQe9zCDiPN8qHIsnmBLU#/", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_5_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.13(0x18000d31) NetType/WIFI Language/zh_CN", "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NmJkOTk5Ni0wYWNjLTRkZDAtOTRkZC0xNjZhNGZiZTQ5NDgiLCJpYXQiOjE2MzIwMzQ2OTcsImV4cCI6MTYzNDYyNjY5N30.DJ1guEdHkT-NpFtXH5yUs_b0TCNnPXxgew__RMJmXkhQgofp6n4gUgepAMJmCs6yEigR9LDliAiEl5MnI_vcnA" },
-  { "Accept": "application/json", "Accept-Encoding": "gzip, deflate", "Accept-Language": "zh-cn", "Connection": "close", "Host": "apponlie.sahaj.cn", "Origin": "http://qwe.51haoquan.top", "Referer": "http://qwe.51haoquan.top/?code=011eep1w37wi6X2D294w3tt5lI0eep1S&openId=oiDdr5_WCQe9zCDiPN8qHIsnmBLU", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_5_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.13(0x18000d31) NetType/WIFI Language/zh_CN", "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzYzkzMDIyMC1jZTNjLTQ0YWUtOTFmMy1jN2MxOGZmOThhYmIiLCJpYXQiOjE2MzIwMzQ4NTMsImV4cCI6MTYzNDYyNjg1M30.MWE-ThbhjxTlclUtQisuFq0uqJdfOTgWv6ApCV0vAkn-qChZbhei4tW1ifdqTgvUnP5bYErRsy7PZ_auYdEI-A" }
+  { "Accept": "application/json", "Accept-Encoding": "gzip, deflate", "Accept-Language": "zh-cn", "Connection": "close", "Host": "apponlie.sahaj.cn", "Origin": "http://qwe.51haoquan.top", "Referer": "http://qwe.51haoquan.top/?code=011eep1w37wi6X2D294w3tt5lI0eep1S&openId=oiDdr5_WCQe9zCDiPN8qHIsnmBLU", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_5_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.13(0x18000d31) NetType/WIFI Language/zh_CN", "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzYzkzMDIyMC1jZTNjLTQ0YWUtOTFmMy1jN2MxOGZmOThhYmIiLCJpYXQiOjE2MzIwMzQ4NTMsImV4cCI6MTYzNDYyNjg1M30.MWE-ThbhjxTlclUtQisuFq0uqJdfOTgWv6ApCV0vAkn-qChZbhei4tW1ifdqTgvUnP5bYErRsy7PZ_auYdEI-A" },
+  { "Accept": "application/json","Accept-Encoding": "gzip, deflate","Accept-Language": "zh-cn","Connection": "close","Host": "apponlie.sahaj.cn","Origin": "http://qasdd.sahaj.cn","Referer": "http://qasdd.sahaj.cn/?code=061QUvll2QWZQ74vwqml2K0Wv01QUvl7&openId=oiDdr58Nkn6NmUdbZ2SP5Wlul55w","User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.18(0x17001233) NetType/WIFI Language/zh_CN","token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYTRkMjY3Mi04ZDAyLTQxZmUtYjE3OC0zODkyYjc4YmRjZGEiLCJpYXQiOjE2MzI5MjIwODAsImV4cCI6MTYzNTUxNDA4MH0.J9QJoG2mQHGjBOJkfc4K0lF0hc5-y2lvEipxoYg1iqRSmJ1Icf9cWeOBHlWiKv36kpj119dRMb6MEBHUPZYaYw"}
 ]
 
+let theCurrentCount;//本次阅读次数
+let theRandomCount;//本轮随机阅读次数
 
 
 !(async () => {
 
 
   for (let k = 0; k < jszhdArr.length; k++) {
+    
     jszhd = jszhdArr[k]
     $.index = k + 1;
     console.log(`\n开始【金手指阅读${$.index}】`)
     await myInfo()
+    theCurrentCount=0;
+    therandomCount=randomInt(10,20);
     await task()
     await $.wait(1000)
   }
@@ -44,7 +51,8 @@ async function myInfo() {
       try {
         const result = JSON.parse(data)
         if (result.code == 0) {
-          console.log(`【昵称】` + result.data.nameNick)
+          console.log(`【账户昵称】` + result.data.nameNick) 
+          console.log(`【账户信用】` + result.data.credit)
           $.goldNow = result.data.goldNow
           console.log(`【账户余额】` + result.data.goldNow)
           num = $.goldNow / 4000 * 0.35
@@ -112,8 +120,8 @@ async function task() {
           if (taskId == null && result.data.bizCode == 30) {
             console.log('【阅读失败】获取任务失败，下批文章将在24小时后到来')
             await $.wait(1000)
-            console.log('【自主检测】开始执行自主检测')
-            await fetchSelfCheck()
+           // console.log('【自主检测】开始执行自主检测')
+           // await fetchSelfCheck()
           }
           if (taskId == null && result.data.bizCode == 11) {
             console.log('【阅读失败】获取任务失败，当天达到上限')
@@ -180,10 +188,18 @@ async function completeTask(body) {
         const result = JSON.parse(data)
         if (result.code == 0) {
           console.log(`【阅读文章】阅读完成，获得金币：${result.data.goldAward}`)
+          theCurrentCount++
+          console.log(`【本轮阅读】${theCurrentCount}次`)
+          console.log(`【本轮限制】${therandomCount}次`)
+          if(theCurrentCount>therandomCount)
+            return
           await $.wait(3000)
           await task()
         } else {
           console.log(`【阅读文章】阅读失败`)
+          theCurrentCount++
+          console.log(`【本轮阅读】${theCurrentCount}次`)
+          console.log(`【本轮限制】${theRandomCount}次`)
         }
       } catch (e) {
         $.logErr(e, response);
@@ -263,7 +279,7 @@ function fetchSelfCheck() {
             padding: CryptoJS.pad.Pkcs7
           })
           if (taskId !== null) {
-            await $.wait(60000)
+            await $.wait(80000)
             await completeSelfCheck(js)
           }
         }
@@ -299,7 +315,6 @@ function completeSelfCheck(abody) {
 
     $.post(request, async (error, response, data) => {
       try {
-        $.log(data);
       } catch (e) {
         $.log(e)
       }
