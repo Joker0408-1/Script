@@ -114,19 +114,19 @@ async function showMsg() {
     if ($.todayOutcomeBean != 0) {
     ReturnMessage+= ` || ${$.todayOutcomeBean}京豆`;
     }
-    ReturnMessage += `\n`;
+    ReturnMessage+= `\n`;
     ReturnMessage+=`🐶昨日收支：${$.incomeBean}京豆`;
     if ($.expenseBean != 0) {
     ReturnMessage+= ` || ${$.expenseBean}京豆`;
     }
-    ReturnMessage += `\n`;
+    ReturnMessage+= `\n`;
     if ($.expirejingdou != 0) {
     ReturnMessage+=`🐶即将过期：${$.expirejingdou}京豆\n`;
     }
     ReturnMessage+=`🐶总计京豆：${$.beanCount}京豆`;
-    ReturnMessage+= `\n`;
+    ReturnMessage+= `\n——|——|——\n`;
     if ($.jdCash != 0) {
-    ReturnMessage +=`💴签到现金：${$.jdCash}元\n`;
+    ReturnMessage+=`💴签到现金：${$.jdCash}元\n`;
     }
     if($.JdMsScore!=0){
     ReturnMessage+=`💰京东秒杀：${$.JdMsScore}枚(${$.JdMsScore / 1000}元)\n`;
@@ -135,41 +135,39 @@ async function showMsg() {
     ReturnMessage+=`💰京东赚赚：${$.JdzzNum}枚(${$.JdzzNum / 10000}元)\n`;
     }
     if(typeof $.JDtotalcash !== "undefined"){
-    ReturnMessage+=`💰极速金币：${$.JDtotalcash}枚(${$.JDtotalcash / 10000}元)\n`;
+    ReturnMessage+=`💰极速金币：${$.JDtotalcash}枚(${$.JDtotalcash / 10000}元)\n——|——|——\n`;
     }
     if (typeof $.JDEggcnt !== "undefined") {
     if ($.JDEggcnt == 0) {
-    ReturnMessage += ``;
+    ReturnMessage+= ``;
 		} else {
-    ReturnMessage += `🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
+    ReturnMessage+= `🥚京喜牧场：${$.JDEggcnt}枚鸡蛋\n`;
     }
     }
     if($.JdFarmProdName != ""){
     if ($.jxFactoryInfo) {
-    ReturnMessage+= `🏭京喜工厂：`
+    ReturnMessage+= `🏭京喜工厂：${$.jxFactoryInfo}\n`
     }
     const response = await await PetRequest('energyCollect');
     const initPetTownRes = await PetRequest('initPetTown');
-    if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' &&
-initPetTownRes.message === 'success') {
+    if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
         $.petInfo = initPetTownRes.result;
-    if ($.response.result.medalPercent > 90){
-    ReturnMessage += `🐻东东萌宠：(${(response.result.medalPercent).toFixed(2)}%),勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
+    if (response.resultCode === '0') {
+    //ReturnMessage+= `🐻东东萌宠：${$.petInfo.goodsInfo.goodsName}\n`;
+    ReturnMessage+= `🐻东东萌宠：(${(response.result.medalPercent).toFixed(2)}%),勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
     }
-    }
-    if ((($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100) > 90){
+    //ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;  
     ReturnMessage+=`👨🏻‍🌾东东农场：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
-    }
-    if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
+             if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
     ReturnMessage+=`,${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}可兑换\n`;
-    } else {
+            } else {
     ReturnMessage+=`\n`;
+            }
+        } else {
+    //ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
     }
-    } else {
-    ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
     }
-    }
-    ReturnMessage+=`\n`;
+    ReturnMessage+=`——|——|——\n`;
     ReturnMessage+=`${$.message}`;
     allMessage+=ReturnMessage;
     $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
@@ -963,12 +961,10 @@ function getJxFactory() {
                                     $.commodityDimId = production.commodityDimId;
                                     // subTitle = data.user.pin;
                                     await GetCommodityDetails();//获取已选购的商品信息
-    if (${((production.investedElectric / production.needElectric) * 100)} !> 90) {
-    infoMsg = `${$.jxProductName}(${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%)`;
-    }
+                                    infoMsg = `(${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%)`;
                                     if (production.investedElectric >= production.needElectric) {
                                         if (production['exchangeStatus'] === 1) {
-                                            infoMsg = `${$.productName}已经完成生产,可兑换`;
+                                            infoMsg = `已经完成生产,可兑换`;
                                         }
                                         if (production['exchangeStatus'] === 3) {
                                             if (new Date().getHours() === 9) {
