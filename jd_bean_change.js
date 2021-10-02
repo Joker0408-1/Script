@@ -159,6 +159,7 @@ initPetTownRes.message === 'success') {
     }
     if ((($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100) > 90){
     ReturnMessage+=`👨🏻‍🌾东东农场：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
+    }
     if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
     ReturnMessage+=`,${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}可兑换\n`;
     } else {
@@ -166,7 +167,6 @@ initPetTownRes.message === 'success') {
     }
     } else {
     ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
-    }
     }
     }
     }
