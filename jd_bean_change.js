@@ -124,7 +124,7 @@ async function showMsg() {
     ReturnMessage+=`🐶即将过期：${$.expirejingdou}京豆\n`;
     }
     ReturnMessage+=`🐶总计京豆：${$.beanCount}京豆`;
-    ReturnMessage+= `\n——|——|——\n`;
+    ReturnMessage+= `\n`;
     if ($.jdCash != 0) {
     ReturnMessage +=`💴签到现金：${$.jdCash}元\n`;
     }
@@ -135,7 +135,7 @@ async function showMsg() {
     ReturnMessage+=`💰京东赚赚：${$.JdzzNum}枚(${$.JdzzNum / 10000}元)\n`;
     }
     if(typeof $.JDtotalcash !== "undefined"){
-    ReturnMessage+=`💰极速金币：${$.JDtotalcash}枚(${$.JDtotalcash / 10000}元)\n——|——|——\n`;
+    ReturnMessage+=`💰极速金币：${$.JDtotalcash}枚(${$.JDtotalcash / 10000}元)\n`;
     }
     if (typeof $.JDEggcnt !== "undefined") {
     if ($.JDEggcnt == 0) {
@@ -145,28 +145,29 @@ async function showMsg() {
     }
     }
     if($.JdFarmProdName != ""){
-    if ($.jxFactoryInfo) {
-    ReturnMessage+= `🏭京喜工厂：${$.jxFactoryInfo}\n`
+    if (${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)) !> 7) {
+    ReturnMessage+= `🏭京喜工厂：`
     }
     const response = await await PetRequest('energyCollect');
     const initPetTownRes = await PetRequest('initPetTown');
     if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
         $.petInfo = initPetTownRes.result;
-    if (response.resultCode === '0') {
-    ReturnMessage += `🐻东东萌宠：${$.petInfo.goodsInfo.goodsName}\n`;
-    ReturnMessage += `🐻萌宠进度：(${(response.result.medalPercent).toFixed(2)}%),勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
+    if (${response.result.medalPercent} !> 90) {
+    ReturnMessage += `🐻东东萌宠：(${(response.result.medalPercent).toFixed(2)}%),勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
     }
-    ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n👨🏻‍🌾农场进度：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
-             if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
+    if (${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100) !> 90) {
+    ReturnMessage+=`👨🏻‍🌾东东农场：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
+    if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
     ReturnMessage+=`,${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}可兑换\n`;
-            } else {
+    } else {
     ReturnMessage+=`\n`;
-            }
-        } else {
+    }
+    } else {
     ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
     }
     }
-    ReturnMessage+=`——|——|——\n`;
+    }
+    ReturnMessage+=`\n`;
     ReturnMessage+=`${$.message}`;
     allMessage+=ReturnMessage;
     $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
@@ -960,10 +961,10 @@ function getJxFactory() {
                                     $.commodityDimId = production.commodityDimId;
                                     // subTitle = data.user.pin;
                                     await GetCommodityDetails();//获取已选购的商品信息
-                                    infoMsg = `${$.jxProductName}\n🏭工厂进度：(${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%)`;
+                                    infoMsg = `${$.jxProductName}(${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%)`;
                                     if (production.investedElectric >= production.needElectric) {
                                         if (production['exchangeStatus'] === 1) {
-                                            infoMsg = `${$.productName}\n🏭工厂进度：已经完成生产,可兑换`;
+                                            infoMsg = `${$.productName}已经完成生产,可兑换`;
                                         }
                                         if (production['exchangeStatus'] === 3) {
                                             if (new Date().getHours() === 9) {
