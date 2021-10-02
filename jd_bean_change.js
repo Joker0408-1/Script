@@ -145,7 +145,7 @@ async function showMsg() {
     }
     }
     if($.JdFarmProdName != ""){
-    if (${((production.investedElectric / production.needElectric) * 100)} !> 7) {
+    if ($.jxFactoryInfo) {
     ReturnMessage+= `🏭京喜工厂：`
     }
     const response = await await PetRequest('energyCollect');
@@ -961,7 +961,9 @@ function getJxFactory() {
                                     $.commodityDimId = production.commodityDimId;
                                     // subTitle = data.user.pin;
                                     await GetCommodityDetails();//获取已选购的商品信息
-                                    infoMsg = `${$.jxProductName}(${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%)`;
+    if (${((production.investedElectric / production.needElectric) * 100)} !> 90) {
+    infoMsg = `${$.jxProductName}(${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%)`;
+    }
                                     if (production.investedElectric >= production.needElectric) {
                                         if (production['exchangeStatus'] === 1) {
                                             infoMsg = `${$.productName}已经完成生产,可兑换`;
