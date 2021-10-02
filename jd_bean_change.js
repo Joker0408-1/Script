@@ -145,7 +145,7 @@ async function showMsg() {
     }
     }
     if($.JdFarmProdName != ""){
-    if (${((production.investedElectric / production.needElectric) * 100).toFixed(2)} !> 7) {
+    if (${((production.investedElectric / production.needElectric) * 100)} !> 7) {
     ReturnMessage+= `🏭京喜工厂：`
     }
     const response = await await PetRequest('energyCollect');
