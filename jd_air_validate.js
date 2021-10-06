@@ -1,7 +1,6 @@
 /*
 57 7,15,23 * * *
 */
-
 let common = require("./function/common");
 const $ = new Env('京东验证码获取');
 let validator = require("./function/jdValidate");
