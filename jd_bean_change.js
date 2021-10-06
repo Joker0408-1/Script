@@ -166,7 +166,6 @@ async function showMsg() {
     ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
     }
     }
-    ReturnMessage+=`——|——|——\n`;
     ReturnMessage+=`${$.message}`;
     allMessage+=ReturnMessage;
     $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
@@ -571,6 +570,8 @@ function redPacket() {
     $.jdhRed = $.jdhRed.toFixed(2)
     $.balance = data.balance
     $.expiredBalance = ($.jxRedExpire + $.jsRedExpire + $.jdRedExpire).toFixed(2)
+    if ($.balance > 0)
+    ReturnMessage+=`——|——|——\n`;
     if ($.jdRed > 0)
     $.message += `🧧京东红包：${$.jdRed}元`;
     if ($.jdRedExpire > 0)
