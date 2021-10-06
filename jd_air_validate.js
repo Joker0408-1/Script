@@ -1,6 +1,6 @@
 /*
 const $ = new Env('京东验证码获取');
-57 7,15,23 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_validate.js
+58 7,15,23 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_validate.js
 */
 let common = require("./function/common");
 let $ = new common.env('京东验证码获取');
