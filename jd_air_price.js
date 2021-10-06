@@ -1,5 +1,5 @@
 /*
-30 0,8,16 * * *
+30 0,8,16 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_price.js
 */
 let common = require("./function/common");
 let jsdom = require("jsdom");
