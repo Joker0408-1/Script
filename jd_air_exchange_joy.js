@@ -1,8 +1,9 @@
 /*
+const $ = new Env('宠汪汪兑换京豆');
 59 7,15,23 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_exchange_joy.js
 */
 let common = require("./function/common");
-const $ = new Env('宠汪汪兑换京豆');
+let $ = new common.env('宠汪汪兑换京豆');
 let fs = require("fs");
 let min = 2,
     help = $.config[$.filename(__filename)] || Math.min(min, $.config.JdMain) || min;
