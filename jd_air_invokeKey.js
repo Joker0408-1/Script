@@ -1,5 +1,8 @@
+/*
+30 7,15,23 * * *
+*/
 let common = require("./function/common");
-let $ = new common.env('京东invokeKey获取替换');
+const $ = new Env('京东invokeKey获取替换');
 let fs = require("fs");
 let min = 2,
     help = $.config[$.filename(__filename)] || Math.min(min, $.config.JdMain) || min;
