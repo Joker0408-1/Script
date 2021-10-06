@@ -1,5 +1,5 @@
 /*
-30 */8 * * *
+30 0,8,16 * * *
 */
 let common = require("./function/common");
 let jsdom = require("jsdom");
