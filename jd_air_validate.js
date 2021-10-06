@@ -1,8 +1,9 @@
 /*
+const $ = new Env('京东验证码获取');
 57 7,15,23 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_validate.js
 */
 let common = require("./function/common");
-const $ = new Env('京东验证码获取');
+let $ = new common.env('京东验证码获取');
 let validator = require("./function/jdValidate");
 let fs = require("fs");
 let min = 2,
