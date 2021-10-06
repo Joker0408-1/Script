@@ -1,5 +1,5 @@
 /*
-30 7,15,23 * * *
+30 7,15,23 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_invokeKey.js
 */
 let common = require("./function/common");
 const $ = new Env('京东invokeKey获取替换');
