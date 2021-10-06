@@ -1,5 +1,8 @@
+/*
+59 7,15,23 * * *
+*/
 let common = require("./function/common");
-let $ = new common.env('宠汪汪兑换京豆');
+const $ = new Env('宠汪汪兑换京豆');
 let fs = require("fs");
 let min = 2,
     help = $.config[$.filename(__filename)] || Math.min(min, $.config.JdMain) || min;
