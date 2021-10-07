@@ -571,7 +571,7 @@ function redPacket() {
     $.balance = data.balance
     $.expiredBalance = ($.jxRedExpire + $.jsRedExpire + $.jdRedExpire).toFixed(2)
     if ($.balance > 0)
-    ReturnMessage+=`——|——|——\n`;
+    $.message +=`——|——|——\n`;
     if ($.jdRed > 0)
     $.message += `🧧京东红包：${$.jdRed}元`;
     if ($.jdRedExpire > 0)
