@@ -12,7 +12,8 @@ let jszhdArr = [
   { "Accept": "application/json", "Accept-Encoding": "gzip, deflate", "Accept-Language": "zh-cn", "Connection": "close", "Host": "apponlie.sahaj.cn", "Origin": "http://qwe.51haoquan.top", "Referer": "http://qwe.51haoquan.top/?code=081hH5000Z9LrM1le7300ARZC11hH506&openId=oiDdr5_WCQe9zCDiPN8qHIsnmBLU#/", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_5_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.13(0x18000d31) NetType/WIFI Language/zh_CN", "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzNDEwZjIxNy1kNmQ1LTQ0ZTItOTcyMy1mNjUyNjJjNmI0MDIiLCJpYXQiOjE2MzIwMzQ0NjcsImV4cCI6MTYzNDYyNjQ2N30.yPD-IAlB8SPkECb6pM9ju4_QLZftMGHOPtDyBR9p-ticbymucFwMbA_jKTD8WMMiiaBORTSvOqRwGfleD9rKng" },
   { "Accept": "application/json", "Accept-Encoding": "gzip, deflate", "Accept-Language": "zh-cn", "Connection": "close", "Host": "apponlie.sahaj.cn", "Origin": "http://qwe.51haoquan.top", "Referer": "http://qwe.51haoquan.top/?code=041nneGa1tvaMB0jmAIa1KBzcM1nneGG&openId=oiDdr5_WCQe9zCDiPN8qHIsnmBLU#/", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_5_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.13(0x18000d31) NetType/WIFI Language/zh_CN", "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2NmJkOTk5Ni0wYWNjLTRkZDAtOTRkZC0xNjZhNGZiZTQ5NDgiLCJpYXQiOjE2MzIwMzQ2OTcsImV4cCI6MTYzNDYyNjY5N30.DJ1guEdHkT-NpFtXH5yUs_b0TCNnPXxgew__RMJmXkhQgofp6n4gUgepAMJmCs6yEigR9LDliAiEl5MnI_vcnA" },
   { "Accept": "application/json", "Accept-Encoding": "gzip, deflate", "Accept-Language": "zh-cn", "Connection": "close", "Host": "apponlie.sahaj.cn", "Origin": "http://qwe.51haoquan.top", "Referer": "http://qwe.51haoquan.top/?code=011eep1w37wi6X2D294w3tt5lI0eep1S&openId=oiDdr5_WCQe9zCDiPN8qHIsnmBLU", "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_5_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.13(0x18000d31) NetType/WIFI Language/zh_CN", "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzYzkzMDIyMC1jZTNjLTQ0YWUtOTFmMy1jN2MxOGZmOThhYmIiLCJpYXQiOjE2MzIwMzQ4NTMsImV4cCI6MTYzNDYyNjg1M30.MWE-ThbhjxTlclUtQisuFq0uqJdfOTgWv6ApCV0vAkn-qChZbhei4tW1ifdqTgvUnP5bYErRsy7PZ_auYdEI-A" },
-  { "Accept": "application/json","Accept-Encoding": "gzip, deflate","Accept-Language": "zh-cn","Connection": "close","Host": "apponlie.sahaj.cn","Origin": "http://qasdd.sahaj.cn","Referer": "http://qasdd.sahaj.cn/?code=061QUvll2QWZQ74vwqml2K0Wv01QUvl7&openId=oiDdr58Nkn6NmUdbZ2SP5Wlul55w","User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.18(0x17001233) NetType/WIFI Language/zh_CN","token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYTRkMjY3Mi04ZDAyLTQxZmUtYjE3OC0zODkyYjc4YmRjZGEiLCJpYXQiOjE2MzI5MjIwODAsImV4cCI6MTYzNTUxNDA4MH0.J9QJoG2mQHGjBOJkfc4K0lF0hc5-y2lvEipxoYg1iqRSmJ1Icf9cWeOBHlWiKv36kpj119dRMb6MEBHUPZYaYw"}
+  { "Accept": "application/json","Accept-Encoding": "gzip, deflate","Accept-Language": "zh-cn","Connection": "close","Host": "apponlie.sahaj.cn","Origin": "http://qasdd.sahaj.cn","Referer": "http://qasdd.sahaj.cn/?code=061QUvll2QWZQ74vwqml2K0Wv01QUvl7&openId=oiDdr58Nkn6NmUdbZ2SP5Wlul55w","User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.18(0x17001233) NetType/WIFI Language/zh_CN","token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYTRkMjY3Mi04ZDAyLTQxZmUtYjE3OC0zODkyYjc4YmRjZGEiLCJpYXQiOjE2MzI5MjIwODAsImV4cCI6MTYzNTUxNDA4MH0.J9QJoG2mQHGjBOJkfc4K0lF0hc5-y2lvEipxoYg1iqRSmJ1Icf9cWeOBHlWiKv36kpj119dRMb6MEBHUPZYaYw"},
+  { "Accept": "application/json","Accept-Encoding": "gzip, deflate","Accept-Language": "zh-cn","Connection": "close","Host": "apponlie.sahaj.cn","Origin": "http://qasdd.sahaj.cn","Referer": "http://qasdd.sahaj.cn/?code=0118hdHa1aIjSB072FFa1Zu9kD48hdHW&openId=oiDdr59z_K2PN9nbH3PKfTldMSow","User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.10(0x18000a2a) NetType/WIFI Language/zh_CN","token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3MTRmYzliNy02NWZmLTQxM2QtYTdlMC1lYzI1ZmJlYWU0YzUiLCJpYXQiOjE2MzM0ODcxMzQsImV4cCI6MTYzNjA3OTEzNH0.BGAJ6H0g30hWGd8aP87DD0uMRwo90NgrTdo7ArZFuSWGgJMbdmBxqfRMrNxsOH-zBtZKBqdbqKIKfboQhD9V7w"}
 ]
 
 let theCurrentCount;//本次阅读次数
@@ -58,7 +59,7 @@ async function myInfo() {
           num = $.goldNow / 4000 * 0.35
 
           $.log("【可提金额】" + num.toFixed(1))
-          if ($.goldNow >= 5000) {
+        /*  if ($.goldNow >= 5000) {
             $.log("\n=====开始提现=====")
             txnum = $.goldNow / 4000 * 0.35
             txnum = txnum.toFixed(1)
@@ -71,7 +72,7 @@ async function myInfo() {
             })
             await $.wait(15000)
             await tx(js)
-          }
+          }*/
         } else {
           console.log(`\n数据获取失败`)
         }
@@ -103,7 +104,7 @@ async function task() {
           if (completeTodayCount >= 25) {
             await taskSeq(1)
           }
-          if (completeTodayCount >= 50) {
+          if (completeTodayCount >= 70) {
             await taskSeq(2)
           }
           const CryptoJS = require('crypto-js')
