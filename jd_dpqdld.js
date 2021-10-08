@@ -5,7 +5,7 @@
 DPQDTK: token1&token2
 */
 const $ = new Env('店铺签到领豆');
-let common = require("./env/jsdom.ini");
+let Joker = require("./env/Joker.ini");
 let token = []
 if (process.env.DPQDTK) {
   token = [...process.env.DPQDTK.split('|'),...token]
