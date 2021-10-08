@@ -22,7 +22,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/ccwav/QLScript.git"
-          source_branch: "main"
+          source_repo: "https://github.com/gcdd1993/My-Scripts.git"
+          source_branch: "ccwav"
           destination_branch: "ccwav"
           github_token: ${{ secrets.PAT }}
