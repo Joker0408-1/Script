@@ -2,7 +2,7 @@
 cron "58 7,15,23 * * *" jd_joy_reward.js
  */
 const $ = new Env('宠汪汪积分兑换');
-let common = require("./env/jsdom.ini");
+let Joker = require("./env/Joker.ini");
 const zooFaker = require('./JDJRValidator_Pure');
 // $.get = zooFaker.injectToRequest2($.get.bind($));
 // $.post = zooFaker.injectToRequest2($.post.bind($));
