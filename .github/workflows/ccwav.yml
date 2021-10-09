@@ -1,7 +1,7 @@
 name: ccwav
 on:
   schedule:
-    - cron: '30 23 ,* * *'
+    - cron: '30 23 * * *'
   workflow_dispatch:
   watch:
     types: started
@@ -22,7 +22,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/gcdd1993/My-Scripts.git"
-          source_branch: "ccwav"
+          source_repo: "https://github.com/ccwav/QLScript2.git"
+          source_branch: "main"
           destination_branch: "ccwav"
           github_token: ${{ secrets.PAT }}
