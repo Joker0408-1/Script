@@ -103,7 +103,7 @@ let UseGroupNotify = 1;
 let strAuthor = "";
 const {
 	getEnvs
-} = require('./ql');
+} = require('./env/ql.js');
 const fs = require('fs');
 let strCKFile = './CKName_cache.json';
 let Fileexists = fs.existsSync(strCKFile);
