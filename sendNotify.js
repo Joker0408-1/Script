@@ -103,7 +103,7 @@ let UseGroupNotify = 1;
 let strAuthor = "";
 const {
 	getEnvs
-} = require('./env/ql');
+} = require('./ql');
 const fs = require('fs');
 let strCKFile = './CKName_cache.json';
 let Fileexists = fs.existsSync(strCKFile);
@@ -122,7 +122,7 @@ let strCustom = "";
 let strCustomArr = [];
 let strCustomTempArr = [];
 let Notify_CKTask = "";
-async function sendNotify(text, desp, params = {}, author = '') {
+async function sendNotify(text, desp, params = {}, author = '\n\n本通知 By ccwav Mod') {
 	console.log(`开始发送通知...`);
 	try {
 		//Reset 变量
@@ -1053,7 +1053,7 @@ function gobotNotify(text, desp, time = 2100) {
 				url: `${GOBOT_URL}?access_token=${GOBOT_TOKEN}&${GOBOT_QQ}`,
 				body: `message=${text}\n${desp}`,
 				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded',
+					'Content-Type': 'application/json',
 				},
 				timeout,
 			};
