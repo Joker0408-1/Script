@@ -2,7 +2,7 @@ name: jsz
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0-12/3 * * *'
+    - cron: '0 0-12/1 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest 
