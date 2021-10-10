@@ -122,7 +122,7 @@ let strCustom = "";
 let strCustomArr = [];
 let strCustomTempArr = [];
 let Notify_CKTask = "";
-async function sendNotify(text, desp, params = {}, author = '\n') {
+async function sendNotify(text, desp, params = {}, author = '') {
 	console.log(`开始发送通知...`);
 	try {
 		//Reset 变量
