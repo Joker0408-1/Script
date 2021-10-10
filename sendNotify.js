@@ -952,17 +952,7 @@ async function sendNotify(text, desp, params = {}, author = '') {
 						if (ShowRemarkType == "3") {
 							$.Remark = $.UserName + "(" + $.Remark + ")";
 						}
-						try {
-							//加个空格，因为有些通知账号前没有空格很丑-_-!!!
-							text = text.replace(new RegExp(`${$.UserName}|${$.nickName}`, 'gm'), " " + $.Remark);
-							desp = desp.replace(new RegExp(`${$.UserName}|${$.nickName}`, 'gm'), " " + $.Remark);
-						} catch (err) {
-							console.log("替换出错了");
-							console.log("Debug Name1 :" + $.UserName);
-							console.log("Debug Name2 :" + $.nickName);
-							console.log("Debug Remark :" + $.Remark);
-						}
-						//console.log($.nickName+$.Remark);
+					
 
 					}
 
@@ -988,10 +978,7 @@ async function sendNotify(text, desp, params = {}, author = '') {
 	}
 
 	//提供6种通知
-	if (strAuthor)
-		desp += '\n\n本通知 By ' + strAuthor + "\n通知时间: " + GetDateTime(new Date());
-	else
-		desp += author + "\n通知时间: " + GetDateTime(new Date());
+
 
 	await serverNotify(text, desp); //微信server酱
 
