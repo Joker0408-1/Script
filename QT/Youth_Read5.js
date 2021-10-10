@@ -1,12 +1,6 @@
 /*
-更新时间: 2021-05-22 22:10
-
-点击几篇文章和视频，自动获取阅读请求，在Github Actions中的Secrets新建name为'YOUTH_READ'的一个值，拷贝抓包的请求体到下面Value的文本框中，添加的请求体越多，获得青豆次数越多，本脚本不包含任何推送通知
-
-多个请求体时用'&'号或者换行隔开" ‼️
-
+cron "0 8 * * *" Youth_Read5.js
 */
-
 
 const $ = new Env("中青看点阅读5")
 //const notify = $.isNode() ? require('./sendNotify') : '';
