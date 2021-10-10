@@ -15,7 +15,7 @@ new Env('东东超市商品兑换');
 #ENV设置：export JD_COOKIE='cookie1&cookie2'
 cookies = ''
 #【填写您要兑换的商品】ENV设置： export coinToBeans='京豆包'
-coinToBeans = '万能的京豆'
+coinToBeans = '超值京豆包'
 
 #多账号并发，默认关闭 ENV设置开启： export blueCoin_Cc=True
 blueCoin_Cc = True
