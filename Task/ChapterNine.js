@@ -15,7 +15,6 @@ let TokenArr = ['lYj5N1IgwRVkrQ6Wneiztc9CPkSeUAo2', 'BXpKAZrCgX8vIx_XFYrwQjziaX2
     .finally(() => {
         $.done();
     })
-
 async function all() {
     //nodejs运行
     for (let i = 0; i < TokenArr.length; i++) {
