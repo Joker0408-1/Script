@@ -599,7 +599,7 @@ function redPacket() {
     if ($.balance > 0)
     $.message += `🧧总计红包：${$.balance}元`;
     if ($.expiredBalance > 0)
-    $.message += ` || 到期${$.expiredBalance}元`;
+    $.message += ` || 到期${$.expiredBalance}元\n`;
                     } else {
                         console.log(`京东服务器返回空数据`)
                     }
