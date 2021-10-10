@@ -1,7 +1,7 @@
 
 const $ = new Env("中青看点4")
 
-let articlebody = require("./Youth_read4.json");
+let articlebody = require("../JSON/Youth_read4.json");
 let AddTimeBody = articlebody.staybody;
 !(async () => {
   for (let i = 0; i < articlebody.datas.length; i++) {

@@ -1,0 +1,1574 @@
+{
+    "info": {
+        "name": "Proxyman Code Generator: PostmanCollection2",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTm9lKPNSXcxm58YzR8ucDJR_9V6MC8J_hqp7izx6SoLUJjA8wydeX_zau7D6GO7KlZ3NuIlY3f1vRXUbl9Rl3awDCZe9iqfFY5z6mhPWeidPJVjHQxhH2wRS11rxp10vjYGZ1JnXSkWlMzry0FGVmIgKXx07Z8fIflPnWDPYgQfupb2q6jbp2VA_oVT_Nwd6W-ac6AKcy1mNO9C2HQynrD-e1mMjgEI62k3XXqMP8MBBa_Vb8MWvkYwC22uQFcivaTlFx1H_thhOdPHH-12YvtK29mkUX87VkJ8qV_FQtT-WkL6qF9rB0VzVgyqY6ugYxtGIc_kPYb0AxfKc7nO3x0CaSEGUl_o9G0RlC6msuQOP9NkZPIv2RZOY1gt5lR96_d5lPs1LWONP_xRWwnyb5-g%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTm9lKPNSXcxlxBnCe9H3inDRwvoBS3C_y_so_EbWgUz9mQuUrxS-zr1am0h8AcZxLx4sIkNw6Mz5-PcFK0Lu6EM2CTYToVNuHCC1Y612EC513Mb6ZD_VanRQU6WyQSVkdrZpWTtwFDSWS_4acbKg8P4W4ZkxocP1NJeyZtQHOK64dJPOqI709c5UAQZxuZ8kkurq1kyh8wxY-VOfe2xSwaTkL6VIqxTDrlF6IdVJFQT6363MdJOyd9OevjHLvKEumWnSWUuMR9ClAR31BIK32bHGJsiJBwAurAHJm4-A_58dGMFYhDKh_FA3THZBF_g4RypwNeuQ7SfoJudYF2baVESl3xGSnzfwdFKHdnYZYZjXQLKthREoGbbNvBMLtr3Gg8AFpCk0B97c5xp9ITfydOw%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTm9lKPNSXcxkwLHIeTKMvDHmLdg59Mk2hec76bNVOaufHPuvrhlURBvxTn9NuclPAULEkGROsyayGeohPzDcGpDNh-TlbxtJUo2splIFUBTQ7AKz0ttx21VtkG-ii-LdnGSTOXAcJvq1gpBvo8K5NUctZQbcsO67Y8nMblvraqDuEu8VgwFR71bn4tptpI4KXJtEmPVTkBd0Cra9m5XmfWlPyyXL-hvesatFpO33Bwq4sEgcJ9pkndx7rRWBVPGzQBxMWrheaCVG11M_XvJIvX9d_nxAX5rfcZr5Z4ZpqNZffU6ix2ZQOFMOFCN-RdwXCmLbHPRrPNqXAiMvXwJsdoMeCXGtBiGfbI0RsqWKvasWgyHe_bWfFH7NrfRo8JCkJzYPh2VWWkg9HEBAFuwR0Xg%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTm9lKPNSXcxmCKmrvlNmBGGUuPzF6TH1BF5OZjOsxTOgsjg1w8ny_mx_ahiaQsJVmNBzB46603lDf-W9PMy7aTX6TQSpXuR9ELQNwL7NRDauNWf600-AXuqk5NXI_tg6f5166Rq-O-WesMen6vGdKTDBOhu-O0TbwaUT9bSi2zDDCwmNq5c-mkIkl4KEr5yex-DwsyWC7fy1PinmXxUCrWD1Z0OB3kbRF0y4zN0KRvb_EtdnkCtKKL10iEZMgmKPbwBGvC5jBxwACcIf9bFCdrYLcUaRSl5t2J35R9rX4RUhCH-Grync7HJ_Y_PyUOGB3amJB_PTpWougjEqHQOK8e2Z0OZ9_9kFPK8jzfQLL616980MOG3dsAUqXgyCFVFZ7jAJKFYKyn81dHP9P84eWfg%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJowtakf55rsnn7CC4e3Ea9nIjLItLZ0ptOiuSbldkYbTnuukq4rLqE37eJwT6MbF_voyQhmKool1o1wfjmPDEAvqjhefE-yX5eHfeyXaVfP-Ofl2v_KRBLVp7uBB7GmpBJy6JUIKxcbEa03N4M9epgNUUKdyWV3ARK_VYF1CYy3t5RGOPPC9TS9I0ACUV1gxY_QqGKYNT8d9rjad9IOX0dE1-7bKWLgL_75fc-FUCJW3HUuglT1d5iS61RFjhtrJSie3vsbXFO4SPHG-ULTzm57V89KtaEs507LoXMpcVJOgsn85pG8jhif5UIddzD8c-4ceTnEpkmbhXVb0aJvQxN6ih3kSPjqp8KvNj-wQPYwjAzq1-6AqHN9YMlScfrbK-iuANDmO1TCTw%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJovkrJY4DFEmuZRXcRJwqcpiG_bh2iO-oD7AgZKMJGeAIWZBp4HAoa9zXU_mTVb7Mr1m4yi0YkYUeW2vDCrvHZyGDgoPNVaKJL0_maoHZ1kji4aq1u-IfEQ1Rc6rlDNzICN-5QWa1lel0gB9ZRi38-tBl3_M-p38QLRsix1ESLLouoJHRvaGLayS2LrRag5t6lkzN1UbuIrMKsbcb8qw8OiCcdyFEsocbrvEGrUn9rQ5Q6DdH_mPQ_P05EqzM6gcygqnxUy_JTFARg7IdSIuuzpdx_H5T_mLigxGuan1FFBE07b_cH4steFLPfEAhtSdOkR79JHN4GGKeEUSWGQhWeB1G0QRwmCtWnrdktGzXSLedwZodJE8hTGwqIZBQrBIBe44dHs1DlbOA%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJqyYSrvzw9Yeg7204U7I_hGj2seFujJnZyMrchMhNR2J5C0t9CjxHFiXk_jy0Cx2GzkZN2VHAzSePEcw839lRyaLarTtIMHDXJ5pgtrkaeh6zL4zaPfqf8mMHzbfcLnaacJiV_6-waNRAGeC8fAzMX6LVfb6ED7HhTYzPJsb9cNNIaJAWBrY5vrcyKDfgYZn5eJeq0t3zR-LL6RycLbO-Gc5nHMK1US_TXVYLeGwLi31Fm5-gApePrKD9k2FCnhkcRPwZBR7gf75KKToD5LdPQRKyyEBAUvBjV084i2JImSVZSsKRYzbUIDLEsAdlCeFaSdQEyv4IfcfYkMy3YEuCiOab4NIfaGvg6UdExz9dunKlwkB_Xwjlq_su7u6psukTgnOIi_RbALWw%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJro8md9HXqX2BQjpq2EoWvdlEa9cUKjbjkSrqCQpAKTg7Ik-3zeshNy06fXcabmbZtLAAn79IST6-Mo1dzMU36ozGiT6F51dKCzPKtOQZSS8xPKh6yOz1QbMnAS3FrNMk2Hwp0djn-UPatnO_SJW2izq3j9abFc6nKWVS4keyBfDANCf6sEwA5sLVUshXSJuRvL8dEJt6sPwP-Q6s49TUxIJJs-4zS_qogGmr4GVSQlo4lo0pSLyNlSPMFeMGv_DQZ6ATgjC10NFYrJu_1pV_ovCoydc7xv0wf4Cyl8J2OC6ElBMCznmq57kjBJKs_cS8vSRIhprVeqTF8MGC3AHW4g4Y542jb7DRhZGiZ9FuUoGv7MlMI8TeQ115oolDrJg12wo-VHDAmckg%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJrdYSKlJyWnUZRsbw1OXwTX57cXWSVQQ2l0nN6s05UCpwzeFU_xYNlF41gvnKN8bpZuNIBcDR0swoYxPl6tSFSuNE5loCPOg_37IumA-aMrNW2yDhYWhXjjNeZ9nUXJiAXQIaztDOL4hKOxcnESxERn1RVYFe01iiU6NYThqSeUFOqqA8ClsHlbBRH9xinR7hFQTwRm2eSEvsYiiikyKA6HAAaFHFH_sedjm6tbfoQNmfzbfRPemAXoNJfbJRHhVXW3cTUMR-Ro-DZIcliZnM_Tj9a0Fqu3QiBDkxudmWT_ktoDY2oxIN5EMgBYiArCuyg4Ets9u2zWsNwplkHnxRlfhFJXD6eT5nx9ZinSy9X_OolIKk_VIhpzgCQO1gOgwPycybGdlvElzA%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJrxMoNvAh_nN6V473iO-4HLAOPtRPyY4foU8aThDUPuVdSkgzw9Ka-O4ZIrqH5behWiDT4ORG3EGUeRDtteOTAKQpahGHd_68HukTdczJWEFkqD3MjoL_O9vUKMnlL6Lf6RR9xubcEz1g2wlQsdfp7KzjXtDJGTdFEYApxz7MIDaTOrsM1t3DYXxbbcrhdyFHMTIb5MrXTb9XcRG7bJKvuikBzI36V7KFjouQy-OLLfAhCJyYBbzgB0xn_yWH--j_H5TKUwKjX_dKlf1mRJfrOedySKOsULTMsh0yqlqWeAXVvqsi4PxDTBw4vb2M2mpOUPWgxiGcalA14EwSdH07XfIU3kXa1T_XY-lkS0CsAjztU3lzKTflw9w1fej85p-vTkyhRoYQTBNA%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJpy_Lc_Sab_go630lGdc_enBWdtsEH2XkuNgABgKk_WGx2LBa8PfE6MZr_MsQREV59gclm_O8z7LVUI3xPZo2tfn5u6WYzybSHUs-eydifyfiTF73CVgcjkLQ1iGyn58ltbzlcqqrzVDDiJzwAF63aM9F4FvmUMcRiy-mSVDyzD5OHtVkSlYsI6kV8eI1Ew01pwC4MJi6hmpf_Yyl2Vd_lalIv_s2ocLaf-hl3IWt5m10RH0oWeoCKJfIJ8xadH7dHHccCzzukmcR2kE19EpKchgphq8NUNYDMO3VGd37BeOLJZFO-UwBADVHuKn1Yto_6QqAdP--YRxJcfx2Ndj8AHOZzhUdaEU95UMevQYn86SAA1z5nUjdzANLQVU-4SjIMpqZaWjAx0uQ%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJqeZKHULfnL4sv3IEzCjVJP80pGe4Hxg4k-bw3a7f3MtMWYJeTPfVwPIq5Jdow88I4eBJ-S29aLsQ9Pt9e7jq_i7BmeuW0170idl4Y7cMZhOPirim7YFD_kE0MRhEcPGffkPS5rzT7-cwUM2nEPjwKzz_LDw2QWlULGLmTCaXoGwZQfzTm_LEsV5o62q4twCCu6IThlzHBymlgFPoAivDmxBakiBwXWWeb_TM-rbtFCbk5iF4sFKk8uMLqq5ayk_RqPGmLQoLGWEw3eCmzPCGzw0R814L4iyW_OEAhtdBR_fUGOHSpOkEPSafU7GFc5pCh2SLD22ozjx9pg17TEpnpR8PMXm1-g0YqrdDljrFnNLz9J6J-rr0gVkN-erqa5-NKqIepZwSb1NA%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJoBdOkYtkc04EiZX61QvJPnAgZcqrbQIAg_Rd4yFdz1myL6Dcb3earTYnJzMSjv_to7rGnnemxKAIw0oHki9bNfpzvNW2R6HmZM5jEhmEQBdea0EPBfZC-KdFR2tDQiAghsdN35W10tcOquPVT4oFqgjzvCjhjV-88Twx9nzS1t9fta3A7rX4p2vYZroXotScqtbprIQwU_VNO0Is9rWJjSkw2AbZyr7FIhQkEL_pHwv4Q6XyD_k5cZa2-wvi6Y-lYVUH-Sv9z21yxJJ8xJWh9GSHcoDslyNooFtFcZAmq9wOm38k_zRgN5FazWW4YIOPRxvYXZ5uQJqybRRTciNIsTDKdr8Btpj2j5E-R6dv7J2O1crDwj5M93B4K84dOkwVYvV6SeQ2EsYw%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJrDbx2j9eDemYIAO17tYNOnXPtK_q-YapgQeDmmhTNYO6xfE1X8Pl3QU9H8wxt3p-67CM0VhYV3PzvuJj5ZqarFUxApTt89zKOo0W5Fjea7KnkzofFSMGokYTGAsmUz-aOoWPpc_6xrEiz9_uMxjMYfPcrBb_jPSdV7FbKqsN2RNQaO8XYjRYBD5MYdhRiDn93e9mgNf_qXtBCnAn-Vo_TTBlc7BaP3nlUbeqLz-sqp3x0FPf-_Cb3MctNrlYAi4pTlO2E_QldKIBZPUsvDM3RUE6b1c2MawwC7LdBef5btPC8LCrsnPsUeMZPRZBJ2fn3JWCVfLnihH68NHg1H9rSbeWDFrGfH_sbXVb-gVLbHwTC9m0Z3gp6iYFbMekDm_dSCK0AnjXMFRQ%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJo_6_5t0CQEjN0eZo1_5I0m09o0yjEAWNwOnykVFo6vrG5C3PIyFSKOO_MkUgqspxsw-i-lihHIYqzkaYUotAJBqnNZcfHRNK26RWpfxX-i4u56yo1twIIq0J2PUxBK-RV2BSu4StI_UcWsFXUc1wZtUwcT0l9hErSNf5IjBPDwqhPCUGjzxJqqDAD6cZpMlCP4RB8pT72kJlrH0m6zi5D9UqH3AAH-J8tyesB8doJpAeQAZgByiRw02aDhuxwPw6z01dseEb00j6pvdfj4yP5ji6j2kPNC4aYEFJ5ry5Zo-bsomT7jxfClgzzpX5AgHuOHjQH0nL88_icMmKkkccdTVLSHBuTclWm7lWqclBS6hOxzipU4mVBkCxCPGPr2FYvEvacr7k194g%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJrciQEZVEvAzRerLzH1T8jnTL8IV6xSEFs2L5a07FiF5x6sBwkzKLFpeYYUmC1KQ320mPeNt0LsWaQEjfHCrxzre4K1AjaXdrfcDStVxaD68eIVDPNi_Ve2JsFX-YPT7D-aEXtd8VER7m1pHuyN1DBNpGEh298ei7U2AwoBE5yrKCkxUi-UjLUqpv735sr5cPUTrAgYElvGXcbZ4cG2DMZnZ8uJr2RburClq8xAfI3KVVFV9R_Z33eN9kE-DA80lZy9aw8OW_u9NVZriN0Z5RhoiC93zx3o8GN2aLeyGteb8qDGLHYnrT5peBYDIsmGjd0pdi8RqtdgnDq1KmdMTMz_QAVKpSCmySIhBZd8QP2MxlQ1YtF7tjVPR3ksCXbmD8r21Bok-SVoAw%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJqrqtL0OkYODNyjvIHDunVvsZodSNWFghloXzP_VBdw67Q6_dblwQ0obRtA36fKem7VZVip6NOmRZmEQUfEmyPLSoLF2SmME2eZJQy72x88QVW-XNhDjUHENaAi-nUahjIvKw3PnCE3GhIdNcKI0Qksi7-MJXHgR1HiTlKGM6G58pvXKjw2bpOx0WzBdk8xxTwPKI95Jn64LS5MUhE0-3-5RKiMiZSUovDJ_Dphbdf2ZeuPK8evLXK5n4Zy3JXfpntvHDg3lX7Iss5ZCEsa49WeDP_a13huL3lCbLsQ4D2AQ-Qst-6geqNdWSPJO0v-bHjFg4haesMrpXCba90-erKG2RlTJBadTXN6qizjM7b94qWGDn5zorcDJVzdY4L0Cf80Jd1-DdN68Q%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "POST /v5/Nameless/adlickstart.json",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://ios.baertt.com/v5/Nameless/adlickstart.json",
+                    "protocol": "https",
+                    "host": "ios.baertt.com",
+                    "path": "/v5/Nameless/adlickstart.json"
+                },
+                "header": [
+                    {
+                        "key": "uuid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "Accept-Encoding",
+                        "value": "gzip, deflate, br"
+                    },
+                    {
+                        "key": "access",
+                        "value": "Wlan"
+                    },
+                    {
+                        "key": "app_version",
+                        "value": "2.0.2"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                        "key": "device_platform",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "device_brand",
+                        "value": "iphone"
+                    },
+                    {
+                        "key": "openudid",
+                        "value": "f683e600f3360e0b5434a2bb927bbe43"
+                    },
+                    {
+                        "key": "device_type",
+                        "value": "1"
+                    },
+                    {
+                        "key": "User-Agent",
+                        "value": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)"
+                    },
+                    {
+                        "key": "sm_device_id",
+                        "value": "20210807184220298c1aaa7490c8370aec08b29221f025017695a090360ce0"
+                    },
+                    {
+                        "key": "version_code",
+                        "value": "202"
+                    },
+                    {
+                        "key": "os_version",
+                        "value": "14.3"
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "zh-Hans-CN;q=1"
+                    },
+                    {
+                        "key": "device_model",
+                        "value": "iPhone_6"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "*/*"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTYGNa5w2QgJqBPz23dCWwsLk-2keSPCrPAEDJ922C1z_c9GPMjANiBXh_UtdFZW_DfC3RuFUPVthUGqj1UNZYrl40v1E7FGSfBETLQ15SkiR1dW8N_mqx2gRssgm5x0IBXZtKRC1XKl1_2VqQUNe89ROKOIaF_4g-GcX0KZ9zprTD8cSst3i9-yxeuueCycH4k9RJmNyo2JGQEtxqtGt78jXIYP-3V4sPEHKFwCnK3BFM645yhsAvwMHLZjqde6mbU6oagww-IQBtR9ndZRFoPkMIkj4zhbbdjI3Pg_wtoOt5Dr4QmJEkCUmfbcMW2sldZsFUZZ5DLm8IHMjkKizVRDyYx5vtsMp3szoWqIvPxxvcI9C4Trwv1bYb2r1frGWLxDWNjWld7mYSv4OQI9U6tg%3D%3D",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
