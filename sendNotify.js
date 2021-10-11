@@ -954,8 +954,8 @@ async function sendNotify(text, desp, params = {}, author = '') {
 						}
 						try {
 							//加个空格，因为有些通知账号前没有空格很丑-_-!!!
-							text = text.replace(new RegExp(`${$.UserName}|${$.nickName}`, 'gm'), + $.Remark);
-							desp = desp.replace(new RegExp(`${$.UserName}|${$.nickName}`, 'gm'), + $.Remark);
+							text = text.replace(new RegExp(`${$.UserName}|${$.nickName}`, 'gm'), "" + $.Remark);
+							desp = desp.replace(new RegExp(`${$.UserName}|${$.nickName}`, 'gm'), "" + $.Remark);;
 						} catch (err) {
 							console.log("替换出错了");
 							console.log("Debug Name1 :" + $.UserName);
