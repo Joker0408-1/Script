@@ -25,7 +25,6 @@ if (!$.isNode() && !YouthBody == true) {
     ReadArr.push(YouthBody)
 } else {
     if ($.isNode()) {
-    let $zqfilename=process.env.zqfilename||"zqwzbodya.txt"
         if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('&') > -1) {
             YouthBodys = process.env.YOUTH_READ.split('&');
             console.log(`您选择的是用"&"隔开\n`)
