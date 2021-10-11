@@ -70,7 +70,7 @@ if (!$.isNode()) {
   indexLast = 0,
   $.begin = 0
 }
-    if (smallzq == "true") {
+    if (smallzq == "false") {
         $.log("     请注意缩减请求开关已打开‼️\n     如不需要    请强制停止\n     关闭Boxjs缩减请求开关")
     };
     $.index = 0, readtimes="";
