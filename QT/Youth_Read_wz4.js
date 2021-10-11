@@ -1,5 +1,5 @@
 /*
-cron "0 8 * * *" Youth_Read_wz4.js
+cron "0 12-15,22 * * *" Youth_Read_wz4.js
 */
 const $ = new Env("中青看点文章4")
 //const notify = $.isNode() ? require('./sendNotify') : '';
