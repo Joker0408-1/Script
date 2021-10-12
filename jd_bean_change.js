@@ -2,7 +2,7 @@
 Modified time: 2021-09-25 15:25:41
 统计昨日京豆的变化情况，包括收入，支出，以及显示当前京豆数量,统计红包以及过期红包，东东萌宠、东东农场、京喜牧场等进度
 网页查看京豆地址 : https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean
-cron : 0 9,19 * * * https://raw.githubusercontent.com/Joker0408-1/Script/JD/jd_bean_change.js
+cron : 0 19 * * * https://raw.githubusercontent.com/Joker0408-1/Script/JD/jd_bean_change.js
  */
 
 const $ = new Env('京东资产通知');
