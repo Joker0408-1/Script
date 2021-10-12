@@ -164,7 +164,7 @@ function AutoRead() {
                     }
                 } else if (readres.error_code == '0' && data.indexOf('"score":0') > -1 && readres.items.score == 0) {
                     $.log(`\n本次阅读获得0个青豆，等待10s即将开始下次阅读\n`);
-                    if (smallzq == "true") {
+                    if (smallzq == "false") {
                         await removebody();
                         $.log("已删除第" + ($.begin) + "个请求，如无需删除请及时提前关掉boxjs内的开关，使用后即关闭")
                         delbody += 1
