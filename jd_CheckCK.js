@@ -406,7 +406,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 
 		if (ErrorMessage) {
-			allMessage += `失效账号：`;
+			allMessage += ``;
 		} else {
 			allMessage += ``;
 		}
