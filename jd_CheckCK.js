@@ -1,8 +1,7 @@
 /*
-cron "30 * * * *" jd_CheckCK.js, tag:京东CK检测by-ccwav
+cron "30 * * * *" jd_CheckCK.js
  */
-//详细说明参考 https://github.com/ccwav/QLScript2.
-const $ = new Env('京东CK检测');
+const $ = new Env('京东账号检测');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -75,6 +74,11 @@ SuccessMessageGp4 = '',
 DisableMessageGp4 = '',
 EnableMessageGp4 = '',
 OErrorMessageGp4 = '';
+
+let WP_APP_TOKEN_ONE = "";
+if ($.isNode() && process.env.WP_APP_TOKEN_ONE) {
+	WP_APP_TOKEN_ONE = process.env.WP_APP_TOKEN_ONE;
+}
 
 let ReturnMessageTitle = '';
 
@@ -162,7 +166,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			if (userIndex4 == -1 && userIndex2 == -1 && userIndex3 == -1) {
 				console.log(`账号没有分组`);
 				IndexAll += 1;
-				ReturnMessageTitle = `【账号${IndexAll}🆔】${$.UserName2}`;
+				ReturnMessageTitle = `${IndexAll}\n京东用户：${$.UserName2}\n`;
 			}
 
 			await TotalBean();
@@ -191,17 +195,23 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 					if (envs[i].status == 0) {
 						const DisableCkBody = await DisableCk(envs[i]._id);
 						if (DisableCkBody.code == 200) {
+							if ($.isNode() && WP_APP_TOKEN_ONE) {
+								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效,自动禁用成功!\n`,`${$.UserName}`);
+							}
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效,自动禁用成功!\n`);
-							TempDisableMessage = ReturnMessageTitle + ` (自动禁用成功!)\n`;
-							TempErrorMessage = ReturnMessageTitle + ` 已失效,自动禁用成功!\n`;
+							TempDisableMessage = ReturnMessageTitle + `检测结果：自动禁用成功`;
+							TempErrorMessage = ReturnMessageTitle + ``;
 						} else {
+							if ($.isNode() && WP_APP_TOKEN_ONE) {
+								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效,自动禁用失败!\n`,`${$.UserName}`);
+							}
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效,自动禁用失败!\n`);
-							TempDisableMessage = ReturnMessageTitle + ` (自动禁用失败!)\n`;
-							TempErrorMessage = ReturnMessageTitle + ` 已失效,自动禁用失败!\n`;
+							TempDisableMessage = ReturnMessageTitle + `检测结果：自动禁用失败`;
+							TempErrorMessage = ReturnMessageTitle + `检测结果：已失效,自动禁用失败`;
 						}
 					} else {
 						console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效,已禁用!\n`);
-						TempErrorMessage = ReturnMessageTitle + ` 已失效,已禁用.\n`;
+						TempErrorMessage = ReturnMessageTitle + `检测结果：已失效,已禁用`;
 					}
 				} else {
 					if (envs[i].status == 1) {
@@ -209,16 +219,22 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 						if (CKAutoEnable == "true") {
 							const EnableCkBody = await EnableCk(envs[i]._id);
 							if (EnableCkBody.code == 200) {
+								if ($.isNode() && WP_APP_TOKEN_ONE) {
+									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,自动启用成功!\n`,`${$.UserName}`);
+								}
 								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复,自动启用成功!\n`);
-								TempEnableMessage = ReturnMessageTitle + ` (自动启用成功!)\n`;
-								TempSuccessMessage = ReturnMessageTitle + ` (自动启用成功!)\n`;
+								TempEnableMessage = ReturnMessageTitle + `检测结果：自动启用成功`;
+								TempSuccessMessage = ReturnMessageTitle + `检测结果：自动启用成功`;
 							} else {
-								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复,自动启用失败!\n`);
-								TempEnableMessage = ReturnMessageTitle + ` (自动启用失败!)\n`;
+								if ($.isNode() && WP_APP_TOKEN_ONE) {
+									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,但自动启用失败!\n`,`${$.UserName}`);
+								}
+								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复,但自动启动失败!\n`);
+								TempEnableMessage = ReturnMessageTitle + `检测结果：自动启动失败`;
 							}
 						} else {
-							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复，可手动启用!\n`);
-							TempEnableMessage = ReturnMessageTitle + ` 已恢复，可手动启用.\n`;
+							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复，可手动启动!\n`);
+							TempEnableMessage = ReturnMessageTitle + `检测结果：已恢复，可手动启动`;
 						}
 					} else {
 						console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 状态正常!\n`);
@@ -376,27 +392,27 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 
 		if (OErrorMessage) {
-			allMessage += `👇👇👇👇👇检测出错账号👇👇👇👇👇\n` + OErrorMessage + `\n\n`;
+			allMessage += `出错账号：` + OErrorMessage + `\n`;
 		}
 		if (DisableMessage) {
-			allMessage += `👇👇👇👇👇自动禁用账号👇👇👇👇👇\n` + DisableMessage + `\n\n`;
+			allMessage += `禁用账号：` + DisableMessage + `\n`;
 		}
 		if (EnableMessage) {
 			if (CKAutoEnable == "true") {
-				allMessage += `👇👇👇👇👇自动启用账号👇👇👇👇👇\n` + EnableMessage + `\n\n`;
+				allMessage += `启用账号：` + EnableMessage + `\n`;
 			} else {
-				allMessage += `👇👇👇👇👇账号已恢复👇👇👇👇👇\n` + EnableMessage + `\n\n`;
+				allMessage += `恢复账号：` + EnableMessage + `\n`;
 			}
 		}
 
 		if (ErrorMessage) {
-			allMessage += `👇👇👇👇👇失效账号👇👇👇👇👇\n` + ErrorMessage + `\n\n`;
+			allMessage += `失效账号：`;
 		} else {
-			allMessage += `👇👇👇👇👇失效账号👇👇👇👇👇\n 一个失效的都没有呢，羡慕啊...\n\n`;
+			allMessage += ``;
 		}
 
 		if (ShowSuccess == "true" && SuccessMessage) {
-			allMessage += `👇👇👇👇👇有效账号👇👇👇👇👇\n` + SuccessMessage + `\n`;
+			allMessage += `有效账号：` + SuccessMessage + `\n`;
 		}
 
 		if (NoWarnError == "true") {
@@ -404,7 +420,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 
 		if ($.isNode() && (EnableMessage || DisableMessage || OErrorMessage || CKAlwaysNotify == "true")) {
-			console.log("京东CK检测：");
+			console.log("京东账号检测：");
 			console.log(allMessage);
 			await notify.sendNotify(`${$.name}`, `${allMessage}`, {
 				url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean`
