@@ -15,7 +15,7 @@ let Today = new Date();
 let strDisable20 = "false";
 if ($.isNode() && process.env.JOY_GET20WHEN16) {
 	strDisable20 = process.env.JOY_GET20WHEN16;
-	if (strDisable20 != "false") {
+	if (strDisable20 != "true") {
 		console.log("检测到16点时段才抢20京豆");
 	}
 }
