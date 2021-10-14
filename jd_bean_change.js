@@ -972,7 +972,7 @@ function getJxFactory() {
                                         }
                                         // await exchangeProNotify()
                                     } else {
-                                        infoMsg += ` || 预测${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(0)}天`
+                                        infoMsg += ` || 预测${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(1)}天`
                                     }
                                     if (production.status === 3) {
                                         infoMsg = ""
