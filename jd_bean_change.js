@@ -148,22 +148,21 @@ async function showMsg() {
     if ($.jxFactoryInfo) {
     ReturnMessage+= `🏭京喜工厂：${$.jxFactoryInfo}\n`
     }
-    const response = await await PetRequest('energyCollect');
-    const initPetTownRes = await PetRequest('initPetTown');
-    if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
-        $.petInfo = initPetTownRes.result;
-    if (response.resultCode === '0') {
-    ReturnMessage += `🐻东东萌宠：${$.petInfo.goodsInfo.goodsName}\n`;
-    ReturnMessage += `🐻萌宠进度：(${(response.result.medalPercent).toFixed(2)}%),勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
-    }
-    ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n👨🏻‍🌾农场进度：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
+    ReturnMessage+=`👨🏻‍🌾东东农场：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
              if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
-    ReturnMessage+=`,${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}可兑换\n`;
+    ReturnMessage+=` || 预测${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}\n`;
             } else {
     ReturnMessage+=`\n`;
             }
         } else {
     ReturnMessage+=`👨🏻‍🌾东东农场：${$.JdFarmProdName}\n`;
+    }
+    const response = await await PetRequest('energyCollect');
+    const initPetTownRes = await PetRequest('initPetTown');
+    if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
+        $.petInfo = initPetTownRes.result;
+    if (response.resultCode === '0') {
+    ReturnMessage += `🐻东东萌宠：(${(response.result.medalPercent).toFixed(2)}%) || 勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
     }
     }
     ReturnMessage+=`${$.message}`;
@@ -961,7 +960,7 @@ function getJxFactory() {
                                     $.commodityDimId = production.commodityDimId;
                                     // subTitle = data.user.pin;
                                     await GetCommodityDetails();//获取已选购的商品信息
-                                    infoMsg = `${$.jxProductName}\n🏭工厂进度：(${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%)`;
+                                    infoMsg = `(${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%)`;
                                     if (production.investedElectric >= production.needElectric) {
                                         if (production['exchangeStatus'] === 1) {
                                             infoMsg = `生产已完成,可兑换`;
@@ -973,7 +972,7 @@ function getJxFactory() {
                                         }
                                         // await exchangeProNotify()
                                     } else {
-                                        infoMsg += `,${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(0)}天可兑换`
+                                        infoMsg += ` || 预测${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(0)}天`
                                     }
                                     if (production.status === 3) {
                                         infoMsg = ""
