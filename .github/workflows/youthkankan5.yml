@@ -2,7 +2,7 @@ name: kankan5
 on:
   workflow_dispatch:
   schedule:
-    - cron: '7 * * * *'
+    - cron: '0 5 * * *'
 jobs:
   build:
     runs-on: macos-latest
