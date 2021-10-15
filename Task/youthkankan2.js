@@ -3,8 +3,29 @@
 const jobname = '看看赚'
 const $ = Env(jobname)
 
-let theCKinfo = require("../JSON/k2.json");
 
+let TokenArr = ['p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpQX5I7TjPfDOwi0y7OWeXC0CYNTjv4w2wkP1q6o095Ia7Hs-U5x6P1K5kZNiZvG35B3F2V27Mc5cYQ7_gMliPwz0pgoGHyq8EdUzQ9zqbJq_sVgBqdHvV6VjfFC9CrYl6HDGVjpIrKNjRa3pBjiH2MyhNYdXDyH96ypQXDkfIslx_odP7_08UbWq7xETKxrxLald6wG9_tObKVoMrAR91Jn-1aQdl9_iTTRZWH5dScMzOJ4DlGIB5HArAYY4S9dgLGRdmx3RxBYUnIwJClRclNhhvBa06I5ezHb3MxpIqZLUgV1eEC-2H2naAIUEHDBIa6oXp2CrFF2NXDADLExXHuYd8LJ2bCz_SFqRhQbxmrSNkUg3_JRhl4mHSWB0I9raJrJmR24oWjFvAKsMi6jJT1Q%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpQX5I7TjPfDN1pl67IrHrZmVLdsFanErENh2ZpuCeoImI6BwnLkwIxiQJBHReTReujRwl7mkDxPlVUsm-rpVV_SFT-qTBVe7jxQ7xaK16mSwSJZ68gf88ebOQa8QiCwstVjdu67eBGVLLNlEzqZwWMrWbAjxd4lI9q4VS5OMON_HSXKTLHjnTxjOHI6bi5vd9skbpgDLVloIs0sgB2RR4t-DJYoLq-LdO8nRsQTJrvc4ueES4oYlkFwp5wvBCIqu4TwqFI-WuAAn7AUthDJ7OqpBeZ4co0XeFNAKXiN-uPmGfRcvzL-GntVZnLXNRpwYBEd9V2zjRFxvwpBb19DrP91YNY65ZXD10tW758c6n9_Sj4NfP4MZAgUekN4jNKuMRIOStvomBYznVmpdT-v20aQ%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpQX5I7TjPfDO1xAdmI2GOwHtPpUgAVguK8rcCI7sGhVmpmsiRPKZyboXN84NkPFM04Don-WGd68NNs0TFHvbL54H4EQNP8bV7mr5aSauqgifShps8pskJHLtwnhvaBr0ytR9n1Sm5ULF-zlGlR3tLettr-4tLMROyXTpstmw0bKwuT1LiAgth4w9BnJaM1ZlncbPCNlDFuRw0HNy-9Er4MJKWeYUNjz2LfoXXIDqhxyEEiz0ErhPylByB5NTrhkvvv8aOT5QZ5uXgC7nKlOUekv3RiAXXWf1b7YdPKkzyg1Ih2r4dxbebNi7ZlnqG5YP9B4UtALd3iVdvgcyrDdqy9XqvtxLdqSq7DOTYUog51BftSBv84DGfNXAZhl-BzPNQMn5l-cOPymq0cQ2w5sl5rw%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpQX5I7TjPfDOBcoO0DGmG23UjrCjkn3d0mevi4JOaPRqfIM_ToGwIz9fSgxubTdAjRD2ki7R8mxD6jI9-vJ1pvKasx3X5ggHyLafIjej-BjPP6_ivzk2nW07G5cxWz1vbQZ0ZtYkPdu5P-9qlAI_J0FscoMGkNVArqOJWuNoRh0PXLutoMaDkuIT4qJwCIoHqXBLAiW-mpq9uR2t80Faq0cpNwKIEfB0X49VwHhmmCcvebmHOWpb1TWfqyPesUR-efVSQO6qqsb5PqkDxSyGF_q9ryFGuJcGWz10UxtHsBAg2qQdlQwiY4CkeMC4DxqmTkfsjOrI1ncEl-dJNpES36tTqJWGPkc8dbadKRrD_svzWJcw-l5D3wouNvW2vkAH1JcGli__Grw265mH1OVjg_Q%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpyd1WCH0OY28iD22gig1dGh_gbhgEemFL2wXMNTaRRl_nrZ3Le-VlvgYJ5o3JN6RyOqzYhAEkQuh_Mv7zYI0uVpWeLd2uwD_7zzqPg6D2gvZK9tKYzPeUhQFadF15OdUnWJPOq2XpUS4phsVc2_yCxgkbZp2xs4htTqWCJ5hfyoBGYhepb5AHzscgPs2w7XysMh8VeX4Y1SaAwmBQyinLfrVKpM6LIWJJfsqrprkNW4SSzjm-JbuO2QHFRJWpr5vI4qB1zxTO7huMVAUjdlTjy4eeS1hi2kVkRR8ka4AHZmV3oFHovKQgAnO9FEuRzgtcrUzRSphunu4H8ONLzjCpli8oPh1XT2LAp-kptxDF6_OXdB66NEs57HWqFLZsX2pqPeWBfx23LIyZg8wD_SzCkA%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpyd1WCH0OY2-XBZzYl6xXx_HwVyslsVXqAjGfL6Rf6GGhs6aw_MdYUY9Pa5LP792QGXCmSAxBqxbxGaQA3lJmTRlcbubhpGK-fd2xyPne0S74S_LXEbpuKIhvg-H0YHcT--6xSN7kgcXlDbgi_YLCGNJkycQttdMisiLGQ_NGikRBDjZO2ifbYGPjb-4UOIS70AZ02DDz5aq6D1b_M5ow_WGkuWBgvCslVQ76DYzeU0_kXYLpYk4STTt25xToAqbB9_ODte63q6J6Rv4Urwu4JVQsRVdqbce6C3WsWVhxJy061AYm0_zpGVN9LAOE-JdA46ljgF-t-kqpK35ZU05xiBCGhDg3ONv4JW-fpQNheB_95MYKH9QQIIuMK78mvVE3IpDe2kiDGsneP2OA_lHTbg%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpyd1WCH0OY287BH69_2DWlN08SY_wfRe43u-bdnO59-y0zm0lCUEVRNh1zvnFVBxhZ6PgkxA_oUytItLOK9zxNLglIPEfrRuNA1m5K7baeTTVONuDNWIOOPESnS564EdlXFp-jfnXQ16nCtfabuWpJyzt1IKOTV9QrxWkeu0H3bsyAH60lWRGDuDE71brLQjfLcpbkCP3jtpIQ0PFLUTVfIcAKaY3dJtWE1Ho2E8afwzz9imBOGGgNHiVOV1N0SgI8OK5qBL4B3Q7LGddO1xDjp-DF2OX9NmyXDnnBOjkBfz95yJZwRy4jnWQnk39fcbW9lpIiDqNnqAz03VOvfppHkhMd_ygCBwXx_TpXi7uSIQwFPCusfd493JJ80MSyUhnVgTekZoSgDLJ4oN54eAS-g%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpyd1WCH0OY28RX18LwP2BndqT9JCZOZqnPW7OkeE57BAZtsmUfcMGCtLExnT5RG_7TDtEaXHDOry5WSEvr_4QdYwpKOPyC8YNs0iJaR0f-hYpfOz_2NEHNs_DQd2b7yujHuXsuHjXrSXS1YMiF2dWvQ_Hj5D6-y0_WHpItpPG8pUdi7JaIhuUeO27ZUDM--SrSCaJL2i57mrguV32F0qjyab25O9A9MGi0r7AfixFdGVTTVuwHknaw-Pvn99GIvfLMJfWGVZlwVV5-slyR7jcwUfI1hqhoLaDkGjCb44855_6c2aZt7EaGg3O-_3KUWMGogTuvdius2rGf2-OWuOLGLP1aV8UtBiHu_IpywXNLO_gtxgMDKhN6LQKGB1wg9Kh7fB4OLNPfKaU4Av9i6-ZaA%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpyd1WCH0OY28GNac_Q6O1B685plfQIsB9lUbKyOCNn8WxvImadl6Sfimyxm-aeH1wI7BsoMpfvFlI-QQ123yRwSB7v6pRWZVPrFF2GKNZHbj-8RDlqYTp5qXko_LnKcPvGo6x2F0LjHJyUKazc-8HcmJBe8Ok4HQRPZwqmIPbUCUvstSLea1VRVn3A7122VkCUJft7_5W_AM0P8MIWE8ETgZvo1uMZKoEmJiSiCz5igoKCGGeXyT1j0DuEbCfKPGnfjgmTgbToOiCSlr5-pRotPhpIf53biIchysEeBndEU9RhSuVxtOSVfs00G3x53M-ZWfa6Z-QTHwP74hJn_tvYEeTjF3nJ0Jl_ax-xKLcCNFRXKpfBIWEEBhb6LDeJblGNoopZ7Ou6IFo-7ruxnsudQ%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1gqFa157CMl2ymzv8diJg2sfm9SHRBXFTF6y0P5p5PwlmFfPPe1Qk9bea6zwBc9gaHXyO2J674tDl6RfZb7ZXt7NRNFomA4KGxCduuEexxghot7CDtM7a5PeBonrMg7s6S6kGta-IIWOvkYMMJjceVzxZoVFV-n59WuYJYegu6LUmNJiGPOlK2dnxc1aJ__lN9ViajeCJA0iT-zrxHGFn3w0DaothAsZMRU-264VokEwlyl9o4r_G9mu6GYv-r7y6cOo12UMGq5HTMY_BS6ovtZmkP1bwgaNNBWjixX4zaEkfaIwc49eFNpCO21D8EKAxjwhCoDd7KRy85U8G38pDUbvVJNyTxsgmQwgVt-dfXNDDL-KEVsxIciUUb6utMKhWGyWuDg1fi1Jdw%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1gp3f8QFTvNhV-A5hAyPRGBkQqO8HgLPc6NXQ083ndO-JGKljgA02Um-LxVe-DFk9gmbtOABYf9DlTnjnrBHXx1G_S03TH8h_xhj_O8-Z0hnmiVscHOLoVuiqzPz2iK9iZFWkbO7KCkpm8N9mZgCGEU6qZfUhtDb1xDPCJ-_hrivZuiYb7T9VG9mQZaSbgTqmVD66jtJrxWEDJeZjZ9aFxyaoosQ0iFPgdMhVzooUYeMl8T_abXmznyhrPBBhxDvhlOib_H-I3oYFZVrrL9NcG2W0eI83JodiNt8d-j_guyBIUSNCM_fsEeY6B05OS2UqhnqWBAAO4ed-cID5MyQQIKhoUCxNW-14CxahcG93EIMP808aSe0ktja_t0D8xk48wPiOjq3CATcBg%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1gr-oKBvs_AEiiaC9cVpPXyjUFA2Z_I-Q5aD9Ffk8BYQJ5uZekIyfIx2JWDcNMjBR92uxEkipt2GYyoKSZGiOTi6selnltwMzwPR-VcpF3wwv7vUkUMT-cuwfPFvXTmC-0o-8wIVzn8Y-vvqfwb0fqQ82i0ThVrbp0FLzk9LWRA9oq0XZcDXaDb-6_LPOK2IJ9VxoJ56JW5J1ffswD0L_gWqSPUgJsxCqFVyKFgMmkO_j9osmBLZ2rROKal9xxIKucIkxiSQXxNMw0-JrIjDI6PXkfP-Qkye2YLVX92Y_7z-SXWcYM8MVlK_i5TnTHz9hjWoVfser4xJwk7cuSoJ4BX5AyON8BpHGC2JTYJ1DqxSWXL7Z_3BSgHkrbrR0cek4KAtheM85Wu0ig%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1gpCvuAti-eNitFV-kcuQ-_G9Qsvc_fnXYNbDuQU_wbCaBDfUYgypGwAIjrKW9fgaPZB7S74zR8X87VIeMYDSihSux0RcGPtk3f_rNduzOP2yrK6uYJR_cE6UtWX-j1er5H8srSfXXA-V8onoIhgnpRUA3kfi1tIZgm7Kk2eLZX87T-kdmnKT6mOlZ5Lltp24GGJX4YI_LNf6Ct9FK7BqDW0zp-f5ra4xQCeJShwHRfx-vUBj__3EwNMf6ZIBdscn0v8Qk8dC5WQIuwn8otQfeNm21dXRFWswVb5Az7UIFg1BSNfguguVicmJBu_Ah1cKmteXsAHdMWycySYezrvRvgZbCm21w0NzpMlE3yYsaBVcxjxb7dfx-gd7W4mB-y5kcEtnbwwJRvsxQ%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1grCWizeWGepsb8i2kzRIHnDXu73_IRts6PvL-zSSyDvLemDHoDvM8DknnidtN45xmfBqNQlU3K_zF5g3iWZoyGGkJZ0m9vqCum3qggaF4PZfkCIfzekb_hw9GAaqvgOpoZCWx8oxNctQMfgIX73Rt7QAsHvbL51OWENmQBWupjFnwb4BqkRjX-NXKlRLR6qPpOhPwoqi5x_g-4Ti1Sc5zuKSQSEpDwv248MIjhloM0XsixOHmxWSKASYU6iy8lPI-8HF6E4i91rLWGeg2sI1ikc69uNNvFagJuQ6gCFh3v-aqThYP7jMGBMYHScU2FUB11Q3oC6WFVYLSeUh_S4uCFtELdiV8y_5KZuAhN6PjhRxJOqLoO3y9DQciH_WjL0m-QdMjrsPcOBWA%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1gqB6KQrM9tLvQaJSxU1df_A7gb73p_RI4tuPAM2sYJZ49RXGgkWtBle6thagRPyuIhXB_xMlH_SHIix1Ic_i6JjhIJHbftQ71R3aaXgV4Y1h0zyjzUaQjn0NJB_05cc93dZba0cQd03yPvST-y2uWJoySAOX5JmWwPDrWOxxeeCWG-B-W_O2qOOcdWEXcphxRQXnp4e3uMIGxWapawWmbeKNQ4JBrQqVOOrqxqtBoxemEBJ0ZKR86gjqC3S-dQfgvypyFznwyUQkxTWiSnByArRmXo0p5zC18VsXiwIH8MCjRljwwaIg0rlwBEzNCREeVfdKDO1goNB4pNztFCqbXTqBjTEg7cnu_KexmMFPR2xnmBaKz9C-a2YCYweKgLOn1exDHGMayGH4Q%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1gqY_Qx8f5P2zMOt_40U3vLzLmUMjuU0ZMdVssOVWbeYSL4KvquMOlkHIAEYqjAVJvjEGCqjaj9iYZwjSecuo31mZphq0m1RxvR5cyhupzqHUJeyakV2Dw4LjEmOpYy0bVZLdaNW7mdoXIoMX_j7gb9wWV4kVZ0MUvlCMFQn5h6zztGy1g4UrCeYJduDmSgMmylDjOJ439T_7bf9VvO3jRtsvVufQPGWjmGHKR8ydK34qVAtrXyu0tdTnRYPqcKAK86vyA3ZZ6J_oEHu2fH9-liwe4yD5Adhdlb-1861U9G-QjWkQDsirkhBlTkREiFxxsGAQcIu08ydwsoRJ0ODFfdk29nHGODdz-fC9hST33fCPb-rZuxruiXnjLXAIpJMhgBpfighH6WHlQ%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1gq3Q6XYmpvY6iTNLU6wgSnXv27NNU2c6bPk22-SNu8UlvoLDdWV7JhcX5umBfZpnlm9Iq0XCH75JapJwW_gf3ye5TJ5t79VBR6kv-bwxmhR9dQ6KYmzI0f_I5d4PE8hO7O7niTh4KBlXArUv_vCj4lqnoG9FztH_Jzx5WmdPnKJuxZQecZIbuMMm0slvuJ8HsstvmBpg6tU341kYjvMX1RgZvg6FbxWMWsg3HFCvUYVS8TW2B5S_O3YpqvpKfsG7kJeT7WIvuUp5Pie_Th04CEkq0lblMXh_8-fQe-9lSxZpFHMIqLBQlA-CunZM5m1UBCgQKr2jBHEDKfJac9N6APZHZNCxi3XWEORJW9T6Z2ajRyQ0MwzITRWpkZUGhlvmCtocbL3NSn6Yg%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1go4mhBo_OTKvE1X8fvP0yamUTB7swJVh2ZGMWNuJ2PNuq7wL72uZdWuoddn28bZbkf-Tx7QVK3hoeaa2PT-Kk62Q5qufITPdXFJlhXjj8V0ERJiACZtQBvHDg4bMzRg6meY3qZXvoXw3F8t4KMzbBtDQwY26u-ruKAyZNYgtc3a3hcwLE79NslX0kYr2_ScSfc7TyLutQ3fQK0_pHpuZ8JpUm8L4Fi-JngynVP0b-m_Tem0-gQ29LtEZexpuDC2SZ5OXGpJK9PkTn_lEh6DC8XZqv7spuUG1RTfUuouAAf4XqiIay8a15MrJrwsbLscDadhOQVH9jqr5D-1AZq-4cqpRCR-rXDa_2cpiPo1qvGS2T9FNDCK1OG7vpLAfAc__8Ql-tmtfPfkhg%3D%3D',
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0Ggew9xh9ROBgqL7XsRGwIUM89ARbRMgpUjkiqUmb1gojQgDfNsfNicC7AaQcvQBL5vYx6I4ykfb2lfX53gremUwwOSmQf8fs7tQcDvzCzgZQmNUWdMhkuN4QFm51g2g1g_0Y9gMEs8U9mkcVD-BCmP-5QDi9uZ6m6khy1F6QpKwVC-q_NojBh6IVus3HGz4ydtix0yz3WeA2Jms51cvXPlru-BiUb8WAwhpd8eBSSKUscVbgbPfc-ZvrQqNddiXapCNFgqU0zqPkWt7a3dA-TNDT6Bl-itS1egu78EU58IWaDUU9NI-JqjLMlxzux489Q49A6a0bRI98kOvIVCrwuT5b5AjVbHxabiuTMq3tVFRvRvOuQx1lA_Fvpj5t_JBo9TDczlYbnLsSp0RXStpaYFMDil0OpO8K6InMEEgljLqqzz75QybmNg%3D%3D'
+
+
+];
 !(async () => {
     await all();
 })()
@@ -14,37 +35,39 @@ let theCKinfo = require("../JSON/k2.json");
     .finally(() => {
         $.done();
     })
-    
+
 async function all() {
     //nodejs运行
-    for (let i =0; i < theCKinfo.item.length; i++) {
-        $.log(`开始执行第${i+1}个账号`);
-        Token=theCKinfo.item[i].request.body.raw;
-        
+    for (let i = 0; i < TokenArr.length; i++) {
+        $.log(`\n准备第${i + 1}次任务`);
+        Token = TokenArr[i];
+        await adlickstart();
+        await $.wait(randomNum(0, 2000));
         for (let i = 0; i < 6; i++) {
-            await bannerstatus();
+            await bannerstatus(i);
             await $.wait(randomNum(0, 2000));
         }
         await adlickend();
-       
+
     }
 }
 
-
-  function adlickend() {
+function adlickstart() {
     return new Promise((resolve, reject) => {
-         const url = "https://ios.baertt.com/v5/Nameless/adlickend.json";
-         const headers = {};
-         const body = Token;
+        const url = "https://ios.baertt.com/v5/Nameless/adlickstart.json";
+        const headers = {};
+        const body = Token;
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
+        $.post(request, async (error, response, data) => {
             try {
-                $.log(data);
+                //$.log(data);
+                const result = JSON.parse(data)
+                $.log(`开始任务:${result.message}`);
             } catch (e) {
                 $.log(e)
             }
@@ -52,22 +75,28 @@ async function all() {
         })
     })
 }
-  
 
-function bannerstatus() {
+
+function adlickend() {
     return new Promise((resolve, reject) => {
-         const url = "https://ios.baertt.com/v5/Nameless/bannerstatus.json";
-         const headers = {};
-         const body = Token;
+        const url = "https://ios.baertt.com/v5/Nameless/adlickend.json";
+        const headers = {};
+        const body = Token;
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
+        $.post(request, async (error, response, data) => {
             try {
-                $.log(data);
+                //$.log(data);
+                const result = JSON.parse(data)
+                $.log(`结束阅读:${result.message}`);
+                if (typeof result.items!='undefined'&&typeof result.items.task_score!='undefined')
+                    $.log(`本次任务获得青豆${result.items.task_score}`);
+                if (typeof result.items!='undefined'&&typeof result.items.score!='undefined')
+                    $.log(`本次任务获得青豆${result.items.score}`);
             } catch (e) {
                 $.log(e)
             }
@@ -75,7 +104,32 @@ function bannerstatus() {
         })
     })
 }
-  
+
+
+function bannerstatus(i) {
+    return new Promise((resolve, reject) => {
+        const url = "https://ios.baertt.com/v5/Nameless/bannerstatus.json";
+        const headers = {};
+        const body = Token;
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async (error, response, data) => {
+            try {
+                //$.log(data);
+                const result = JSON.parse(data);
+                $.log(`完成第${i+1}次阅读:${result.message}`);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+
 
 
 

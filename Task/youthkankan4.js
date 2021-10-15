@@ -3,8 +3,29 @@
 const jobname = '看看赚'
 const $ = Env(jobname)
 
-let theCKinfo = require("../JSON/k4.json");
 
+let TokenArr = [
+    'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCFeY-sbvwBDdA3HLbXFJASEEsRBECMduxZG795z9ydP_1WXK2EAwctYDdGtavL8wyQ2wL7bK29IQg8R918OGrrJgpwnkXz5WFjWAaLuD2nxnFsPhBfqZgOIWPJ1K8VPOe0nZ0xfONVZFWmJ-KMdLZfdXlhP8kFXA1dCtAZIrRTN8GTLnOqBb78VR8wvDC7xle3P02eEH2DOaqK7n7z6ZsZwTD1RenPBKlwoz5U091fb9OrqGSOvK3zYQg5tKYMB3cA_y0tjLhTBDH66j65E6krzfSAWoPdijRrXoLPC6AC9iOZ7HnejZufQwka_bmyWU8-emRz6Bznh0H-gc-_62G3leIIEsf8BA7bZPYTx0ljur-WsRKHYlywLRmUbC-WkIA_YQieljuh6qA%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCFrbRxL3ej2QUHmwxeBwL4b86bfhuHflaafPXc0ti1fa_KA90nMpalaQsw6BNdDVQWJkeY8QLK8A9_P4Cq5G83XFqX_LF6XLKHOnf9RvG0K99Rn8Ra9limHuDMzYtsvrgc2inNFf9DpXddp1JLMrZdDaW7RlSh0wTlKrPAY78z2Ooc2sQQh7zFVUbSdbYNjcP7s88qz7EYNOMPewP62_dLKqhwz6xX3YoaY6HdqvnxrtHFwAS2VEdkH_8yUYdcxREOms21ecmT23Unr_MPuk14xzNd0jwyDeq3sn34T1LEqe8AIaPbG9rB2bSTcZM3S5msc1pD1IOp9qw4UlaDwMsOMXrGerKhUgkdsSnb3wny6merofECKDe1-YzL1wLLln8bg6Omo1QA8Wg%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCHUhSOVAjnhroHW0jo-SlO_C0CK4-Y7rzx9G75X3urygM_apMYBhTfGxPRc9wVHVozis7ioI4fjkV752ayYiz5JjFZcMiDQwzljCl3zydBKRjoPVd4PSmbV8UnjK3dpOJgoQa-I8ghsFWvON7UJhB6PLq0s0Gn6m8TamxdP2gh6cdM79Y_2KOwZeS2BSR1iUf1ic9IHKpEsHM1xOH3ux5ErwovZSdgPYl8Ujm2qxQMB3AjFnMxZSZbmursdwffTpBM9vHt1_VbiG-M8EJbBUwfMvJAft6qnQYMij8QNw9HylFavGURKgORtRPWSLGiHBpjsjpJtHkhgE79H5-rxZADJgkcm4UvcYR0w4RK1NUMHLKEA41o8xhLii-MIb3kFuZAlGrzJ90fGRg%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCGxIAx1r8lYDMi0d2n2v5P_iC_WgC-ZI_GXPm1ctieLMzI9iZ2gDhCdakEgyp_c2QgBpx68YfU6VWs13kzR1EPKueJaFQkmKPWFz6kfBqcvLAdplWElQXPxOZ6IqJKmRj7vkowriCodNNNrmOqcWt873soa9BdzwMyY889Y5tkrnKS-AOfRwG6lB03aDCAB_XJ9-FKrzZNKpx5y5qxIQYEa-e_7N-959nISCUkW5S4yvudCdC657CYODvFDVpbgzRXFAKeZUilxR8SaDTcSLzd-BLocweFYLMhaGSCRMRFhUddhoO5PM93dUg2gphFK3XJjN5gsMEbDLCvzAhiRCOEhFrMEkLVstbcsjH-RUACWno70jcKBQbCKi1tJZ9cxQsYLu4xd6Zev6A%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCEZtjaNDdovpQ8ul4JAE8mfxPJpff45uSFt0jy7aMNmHBCDFc5c3c3tchNmwVm_kleJQG7WL2wGJMf44XACKdJ-g_hI8v4gYkHkQwGuLkoQ-_KmZZ63Xzu7lx2RRLBePk7m29rU1rQJi0wOolSlGxI9avWJPj1ZO104BFn1_9lfIzTEZz9LzYOqdxTn87lzfLv8jOjFsjY69I_ZW9NVlb0uQHumzU7YUrQRS-iATZhmKsqJnBU4qjriRv5siBFQvafA28NOex9fs7KzWFXtWef4LWpQzseJ0x_zWqFA2R6wae9-VUySQe0wsHcDI9hJbrG9hYbRG7G2QCkKGtgYu_xyHntfJKat5U3ZNR9mXslkDBlQD8zYFav9aZOUTpJHP4beBmTx4b0h9g%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCGRqJ9GthYF2IbjzNozlZTT4FFjhwepPyednc6uxakCoHDuO9gq4f7fx1dGB1g4hCyi_ddUgZS9CQ-81n1JqRkpGGnlF_9Z6Z2wHDm-78ZnTi_trX6awEbGHBrZK8HrQ3msznCsHjBWrxwkYmQmBvyWyKbIhv1ifRzEMB27X3-9BfVN-aE2IQ-qOmKNwmVSz9DQQQqrAHUYGGQT1pF2fKUBkS0Ox0pH26VoaGR69V6mKI_evIaxgkM7Vi4TpCFf1PRCiVxaIbHY2b9crhDyQgakWJ72fGpmsueG0H0PKHtWYHfWo_DOKi-7qTXXXhB1PVh9GHtsadXm_YJaMZFlA23fa6fnc1ZrucwA982tBRerGmWlwAGb-iJGyGbQ2A2R3Hoj82iITMRElw%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCGsbuvJzLMd69PNy1KyqqrRu0jq8wQDx1AURNv_Op7BoA7J_JK9HQS2bBb2iLAi4wBAqx-iyzzACYroEvYeS1nLINH1Qtzb9dwXkyBeGWSsH8Bi-PHL_WSd3aCzRJNAU0eOfo-xRGnWZVEWp44g6KIm_f5ZWOj8LGDVtW0zXHW54AIa5TEe0uYpPySWXdV3jfwzQjRT4AXvNNLNI8kNHMSMaO9OA9EHnNiqaDPRF8yzEFJdZuKQscst7RXiSFQBITeCXZb2VQGGWIzNUIzeo4peeGmiXz9FI5LJlDSYw79RzigcyXGiVzq3-yg4XJExsOtY_RhxPmnPdtxk0E7HiLmF8fSe_MIm2eBj6uL8DlyY8kC_aaPO7YCUYxpjX5K0lh_CRp6alk_7qw%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCHjffUspEK4sYiIe07EyVI383h-4b1j3d_3g6OomMQRL3YHpTMaeCy5Ae0oNJyGPSvOySQbb1gmbTXXezgwzGlSUqTxiS59gcXCDYmkjmsEjT17hk2eHqbioKeAL1Z4fLU8gL_k5DuDb0EbZpCGlcoaARD6wjhA0bdeXWgszegugcimVcQo4JYqfjXmlzjBHputxH0omr90s97_N-Y7WF3tl-_OFjGLLPjPnpC8ohuqu6iAoE_MVpsUOW9epwRtbz7utvLK-zs5LVNDAdxC0zbTxbaZfefr4MZPKhzbmqSE2SoN8FOyzh4YC5TNDpkz_lqGB2WEF6k6G9JoE58txN7m-IvnRaEBumv5YJt6FFOW0mZ4MdVEgAVcELoPbSNqa8pQyZ-eXEgsyA%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCHdv8uVIwrFoNkSc2V-spn3IxWZ5erTW2NEuAJr6Bt1pXo3j9PVVNvwgdujC0M2oUXdRKCc7vCbmaHuzeq6NhiAiZPnBB3afM62El6hlgNHO89DlZbEozlH6oenXH-jBgL12KUVWfMKi9RylhrHHzXCiMiTQnSQFlU4SXxawDNHOo2jqBiQHEJjhrHRiOaBdCG62W3qGpjLYdFVUQyyySDIKepbczPkPk4pALhAFebcGVqUc1O8hIten36qd5eGalGHCICYj1C1_8bvgq-_h33kgDy99TilETgUOs_YBuS8TaAeE3NiKkeVT0sQEfq_dm-OdUGlHsKe7gpboHIlpTYE8Jy-Pndvo4XpQo10Gzee-L76QiWJeEMK_sPSeWh3LtUUxks0xTBfpg%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCF6nul_ADEPmIdVOHcLIe5V2Gy5zyW9nifGeyt1TeyT5rHzPoVxpxRv9DzGtnoagNV4KhD6PdUWI-rggy2vMkGPIrpkl1-BHSeKwavt3AYs1zf2CAGjTSLb2VH8TCOC8c-9ViGy49zxPhbvRwb-yjoXx5H9oEw9lz8nrioWWZz8XunP_NXO30K9MkiTXmyB6sddKpKF9yoK_QrdrlYuYaWq_UZwUynl0fpSWrOVccLZQkyFCntzG6AoW9bPZ_L7meLrTWg4A7RLsjk_DV7DN1Nrw8xW3ET0-OVwqrqrwHXP9R4_2NMOvMAR79C81KDdgwLTrZlLQGrEKfhkUgVVnQaPQFRUffuGieSpQnNQXZVzeTvgQJrlMsdCCL8dw9I0Juo0d4G9LxMRlg%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCEsRE7h39JuQodwAyE6ZQx6ZOb65x3Pl6x6qQN1EOU1ug6iVGRhjhb3s47N9mueNBhJ3cM1SA1yRS37g1b0G-DgkWPWmhUuxmn0H_IG1R23HsvOHLaVcJNBHnVw4p49A0E9qAhFvWYUR3eABmEUaFtOpxb7a2COUYrwnH_FDw3V7lpyh7tbcCB69lfcsXEwDTH8nG8hfSPENL48EFp9v-7RfU-GwOzy-IPJp7nwQ_MMT1nYc_nVgYN3VeQ5MVgryXVplZOBXo65zMcpc4MnDRgZUif4Omwe5sD5ZA-imcKWuvPb_h6BdTtwH3dwKwKx-4xOdF5TbFr5XferMpRxEVBh0p7IRZgSgWM1lLDlkH4nT-CQ8veR3--OR9WMlofLLQ6xQ3UJi0uH4Q%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCF4u5FRMALBR_JnogfXxLM9q7lYF42fHIRv5f27MDpFO-6m0NuHcYJ3GMEiPJzKXCTj4rewdinnQXKOguoB06m0LST3dmp5y9m4N70gLGEqt0wCd0UGcZNEA8CiJm-Fue3Ji5HT7imX_d-QfvyS7T_u-o-LSe6jE5CDon-jhfQZmXqcqiXJvicXv7VIISYSOv0ZjZi3cUYGYgjCF8VQnaTM322Arp8PqfqEZRqsK_7iZN-uQhyyrCGyHxdfRC5bQv2zp5jgg3CmfGdUO2ZbXqeZazIV4quReev1UWpoOSxKJmDp_yeAKlny5YwyaC_DyndQaScYQv-UUokCTIkbxoEzW6QuXZMfWyEr-2YR3AViW5Pt6WiKA0d0CbW0_yGF1Gi6W26yH0oPbw%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCE7jmiQJEljUeS9c-OGy7ASqwcT3N8Wo7ERhrZ2bfYw8KJdzp3uoeHs8rQ2kVraO3JD2UVJfdGeahykXrVshaCexvTO99H863rTYLcQiDcpbxkkJ7HmpG4p6-Rf2PguEdHC0ZNc_1LrjN3zGXDMgqo3rsuSbzs9O8cP-aYXGAJHXdMRGA4Z30ZMKrtuD2cpIgIdUM9I_H7nJmC8PlOQoz8MtqydKLse9q5rN3OHrizYP9nsWgliC8Sv0jKBAAViBgAedEyod_la4BXstDz_QOhFpJOHBF_9Kf-IKH2toZWoCiBapbOxxqeSxBiZFOaVt-lJyZtv2CH6XRwoQavVWAOHgMB0VsSTy7mZ4-o29GS_cZZezTT5fsO1wBPwq8eQ_M__nFun9DiNtQ%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCHqXXY-UxNN5X7TtHG4H7n4pZf6Qqdb_F_oMJ6sXn-zj7-1i5jPSDsINAWm4TOkSba4jIxb9lUYX8fDzyWZJ1GmkDHOUCqe1l6fRSkdkAv-aYXEEOnWO6A7J39C5OHj8nbDDN15Ybz7m6vZpD6xYd7Hflxdv6vdLJNpZsLlmCqYceQ-4kJs8_va1hNSeJmVyn0ZiB8A4gvT-LP3YLbnyntrJtqSf2cJzIRbyn_Y8trb8GBfdbCwOCqvvQpVya_9wlozm6IW4Eoxv8pFLEDKhehBVeck5bixH9Q4yIIan8DrZwMsOR37VN3kFXYeUQGNDOVbzE2DPwfiF9mnUiOl-fjK5YFXYxQhx0ifF5EN7qAaVlrITmtsAhBL0oLYkYuhxnYBFZUpOuO24A%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCHei2GJrc9-3G0S5f7JWHfOcSSWchHiFwKWB9zedauO3KOPcsTTB-riaS5hsdP8MTbuWpQhQE-zXKhcGOgs4yAOEKwQ8ikh7apvzhQn2eNcRWzC7Ebn-ofwlDsTfpKxoqgbc50ik0h9I9QZT6sauDsNAshMJHFDRKj4uvl2rkMnSx17mEf1jBozktOTbtsuXcIa9M6l06UwFzQWDZg0YS_qYUwEwusl6aWOveg5cvXOAXXlJnVlXQfXr4hWklhMqMKz_5YrHT1vAx4T-BXqhVlSItpMt7s51YlVtniSogTKbGUxd8LiBOEh5fXV6SjGbnA800_s4PdkV2jwDL9bVlCq7nxa3UKu0KcSwyZ6jifZ37UhbXPx7-3NjXBYI8rTkcTZH2dcW4vCPg%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCFEVjXQolXNJc0DIsFrdoKRfypTcocHvLfcI6UcZbUQJSN-pJNru4V_pkhHe8KnKpW5tw0bhrZVyb3wxeXNtLsByuuH0ilV3cISkK15-PXpFzqk0N1FQlRrAEKqHybzo2oVhxsb68388Yv7FB4tIqYb18WriyjUNOgckygAGM-84h3af2z5R3y4EPyIntE7t9HOHF_NN2Svig4RKPGTADieLi0851hHzCsJWr4XR7W9PHqNBYgIcjtLCoPNWJ5IYNffZTCLi5mjNsukzRrdg7cvcWwcUeUuHv0ehn8nUGN9OZWT4G6SKc2V1suZ_Pdh0BglPpgZYLa-kQ0cA05XjEo_V7wHgxdNfejEMfPguriueRveqmLGzNFhlUBX8DrNQKqaX6YnReBQPA%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCExFDzrb7r2p6meodpeTlca0CRtS0XX7AlIef1jxQxD_s7pwven8urMGmoCUvmCFHEojd2XHepwovhXw2TgZLpL-IbG552s7jMwH2VrhWLE2QZOkLbc4xAE4vohv0kirb8uiaxfsaFx7g8-flz42Bb5rSymAimgenivUnjpgjopdohpGxEoaXFIX5ydneAb4lpRlh4HlE9h2JBSog4Qar2Vv8qth8JeXWE0bVECWPCa6x7sqHYjH5a733dJvscLfvvbSqLWF804bVGqUvOJC2hutTSv8dHre3RLeNR_1Bw6dHk3yqyWvDfDnfqAsxFUDMDijHJLipQwJTr9bNkt0Oh-yX1XzhGA5sJ-wQFET-dWnQzyUST9nsBXoE12uaamRRLRBkQeFg4OUg%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCFt33bSLUjIFBENLAhEleNT1cRYcauIUQHB-Sn2GXP7iE-P3fpQe0tr0WOFh_4MzERj9iOqLpEpCXYUUJZDQCMTQrT-K-Q7vGbwXJx0jDJotefe2GtsDTEa7wPB4-zuGjAFP_B3EUpyyKiJCCmviL25UkVOtvMMl2Y9-ewZcWFSu_PCmNU9JOlAntvAvJJq3FatcNqryfRi97yC0WYJwRcTcD0iIdPdpB4buJF3YWj0RERVOpXmCnPbNX473NlCes-a1jlaAaqGeNHb0FGjd9Q8-1ybCH8NIxsumnr_GvtYsAj9sOrLxuWdPs28NwBAEEmgyv8I4QlXaSWU7mKrue-mqMIHzf_oAV9QVa2h0BtrqmFDBjFMqhCEaD1DEBXzcbhik_9DdwwQWQ%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCEAURCypZeAKdXucYkwK3S1ENhuT2mZnHztXVcvd6XYbLDrEz_69o-qNdfEicr5vuR1XjWt5eLgHEJxJdHFq73hU3HG6PmI_V4cKzSEOokTofQIct_Why3zYNHMgzsohRavwui138mtS-uwGoxOpdh3lfmco4ihRfyW4F1sDRUWr_NBqj6UyE_iwxA4-pCkrrMEva4TgzQ25LUaDIE7ue-UTjtLn7ETnktzszuyKxsZSlUxCobZ6k2BtVKxC4IcU9DW7nc89WGKZex0O3oHEMEoRO9jfr0gfWocDeLK-EJDqSYVSrEFjxVkZJbMf5soLKNZZnA1Efc6qadTOpICLZw6Rv2sDDm3_gW5jlbdzAzbzY-dVUywK7b1UnQ9lRg5aJAztZsiG815dQ%3D%3D',
+'p=9NwGV8Ov71o%3DC5Jtxwc6iVuTcJotRQ4YI8A3NCwuYXT0355OHYcFfA_DH49KJiDULn5b7EiVrDBTx1UYSzKgNCE023gio2q6yY9bqC9pg9bEMwv1cteU-_KgI6t1Ngr2IElfH4KLvb-PrdSF2SpA7RQ3xVNx0KTniM-n54k00bZKQ7t6DE8RfUV8plvsgdvl2_yhZGuOcYeg3CucDo9w0QEM4yXFeYugEkT85bRx4PKtn6WMhC2qFxTh-0hixBMF4DDSEPKsoecjSLg3qWo1BIQWrBJPJOsKElc4A5_INDxyKp8lgIJV94bewaYh88uqUSJqWp3amC8y10JvIyY0GhsrTJ5nWjxDglSgwPi_6C7ZyYOMhzVgv5549FlCNN6d3rCpolTGK4qmNYZI_6FzZGNKs2bJI9QGbM4hvDzEW-tz6xUawmboO5Oi6V-njMfjhelORtOS1YuOFYZwftaXTNcs3Ljj5cykVg%3D%3D'
+];
 !(async () => {
     await all();
 })()
@@ -14,37 +35,39 @@ let theCKinfo = require("../JSON/k4.json");
     .finally(() => {
         $.done();
     })
-    
+
 async function all() {
     //nodejs运行
-    for (let i =0; i < theCKinfo.item.length; i++) {
-        $.log(`开始执行第${i+1}个账号`);
-        Token=theCKinfo.item[i].request.body.raw;
-        
+    for (let i = 0; i < TokenArr.length; i++) {
+        $.log(`\n准备第${i + 1}次任务`);
+        Token = TokenArr[i];
+        await adlickstart();
+        await $.wait(randomNum(0, 2000));
         for (let i = 0; i < 6; i++) {
-            await bannerstatus();
+            await bannerstatus(i);
             await $.wait(randomNum(0, 2000));
         }
         await adlickend();
-       
+
     }
 }
 
-
-  function adlickend() {
+function adlickstart() {
     return new Promise((resolve, reject) => {
-         const url = "https://ios.baertt.com/v5/Nameless/adlickend.json";
-         const headers = {};
-         const body = Token;
+        const url = "https://ios.baertt.com/v5/Nameless/adlickstart.json";
+        const headers = {};
+        const body = Token;
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
+        $.post(request, async (error, response, data) => {
             try {
-                $.log(data);
+                //$.log(data);
+                const result = JSON.parse(data)
+                $.log(`开始任务:${result.message}`);
             } catch (e) {
                 $.log(e)
             }
@@ -52,22 +75,28 @@ async function all() {
         })
     })
 }
-  
 
-function bannerstatus() {
+
+function adlickend() {
     return new Promise((resolve, reject) => {
-         const url = "https://ios.baertt.com/v5/Nameless/bannerstatus.json";
-         const headers = {};
-         const body = Token;
+        const url = "https://ios.baertt.com/v5/Nameless/adlickend.json";
+        const headers = {};
+        const body = Token;
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
+        $.post(request, async (error, response, data) => {
             try {
-                $.log(data);
+                //$.log(data);
+                const result = JSON.parse(data)
+                $.log(`结束阅读:${result.message}`);
+                if (typeof result.items!='undefined'&&typeof result.items.task_score!='undefined')
+                    $.log(`本次任务获得青豆${result.items.task_score}`);
+                if (typeof result.items!='undefined'&&typeof result.items.score!='undefined')
+                    $.log(`本次任务获得青豆${result.items.score}`);
             } catch (e) {
                 $.log(e)
             }
@@ -75,7 +104,32 @@ function bannerstatus() {
         })
     })
 }
-  
+
+
+function bannerstatus(i) {
+    return new Promise((resolve, reject) => {
+        const url = "https://ios.baertt.com/v5/Nameless/bannerstatus.json";
+        const headers = {};
+        const body = Token;
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async (error, response, data) => {
+            try {
+                //$.log(data);
+                const result = JSON.parse(data);
+                $.log(`完成第${i+1}次阅读:${result.message}`);
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+
 
 
 
