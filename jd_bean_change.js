@@ -150,7 +150,7 @@ async function showMsg() {
     }
     ReturnMessage+=`👨🏻‍🌾东东农场：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
              if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
-    ReturnMessage+=` || 预测${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}\n`;
+    ReturnMessage+=` || 预计${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}\n`;
             } else {
     ReturnMessage+=`\n`;
             }
@@ -972,7 +972,7 @@ function getJxFactory() {
                                         }
                                         // await exchangeProNotify()
                                     } else {
-                                        infoMsg += ` || 预测${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(0)}天`
+                                        infoMsg += ` || 预计${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(0)}天`
                                     }
                                     if (production.status === 3) {
                                         infoMsg = ""
