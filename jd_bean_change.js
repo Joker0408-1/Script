@@ -1,4 +1,5 @@
 /*
+个人自用，有后门，用者自负
 Modified time: 2021-09-25 15:25:41
 统计昨日京豆的变化情况，包括收入，支出，以及显示当前京豆数量,统计红包以及过期红包，东东萌宠、东东农场、京喜牧场等进度
 网页查看京豆地址 : https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean
