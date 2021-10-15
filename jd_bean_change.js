@@ -6,7 +6,7 @@ cron : 0 19 * * * https://raw.githubusercontent.com/Joker0408-1/Script/JD/jd_bea
  */
 
 const $ = new Env('京东资产通知');
-let Joker = require("./env/Joker.ini");
+let Joker = require("./env/Joker");
 const notify = $.isNode() ? require('./sendNotify') : '';
 const JXUserAgent =  $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_USER_AGENT : ``):``;
 //Node.js用户请在jdCookie.js处填写京东ck;
