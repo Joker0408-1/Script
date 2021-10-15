@@ -8,7 +8,7 @@
  * cron: 0 9,19 * * *
 */
 const $ = new Env('清空购物车');
-let Joker = require("./env/Joker.ini");
+let Joker = require("./env/Joker");
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
