@@ -1058,14 +1058,14 @@ def getResult(resulttxt, userName, user_num):
             message = result_data['message']
             try:
                 result = result_data['result']['giftInfo']['giftList']
-                print(f"\t\t└账号{user_num}【{userName}】:{message}")
+                print(f"\t\t└账号{user_num}[{userName}]:{message}")
                 for i in result:
                     print("\t\t\t└{0}:{1} ".format(i['prizeTypeName'], i['discount']))
             except:
-                print(f'\t\t└账号{user_num}【{userName}】:{message}')
+                print(f'\t\t└账号{user_num}[{userName}]:{message}')
             return busiCode
         else:
-            print("\t\t└账号{0}【{1}】:{2}".format(user_num, userName, result_data['message']))
+            print("\t\t└账号{0}[{1}]:{2}".format(user_num, userName, result_data['message']))
             return busiCode
 
 
@@ -1279,22 +1279,22 @@ def start():
     if os.path.exists(pwd + "log/memory.json"):
         memoryJson = getMemory()
         n = 1
-        message("\n###【本次统计 {}】###\n".format(nowtime()))
+        message("\n[本次统计 {}]\n".format(nowtime()))
         all_get_bean = 0
         for name, pinname in zip(userNames, pinNameList):
             try:
                 userCountBean = memoryJson['{}'.format(pinname)]
                 successJoin = memoryJson['{}_ok'.format(pinname)]
-                message(f"账号{n}:【{name}】\n\t└成功入会【{successJoin}】个，收获【{userCountBean}】京豆")
+                message(f"账号{n}:[{name}]\n\t└成功入会[{successJoin}]个，收获[{userCountBean}]京豆")
                 all_get_bean += userCountBean
             except Exception as e:
-                message(f"账号{n}:【{name}】\n\t└成功入会【0】个，收获【0】京豆")
+                message(f"账号{n}:[{name}]\n\t└成功入会[0]个，收获[0]京豆")
             n += 1
-        message(f"\n本次总累计获得：{all_get_bean} 京豆")
+        message(f"\n---- 总累计获得：{all_get_bean} 京豆 ----")
     time.sleep(1)
-    message("\n------- 入会总耗时 : %.03f 秒 seconds -------" % (endtime - starttime))
+    message("\n---- 入会总耗时 : %.03f 秒 ----" % (endtime - starttime))
     print("{0}\n{1}\n{2}".format("*" * 30, scriptHeader, remarks))
-    send("【JD入会领豆】", message_info)
+    send("京东入会领豆", message_info)
     exitCodeFun(0)
 if __name__ == '__main__':
     start()
