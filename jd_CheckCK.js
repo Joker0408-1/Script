@@ -199,8 +199,8 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效,自动禁用成功!\n`,`${$.UserName}`);
 							}
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效,自动禁用成功!\n`);
-							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用成功`;
-							TempErrorMessage = ReturnMessageTitle + ``;
+							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用成功\n`;
+							TempErrorMessage = ReturnMessageTitle + `禁用账号：`;
 						} else {
 							if ($.isNode() && WP_APP_TOKEN_ONE) {
 								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效,自动禁用失败!\n`,`${$.UserName}`);
