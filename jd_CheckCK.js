@@ -223,14 +223,14 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,自动启用成功!\n`,`${$.UserName}`);
 								}
 								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复||自动启用成功!\n`);
-								TempEnableMessage = ReturnMessageTitle + `检测结果：自动启用成功\n\n`;
+								TempEnableMessage = ReturnMessageTitle + `检测结果：已恢复 || 自动启用成功\n\n`;
 								TempSuccessMessage = ReturnMessageTitle + `检测结果：自动启用成功\n\n`;
 							} else {
 								if ($.isNode() && WP_APP_TOKEN_ONE) {
 									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,但自动启用失败!\n`,`${$.UserName}`);
 								}
 								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复||启用失败\n`);
-								TempEnableMessage = ReturnMessageTitle + `检测结果：自动启动失败\n\n`;
+								TempEnableMessage = ReturnMessageTitle + `检测结果：已恢复 || 自动启动失败\n\n`;
 							}
 						} else {
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复，手动启动\n`);
