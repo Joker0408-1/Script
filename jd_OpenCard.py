@@ -1285,10 +1285,10 @@ def start():
             try:
                 userCountBean = memoryJson['{}'.format(pinname)]
                 successJoin = memoryJson['{}_ok'.format(pinname)]
-                message(f"账号{n}:[{name}]\n\t└成功入会[{successJoin}]个，收获[{userCountBean}]京豆")
+                message(f"账号{n}:『 {name} 』\n\t└成功入会『 {successJoin} 』个，收获『 {userCountBean} 』京豆")
                 all_get_bean += userCountBean
             except Exception as e:
-                message(f"账号{n}:[{name}]\n\t└成功入会[0]个，收获[0]京豆")
+                message(f"账号{n}:『 {name} 』\n\t└成功入会『 0 』个，收获『 0 』京豆")
             n += 1
         message(f"\n---- 总累计获得：{all_get_bean} 京豆 ----")
     time.sleep(1)
