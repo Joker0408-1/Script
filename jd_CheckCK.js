@@ -199,19 +199,19 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效,自动禁用成功!\n`,`${$.UserName}`);
 							}
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效,自动禁用成功!\n`);
-							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用成功\n`;
+							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用成功\n\n`;
 							TempErrorMessage = ReturnMessageTitle + ``;
 						} else {
 							if ($.isNode() && WP_APP_TOKEN_ONE) {
 								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效,自动禁用失败!\n`,`${$.UserName}`);
 							}
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效,自动禁用失败!\n`);
-							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用失败\n`;
-							TempErrorMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用失败\n`;
+							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用失败\n\n`;
+							TempErrorMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用失败\n\n`;
 						}
 					} else {
 						console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效,已禁用!\n`);
-						TempErrorMessage = ReturnMessageTitle + `检测结果：已失效||已禁用\n`;
+						TempErrorMessage = ReturnMessageTitle + `检测结果：已失效||已禁用\n\n`;
 					}
 				} else {
 					if (envs[i].status == 1) {
@@ -223,18 +223,18 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,自动启用成功!\n`,`${$.UserName}`);
 								}
 								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复||自动启用成功!\n`);
-								TempEnableMessage = ReturnMessageTitle + `检测结果：自动启用成功\n`;
-								TempSuccessMessage = ReturnMessageTitle + `检测结果：自动启用成功\n`;
+								TempEnableMessage = ReturnMessageTitle + `检测结果：自动启用成功\n\n`;
+								TempSuccessMessage = ReturnMessageTitle + `检测结果：自动启用成功\n\n`;
 							} else {
 								if ($.isNode() && WP_APP_TOKEN_ONE) {
 									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,但自动启用失败!\n`,`${$.UserName}`);
 								}
 								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复||启用失败\n`);
-								TempEnableMessage = ReturnMessageTitle + `检测结果：自动启动失败\n`;
+								TempEnableMessage = ReturnMessageTitle + `检测结果：自动启动失败\n\n`;
 							}
 						} else {
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复，手动启动\n`);
-							TempEnableMessage = ReturnMessageTitle + `检测结果：已恢复||手动启动\n`;
+							TempEnableMessage = ReturnMessageTitle + `检测结果：已恢复||手动启动\n\n`;
 						}
 					} else {
 						console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 状态正常!\n`);
