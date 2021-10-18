@@ -166,7 +166,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			if (userIndex4 == -1 && userIndex2 == -1 && userIndex3 == -1) {
 				console.log(`账号没有分组`);
 				IndexAll += 1;
-				ReturnMessageTitle = `${IndexAll}\n京东用户：${$.UserName2}\n`;
+				ReturnMessageTitle = `京东账号：${IndexAll}\n京东用户：${$.UserName2}\n`;
 			}
 
 			await TotalBean();
@@ -200,7 +200,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 							}
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效,自动禁用成功!\n`);
 							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效||自动禁用成功\n`;
-							TempErrorMessage = ReturnMessageTitle + `禁用账号：`;
+							TempErrorMessage = ReturnMessageTitle + ``;
 						} else {
 							if ($.isNode() && WP_APP_TOKEN_ONE) {
 								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效,自动禁用失败!\n`,`${$.UserName}`);
@@ -392,16 +392,16 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 
 		if (OErrorMessage) {
-			allMessage += `出错账号：` + OErrorMessage + `\n`;
+			allMessage += `出错账号` + OErrorMessage + `\n`;
 		}
 		if (DisableMessage) {
-			allMessage += `禁用账号：` + DisableMessage + `\n`;
+			allMessage += `禁用账号` + DisableMessage + `\n`;
 		}
 		if (EnableMessage) {
 			if (CKAutoEnable == "true") {
-				allMessage += `启用账号：` + EnableMessage + `\n`;
+				allMessage += `启用账号` + EnableMessage + `\n`;
 			} else {
-				allMessage += `恢复账号：` + EnableMessage + `\n`;
+				allMessage += `恢复账号` + EnableMessage + `\n`;
 			}
 		}
 
