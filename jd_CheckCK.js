@@ -166,7 +166,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			if (userIndex4 == -1 && userIndex2 == -1 && userIndex3 == -1) {
 				console.log(`账号没有分组`);
 				IndexAll += 1;
-				ReturnMessageTitle = `京东账号：${IndexAll}\n京东用户：${$.UserName2}\n`;
+				ReturnMessageTitle = `京东账号：${IndexAll}\n京东昵称：${$.UserName2}\n`;
 			}
 
 			await TotalBean();
