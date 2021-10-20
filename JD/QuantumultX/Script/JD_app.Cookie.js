@@ -3,7 +3,7 @@ let cookie = $request.headers.Cookie
 let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
 console.log(`\n=================================\n=================================\n=================\n请手动复制此Cookie\n=================\n\n\n${pt_key};${pt_pin};\n\n\n警告:APP获取的Cookie有效期不超过一天！\n=================================\n=================================`)
-$.msg("京东助手","京东Cookie 1: 请在日志中查看","获取京东Cookie成功🎉")
+$.msg("京东助手","Cookie请在日志中查看","获取京东Cookie成功🎉")
 
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
