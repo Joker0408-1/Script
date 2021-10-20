@@ -40,5 +40,5 @@ async function main(id) {
         'cookie':id.cookie
     }
     await $.curl(params,'s')
-    console.log($.s.data.result.toasts||'可能是自己的号或账号过期了')
+    console.log($.s.data.result.toasts||'账号已黑或失效')
 }
