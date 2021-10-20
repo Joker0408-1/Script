@@ -1,6 +1,6 @@
 /*
 const $ = new Env('城城分现金助力');
-0 */8 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_city.js
+0,5 0 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_city.js
 */
 let common = require("./function/common");
 let $ = new common.env('城城分现金助力');
