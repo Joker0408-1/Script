@@ -15,7 +15,7 @@ new Env('东东超市商品兑换');
 #ENV设置：export JD_COOKIE='cookie1&cookie2'
 cookies = ''
 #【填写您要兑换的商品】ENV设置： export coinToBeans='京豆包'
-coinToBeans = '超值京豆包'
+coinToBeans = '万能的京豆'
 
 #多账号并发，默认关闭 ENV设置开启： export blueCoin_Cc=True
 blueCoin_Cc = True
@@ -42,7 +42,7 @@ endtime='00:00:10.00000000'
 today = datetime.datetime.now().strftime('%Y-%m-%d')
 unstartTime = datetime.datetime.now().strftime('%Y-%m-%d 23:55:00.00000000')
 tomorrow = (datetime.datetime.now() + datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-starttime = (datetime.datetime.now() + datetime.timedelta(days=0)).strftime('%Y-%m-%d 23:59:59.00000000')
+starttime = (datetime.datetime.now() + datetime.timedelta(days=1)).strftime('%Y-%m-%d 00:00:01.00000000')
 
 
 def printT(s):
