@@ -1,4 +1,4 @@
-const $ = new Env(`京东采集器`);
+const $ = new Env(`京东采集器🄱`);
 $.suffix = i => i > 0 ? i + 1 + '' : '';
 $.nowTime = new Date().getTime();
 $.isRewrite = 'undefined' !== typeof $request;
