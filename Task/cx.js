@@ -1,4 +1,21 @@
-
+b1arr = [
+    "submitdata=1%24S210820017%7D2%24%E4%B8%8A%E6%B5%B7%E5%BE%A1%E6%B8%A1%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%7D3%24%E4%BF%AE%E6%94%B9%E8%A1%8C%E7%A8%8B%E4%BF%A1%E6%81%AF%7D5%24(%E8%B7%B3%E8%BF%87)%7D6%24(%E8%B7%B3%E8%BF%87)%7D7%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E5%8C%BA%E5%9F%9F%E6%97%85%E5%B1%85%E8%A1%8C%E4%B8%BA%E6%97%A0%E9%9C%80%E6%A3%80%E6%B5%8B%7D8%24%E5%B7%B2%E6%8E%A5%E7%A7%8D1%E9%92%88%EF%BC%882%E9%92%88%E5%9E%8B%EF%BC%89%7D9%24-3%7D22%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E7%96%AB%E6%83%85%E9%AB%98%E4%B8%AD%E9%A3%8E%E9%99%A9%E5%8C%BA%E5%9F%9F%E5%8F%8A%E7%89%B9%E6%AE%8A%E5%88%97%E7%AE%A1%E5%8C%BA%E5%9F%9F%7D27%24-3%7D28%24-3%7D29%24-3%7D49%24%E6%98%AF%7D50%24swf9",
+    "submitdata=1%24S210702032%7D2%24%E4%B8%8A%E6%B5%B7%E5%BE%A1%E6%B8%A1%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%7D3%24%E6%96%B0%E5%A2%9E%E8%A1%8C%E7%A8%8B%E4%BF%A1%E6%81%AF%7D5%24(%E8%B7%B3%E8%BF%87)%7D6%24(%E8%B7%B3%E8%BF%87)%7D7%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E5%8C%BA%E5%9F%9F%E6%97%85%E5%B1%85%E8%A1%8C%E4%B8%BA%E6%97%A0%E9%9C%80%E6%A3%80%E6%B5%8B%7D8%24%E5%B7%B2%E5%AE%8C%E6%88%90%E6%8E%A5%E7%A7%8D%EF%BC%882%E9%92%88%E5%9E%8B%EF%BC%89%7D9%24-3%7D22%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E7%96%AB%E6%83%85%E9%AB%98%E4%B8%AD%E9%A3%8E%E9%99%A9%E5%8C%BA%E5%9F%9F%E5%8F%8A%E7%89%B9%E6%AE%8A%E5%88%97%E7%AE%A1%E5%8C%BA%E5%9F%9F%7D27%24-3%7D28%24-3%7D29%24-3%7D49%24%E6%98%AF%7D50%24swf9",
+    "submitdata=1%24S210708054%7D2%24%E4%B8%8A%E6%B5%B7%E5%BE%A1%E6%B8%A1%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%7D3%24%E6%96%B0%E5%A2%9E%E8%A1%8C%E7%A8%8B%E4%BF%A1%E6%81%AF%7D5%24(%E8%B7%B3%E8%BF%87)%7D6%24(%E8%B7%B3%E8%BF%87)%7D7%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E5%8C%BA%E5%9F%9F%E6%97%85%E5%B1%85%E8%A1%8C%E4%B8%BA%E6%97%A0%E9%9C%80%E6%A3%80%E6%B5%8B%7D8%24%E5%B7%B2%E5%AE%8C%E6%88%90%E6%8E%A5%E7%A7%8D%EF%BC%882%E9%92%88%E5%9E%8B%EF%BC%89%7D9%24-3%7D22%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E7%96%AB%E6%83%85%E9%AB%98%E4%B8%AD%E9%A3%8E%E9%99%A9%E5%8C%BA%E5%9F%9F%E5%8F%8A%E7%89%B9%E6%AE%8A%E5%88%97%E7%AE%A1%E5%8C%BA%E5%9F%9F%7D27%24-3%7D28%24-3%7D29%24-3%7D49%24%E6%98%AF%7D50%24swf9",
+    "submitdata=1%24S210819009%7D2%24%E4%B8%8A%E6%B5%B7%E5%BE%A1%E6%B8%A1%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%7D3%24%E6%96%B0%E5%A2%9E%E8%A1%8C%E7%A8%8B%E4%BF%A1%E6%81%AF%7D5%24(%E8%B7%B3%E8%BF%87)%7D6%24(%E8%B7%B3%E8%BF%87)%7D7%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E5%8C%BA%E5%9F%9F%E6%97%85%E5%B1%85%E8%A1%8C%E4%B8%BA%E6%97%A0%E9%9C%80%E6%A3%80%E6%B5%8B%7D8%24%E5%B7%B2%E5%AE%8C%E6%88%90%E6%8E%A5%E7%A7%8D%EF%BC%882%E9%92%88%E5%9E%8B%EF%BC%89%7D9%24-3%7D22%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E7%96%AB%E6%83%85%E9%AB%98%E4%B8%AD%E9%A3%8E%E9%99%A9%E5%8C%BA%E5%9F%9F%E5%8F%8A%E7%89%B9%E6%AE%8A%E5%88%97%E7%AE%A1%E5%8C%BA%E5%9F%9F%7D27%24-3%7D28%24-3%7D29%24-3%7D49%24%E6%98%AF%7D50%24swf9"
+];
+b2arr = [
+    "submitdata=1%24S210820017%7D15%24E03107%7D27%24%E5%91%A8%E5%87%AF%7D33%24%E5%90%A6%7D34%24(%E8%B7%B3%E8%BF%87)%7D35%24%E6%97%A0%E5%BC%82%E5%B8%B8%7D49%24%E6%98%AF%7D50%24d6gh",
+    "submitdata=1%24S210702032%7D15%24E03107%7D27%24%E6%9B%BE%E6%B5%B7%E7%87%95%7D33%24%E5%90%A6%7D34%24(%E8%B7%B3%E8%BF%87)%7D35%24%E6%97%A0%E5%BC%82%E5%B8%B8%7D49%24%E6%98%AF%7D50%24d6gh",
+    "submitdata=1%24S210708054%7D15%24E03107%7D27%24%E8%83%A1%E5%A9%B7%E5%A9%B7%7D33%24%E5%90%A6%7D34%24(%E8%B7%B3%E8%BF%87)%7D35%24%E6%97%A0%E5%BC%82%E5%B8%B8%7D49%24%E6%98%AF%7D50%24d6gh",
+    "submitdata=1%24S210819009%7D15%24E03107%7D27%24%E8%83%A1%E6%B1%89%E5%91%A8%7D33%24%E5%90%A6%7D34%24(%E8%B7%B3%E8%BF%87)%7D35%24%E6%97%A0%E5%BC%82%E5%B8%B8%7D49%24%E6%98%AF%7D50%24d6gh"
+];
+u3arr = [
+    "https://vsurvey.cxmt.com:8011/Survey/GetAKCode?badge=s210820017",
+    "https://vsurvey.cxmt.com:8011/Survey/GetAKCode?badge=S210702032",
+    "https://vsurvey.cxmt.com:8011/Survey/GetAKCode?badge=S210708054",
+    "https://vsurvey.cxmt.com:8011/Survey/GetAKCode?badge=S210819009"
+];
 const $ = new Env('CX每日签到')
 !(async () => {
     await all();
@@ -12,18 +29,26 @@ const $ = new Env('CX每日签到')
 
 
 async function all() {
-    await Survey();
-    await $.wait(1000);
-    await joinResult();
-    await $.wait(1000);
-    await GetAKCode();
+
+    for (let i = 0; i < 4; i++) {
+        body1 = b1arr[i];
+        body2 = b2arr[i];
+        url3=u3arr[i];
+        await Survey();
+        await $.wait(1000);
+        await joinResult();
+        await $.wait(1000);
+        await GetAKCode();
+
+    }
+
 }
 
 function Survey() {
     return new Promise((resolve, reject) => {
         const url = "https://vsurvey.cxmt.com:8011/Survey/NcovLimsurveyResult";
         const headers = {};
-        const body = "submitdata=1%24S210820017%7D2%24%E4%B8%8A%E6%B5%B7%E5%BE%A1%E6%B8%A1%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%7D3%24%E4%BF%AE%E6%94%B9%E8%A1%8C%E7%A8%8B%E4%BF%A1%E6%81%AF%7D5%24(%E8%B7%B3%E8%BF%87)%7D6%24(%E8%B7%B3%E8%BF%87)%7D7%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E5%8C%BA%E5%9F%9F%E6%97%85%E5%B1%85%E8%A1%8C%E4%B8%BA%E6%97%A0%E9%9C%80%E6%A3%80%E6%B5%8B%7D8%24%E5%B7%B2%E6%8E%A5%E7%A7%8D1%E9%92%88%EF%BC%882%E9%92%88%E5%9E%8B%EF%BC%89%7D9%24-3%7D22%24%E6%97%A0%E4%BB%A5%E4%B8%8A%E7%96%AB%E6%83%85%E9%AB%98%E4%B8%AD%E9%A3%8E%E9%99%A9%E5%8C%BA%E5%9F%9F%E5%8F%8A%E7%89%B9%E6%AE%8A%E5%88%97%E7%AE%A1%E5%8C%BA%E5%9F%9F%7D27%24-3%7D28%24-3%7D29%24-3%7D49%24%E6%98%AF%7D50%24swf9";
+        const body =body1;
         const request = {
             url: url,
             headers: headers,
@@ -52,7 +77,7 @@ function joinResult() {
     return new Promise((resolve, reject) => {
         const url = "https://vsurvey.cxmt.com:8011/Survey/joinResult";
         const headers = {};
-        const body = "submitdata=1%24S210820017%7D15%24E03107%7D27%24%E5%91%A8%E5%87%AF%7D33%24%E5%90%A6%7D34%24(%E8%B7%B3%E8%BF%87)%7D35%24%E6%97%A0%E5%BC%82%E5%B8%B8%7D49%24%E6%98%AF%7D50%24d6gh";
+        const body = body2;
         const request = {
             url: url,
             strictSSL: false,
@@ -77,7 +102,7 @@ function joinResult() {
 
 function GetAKCode() {
     return new Promise((resolve, reject) => {
-        const url = "https://vsurvey.cxmt.com:8011/Survey/GetAKCode?badge=s210820017";
+        const url =url3;
         const headers = {};
         const body = "";
         const request = {
@@ -91,13 +116,13 @@ function GetAKCode() {
             try {
                 let result = JSON.parse(data);
                 if (result.Flag == true && result.Message == 1) {
-                    $.log('【门禁卡状态查询】您的安康码状态为绿色，可以正常入厂。');
+                    $.log('【门禁卡状态查询】您的安康码状态为绿色，可以正常入厂。\n');
                 }
                 else if (result.Flag == true && result.Message == 2) {
-                    $.log('【门禁卡状态查询】您的安康码状态为黄色，已被禁止入厂。');
+                    $.log('【门禁卡状态查询】您的安康码状态为黄色，已被禁止入厂。\n');
                 }
                 else if (result.Flag == true && result.Message == 3) {
-                    $.log('【门禁卡状态查询】您的安康码状态为红色，已被禁止入厂。');
+                    $.log('【门禁卡状态查询】您的安康码状态为红色，已被禁止入厂。\n');
                 }
             } catch (e) {
                 $.log(e)
