@@ -1,5 +1,5 @@
 /*
-cron 0 0 * * * jd_dpqd.js
+0 0 * * * jd_dpqd1.js
 */
 const $ = new Env('店铺签到');
 let Joker = require("./env/Joker");
