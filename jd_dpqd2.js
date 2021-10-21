@@ -3,7 +3,7 @@
 0 0 * * * jd_dpqd2.js
 DPQDTK: token1&token2
 */
-const $ = new Env('店铺签到');
+const $ = new Env('店铺签到2');
 let Joker = require("./env/Joker");
 let token = []
 if (process.env.DPQDTK) {
