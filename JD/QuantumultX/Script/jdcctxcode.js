@@ -1,4 +1,4 @@
-const $ = new Env('城城自动提现');
+const $ = new Env('CCTX');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
