@@ -1,9 +1,9 @@
-const $ = new Env("京东辅助")
+const $ = new Env("京东采集器")
 let cookie = $request.headers.Cookie
 let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
 let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
 console.log(`\n=================================\n=================================\n\n\n${pt_key};${pt_pin};\n\n\n=================================\n=================================`)
-$.msg("京东辅助","请在脚本日志中查看","获取京东Cookie成功🎉")
+$.msg("京东采集器","请在脚本日志中查看","获取京东Cookie成功🎉")
 
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
