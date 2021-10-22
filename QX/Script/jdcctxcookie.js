@@ -18,8 +18,8 @@ async function GetCookie() {
   if ($request.url.indexOf("client.action") > -1 && $request.body.indexOf("city_withdraw") > 1) {
     const jdcctxcode = $request.body.split('"code":"')[1].split('"')[0];;
     $.setdata(jdcctxcode, 'jdcctxcode')
-    $.log(`获取微信code成功🎉\n${jdcctxcode}`)
-    $.msg($.name, '', `更新微信code成功🎉\n${jdcctxcode}`);
+    $.log(`获取🄲🄲🅃🅇code成功🎉\n${jdcctxcode}`)
+    $.msg($.name, '', `更新🄲🄲🅃🅇code成功🎉`);
   }
 
 }
