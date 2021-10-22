@@ -1,4 +1,4 @@
-const $ = new Env('JDCCTX_Cookie');
+const $ = new Env('CCTX_Cookie');
 
 //++++++++++++++++++++++++++++++++++++
 !(async () => {
