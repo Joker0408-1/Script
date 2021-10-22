@@ -18,8 +18,8 @@ async function GetCookie() {
   if ($request.url.indexOf("client.action") > -1 && $request.body.indexOf("city_withdraw") > 1) {
     const jdcctxcode = $request.body.split('"code":"')[1].split('"')[0];;
     $.setdata(jdcctxcode, 'jdcctxcode')
-    $.log(`获取成功🎉: jdcctxcode: ${jdcctxcode}`)
-    $.msg($.name, '', `更新code成功:${jdcctxcode}🎉`);
+    $.log(`${jdcctxcode}\n获取code成功🎉`)
+    $.msg($.name, '', `${jdcctxcode}\n更新code成功🎉`);
   }
 
 }
