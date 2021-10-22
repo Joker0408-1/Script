@@ -1,4 +1,4 @@
-const $ = new Env('CCTX_Cookie');
+const $ = new Env('JDCCTX_Cookie');
 
 //++++++++++++++++++++++++++++++++++++
 !(async () => {
@@ -18,8 +18,8 @@ async function GetCookie() {
   if ($request.url.indexOf("client.action") > -1 && $request.body.indexOf("city_withdraw") > 1) {
     const jdcctxcode = $request.body.split('"code":"')[1].split('"')[0];;
     $.setdata(jdcctxcode, 'jdcctxcode')
-    $.log(`${jdcctxcode}\n获取code成功🎉`)
-    $.msg($.name, '', `${jdcctxcode}\n更新code成功🎉`);
+    $.log(`获取微信code成功🎉\n${jdcctxcode}`)
+    $.msg($.name, '', `更新微信code成功🎉\n${jdcctxcode}`);
   }
 
 }
