@@ -42,11 +42,11 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         continue
       }
       await getCash();
-      for (let k = 0; k < 200; k++) {
+      for (let k = 0; k < 100; k++) {
         if (code === -525) {
           await getCash();
         }else if (code === -522) {
-          $.msg($.name, '', `京东账号${$.index} ${$.nickName || $.UserName}\n提现20元🎉`);
+          $.msg($.name, '', `京东账号${$.index} ${$.nickName || $.UserName}\n提现已达每日限额20元🎉`);
           break
         }else {
           console.log(`🔥非火爆抢提现,跳出循环任务`)
@@ -61,7 +61,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
   })
   .finally(() => {
-    $.msg($.name, '', `🗣请重新获取新的提现code`);
+    $.msg($.name, '', `请重新获取新的微信code`);
     $.done();
   })
 
@@ -82,8 +82,8 @@ function getCash() {
             code = data.data.bizCode
             switch (code) {
               case 0:
-                console.log(`京东账号${$.index} ${$.nickName || $.UserName}提现成功🎉\n🗣请重新获取新的提现code`);
-                $.msg($.name, '', `京东账号${$.index} ${$.nickName || $.UserName}\n提现成功🎉\n🗣请重新获取新的提现code`);
+                console.log(`京东账号${$.index} ${$.nickName || $.UserName}\n恭喜提现成功🎉\n请重新获取新的微信code`);
+                $.msg($.name, '', `京东账号${$.index} ${$.nickName || $.UserName}\n恭喜提现成功🎉\n请重新获取新的微信code`);
                 $.done();
                 break;
               case -525:
@@ -101,7 +101,7 @@ function getCash() {
               default:
                 console.log(`**** getCash *****\n`);
                 $.log(`\n‼️${resp.statusCode}[调试log]:${resp.body}`);
-                $.msg($.name, '', `城城提现成功🎉：${code}`);
+                $.msg($.name, '', `恭喜提现成功🎉：${code}`);
 
 
 
