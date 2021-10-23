@@ -38,7 +38,7 @@ inStock = ''
 UserAgent = ''
 periodId = ''
 #最长抢兑结束时间
-endtime='00:00:15.00000000'
+endtime='00:00:05.00000000'
 today = datetime.datetime.now().strftime('%Y-%m-%d')
 unstartTime = datetime.datetime.now().strftime('%Y-%m-%d 23:55:00.00000000')
 tomorrow = (datetime.datetime.now() + datetime.timedelta(days=1)).strftime('%Y-%m-%d')
