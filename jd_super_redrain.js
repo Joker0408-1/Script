@@ -1,5 +1,5 @@
 /*
-cron: 0 * * * *
+cron: 0 * * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_super_redrain.js
 环境变量:
 # 关闭京豆雨通知
 export RAIN_NOTIFY_CONTROL="false"
