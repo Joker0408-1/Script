@@ -61,7 +61,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
   })
   .finally(() => {
-    $.msg($.name, '', `请重新获取新的微信code`);
+    $.msg($.name, '🄲🄲🅃🅇失败❌', `请重新获取微信code`);
     $.done();
   })
 
