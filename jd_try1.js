@@ -5,7 +5,7 @@
  * 脚本是否耗时只看args_xh.maxLength的大小
  * 上一作者说了每天最多300个商店，总上限为500个，jd_unsubscribe.js我已更新为批量取关版
  * 请提前取关至少250个商店确保京东试用脚本正常运行
- * ## 15 0 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_try.js
+15 0 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_try.js
  * @LastEditors: X1a0He
  */
 const $ = new Env('京东试用')
