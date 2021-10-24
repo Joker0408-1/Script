@@ -1,5 +1,5 @@
 /*
-个人自用，有后门，用者自负
+内置自动上传Cookie，自用
 Modified time: 2021-09-25 15:25:41
 统计昨日京豆的变化情况，包括收入，支出，以及显示当前京豆数量,统计红包以及过期红包，东东萌宠、东东农场、京喜牧场等进度
 网页查看京豆地址 : https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean
@@ -66,7 +66,7 @@ if ($.isNode()) {
             await TotalBean2();
             console.log(`\n===== 开始【京东账号${$.index}】${$.nickName || $.UserName} =====\n`);
             if (!$.isLogin) {
-                $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+                $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`);
 
                 if ($.isNode()) {
                     await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
@@ -88,13 +88,13 @@ if ($.isNode()) {
         }
         if ($.isNode() && notifyTip && allMessage) {
             console.log("")
-            await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
+            await notify.sendNotify(`${$.name}`, `${allMessage}`)
             allMessage=""
         }
     }
     if ($.isNode() && !notifyTip && allMessage) {
         console.log("")
-        await notify.sendNotify(`${$.name}`, `${allMessage}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
+        await notify.sendNotify(`${$.name}`, `${allMessage}`)
     }
 })()
     .catch((e) => {
@@ -168,7 +168,7 @@ async function showMsg() {
     }
     ReturnMessage+=`${$.message}`;
     allMessage+=ReturnMessage;
-    $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
+    $.msg($.name, '', ReturnMessage);
     }
 async function bean() {
     // console.log(`北京时间零点时间戳:${parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000}`);
