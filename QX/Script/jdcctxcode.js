@@ -46,7 +46,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         if (code === -525) {
           await getCash();
         }else if (code === -522) {
-          $.msg($.name, '', `京东账号${$.index} ${$.nickName || $.UserName}\n🄲🄲🅃🅇已达每日限额20元🎉`);
+          $.msg($.name, '京东账号${$.index} ${$.nickName || $.UserName}', `恭喜🄲🄲🅃🅇已达每日限额20元🎉`);
           break
         }else {
           console.log(`🔥非火爆抢提现,跳出循环任务`)
@@ -61,7 +61,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
   })
   .finally(() => {
-    $.msg($.name, '🄲🄲🅃🅇失败❌', `请重新获取新的🅅🅇code`);
+    $.msg($.name, '🄲🄲🅃🅇循环任务完毕', `请重新获取新的🅅🅇code`);
     $.done();
   })
 
@@ -82,8 +82,8 @@ function getCash() {
             code = data.data.bizCode
             switch (code) {
               case 0:
-                console.log(`京东账号${$.index} ${$.nickName || $.UserName}\n恭喜🄲🄲🅃🅇成功🎉\n请重新获取新的🅅🅇code`);
-                $.msg($.name, '', `京东账号${$.index} ${$.nickName || $.UserName}\n恭喜🄲🄲🅃🅇成功🎉\n请重新获取新的🅅🅇code`);
+                console.log(`京东账号${$.index} ${$.nickName || $.UserName}', `恭喜🄲🄲🅃🅇成功🎉`, `请重新获取新的🅅🅇code`);
+                $.msg($.name, '京东账号${$.index} ${$.nickName || $.UserName}', `恭喜🄲🄲🅃🅇成功🎉`, `请重新获取新的🅅🅇code`);
                 $.done();
                 break;
               case -525:
