@@ -61,7 +61,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
   })
   .finally(() => {
-    $.msg($.name, '🄲🄲🅃🅇循环任务完毕', `请重新获取新的🅅🅇code`);
+    $.msg($.name, '', `🄲🄲🅃🅇循环任务完毕\n请重新获取新的🅅🅇code`);
     $.done();
   })
 
