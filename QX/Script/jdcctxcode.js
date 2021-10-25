@@ -83,7 +83,7 @@ function getCash() {
             switch (code) {
               case 0:
                 console.log(`京东账号${$.index} ${$.nickName || $.UserName}\n恭喜🄲🄲🅃🅇成功🎉\n请重新获取新的🅅🅇code`);
-                $.msg($.name,'','京东账号${$.index} ${$.nickName || $.UserName}\n恭喜🄲🄲🅃🅇成功🎉\n请重新获取新的🅅🅇code`);
+                $.msg($.name,'',`京东账号${$.index} ${$.nickName || $.UserName}\n恭喜🄲🄲🅃🅇成功🎉\n请重新获取新的🅅🅇code`);
                 $.done();
                 break;
               case -525:
