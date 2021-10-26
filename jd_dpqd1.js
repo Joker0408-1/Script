@@ -113,7 +113,7 @@ function getvenderId(token) {
           if (data.code == 402) {
             vender = ''
             console.log(`第` + num + `个店铺签到活动已失效`)
-            message +=
+            message += ``
           } else {
             vender = data.data.venderId
           }
@@ -260,7 +260,7 @@ function taskUrl(token, venderId) {
           //console.log(data)
           data = JSON.parse(/{(.*)}/g.exec(data)[0])
           console.log(`已签到：` + data.data.days + `天`)
-          message +=
+          message += ``
         }
       } catch (e) {
         $.logErr(e, resp);
