@@ -113,7 +113,7 @@ function getvenderId(token) {
           if (data.code == 402) {
             vender = ''
             console.log(`第` + num + `个店铺签到活动已失效`)
-            message += `第` + num + `个店铺签到活动已失效\n`
+            message += ``
           } else {
             vender = data.data.venderId
           }
@@ -150,7 +150,7 @@ function getvenderName(venderId) {
           data = JSON.parse(data)
           shopName = data.shopName
           console.log(`【` + shopName + `】`)
-          message += `【` + shopName + `】`
+          message += ``
         }
       } catch (e) {
         $.logErr(e, resp);
@@ -260,7 +260,7 @@ function taskUrl(token, venderId) {
           //console.log(data)
           data = JSON.parse(/{(.*)}/g.exec(data)[0])
           console.log(`已签到：` + data.data.days + `天`)
-          message += `已签到：` + data.data.days + `天\n`
+          message += ``
         }
       } catch (e) {
         $.logErr(e, resp);
@@ -273,8 +273,8 @@ function taskUrl(token, venderId) {
 
 async function showMsg() {
   if ($.isNode()) {
-    $.msg($.name, '', `【京东账号${$.index}】${$.nickName}\n${message}`);
-    await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】${$.nickName}\n${message}`);
+    $.msg($.name, '', `${message}`);
+    await notify.sendNotify(`${$.name}`, `${message}`);
   }
 }
 
