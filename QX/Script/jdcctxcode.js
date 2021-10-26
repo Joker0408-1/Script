@@ -42,7 +42,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
         continue
       }
       await getCash();
-      for (let k = 0; k < 100; k++) {
+      for (let k = 0; k < 200; k++) {
         if (code === -525) {
           await getCash();
         }else if (code === -522) {
