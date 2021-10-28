@@ -7,6 +7,7 @@
 默认：不执行 如需要请添加环境变量
 gua_cleancart_Run="true"
 gua_cleancart_SignUrl="" # 算法url
+0 9,19 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_cleancart.js
 
 ——————————————
 1.@&@ 前面加数字 指定账号pin
