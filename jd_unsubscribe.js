@@ -1,13 +1,11 @@
 /*
- * @Author: X1a0He
  * @Date: 2021-09-04 11:50:47
  * @LastEditTime: 2021-09-06 15:00:00
- * @LastEditors: X1a0He
  * @Description: 批量取关京东店铺和商品
  * @Fixed: 不再支持Qx，仅支持Node.js
- * || 0 9,15 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_jd_unsubscribe.js
+ * || 30 0-22/2 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_jd_unsubscribe.js
  */
-const $ = new Env('批量取关店铺和商品');
+const $ = new Env('取关店铺和商品');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -22,45 +20,17 @@ if($.isNode()){
     cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 let args_xh = {
-    /*
-     * 是否执行取消关注，默认true
-     * 可通过环境变量控制：JD_UNSUB
-     * */
-    isRun: process.env.JD_UNSUB || true,
-    /*
-     * 执行完毕是否进行通知，默认false
-     * 可用环境变量控制：JD_TRY_PLOG
-     * */
+    isRun: process.env.JD_UNSUB || false,
     isNotify: process.env.JD_UNSEB_NOTIFY || false,
-    /*
-     * 每次获取已关注的商品数
-     * 可设置环境变量：JD_UNSUB_GPAGESIZE，默认为20，不建议超过20
-     * */
     goodPageSize: process.env.JD_UNSUB_GPAGESIZE * 1 || 20,
-    /*
-     * 每次获取已关注的店铺数
-     * 可设置环境变量：JD_UNSUB_SPAGESIZE，默认为20，不建议超过20
-     * */
     shopPageSize: process.env.JD_UNSUB_SPAGESIZE * 1 || 20,
-    /*
-     * 商品类过滤关键词，只要商品名内包含关键词，则不会被取消关注
-     * 可设置环境变量：JD_UNSUB_GKEYWORDS，用@分隔
-     * */
     goodsKeyWords: process.env.JD_UNSUB_GKEYWORDS && process.env.JD_UNSUB_GKEYWORDS.split('@') || [],
-    /*
-     * 店铺类过滤关键词，只要店铺名内包含关键词，则不会被取消关注
-     * 可设置环境变量：JD_UNSUB_SKEYWORDS，用@分隔
-     * */
     shopKeyWords: process.env.JD_UNSUB_SKEYWORDS && process.env.JD_UNSUB_SKEYWORDS.split('@') || [],
-    /*
-     * 间隔，防止提示操作频繁，单位毫秒(1秒 = 1000毫秒)
-     * 可用环境变量控制：JD_UNSUB_INTERVAL，默认为3000毫秒
-     * */
     unSubscribeInterval: process.env.JD_UNSUB_INTERVAL * 1 || 1000,
     printLog: process.env.JD_UNSUB_PLOG || true
 }
 !(async() => {
-    console.log('X1a0He留：运行前请看好脚本内的注释，日志已经很清楚了，有问题带着日志来问')
+    console.log('')
     if(args_xh.isRun){
         if(!cookiesArr[0]){
             $.msg('【京东账号一】取关京东店铺商品失败', '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {
