@@ -20,7 +20,7 @@ if ($.isNode()) {
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 
 !(async () => {
-  console.log(`本次的提现code为：${jdtxcode}`);
+  console.log(`本次的code为：${jdtxcode}`);
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
