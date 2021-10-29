@@ -320,7 +320,7 @@ def helpCode(ck, groupCode, shareCode,u, unum, user, activityId):
         print(f"helpCode Error ", e)
 
 def start():
-    scriptName='### 全民抢京豆-助力 ###'
+    scriptName='全民抢京豆'
     print(scriptName)
     global cookiesList, userNameList, pinNameList, ckNum, beanCount, userCount
     cookiesList, userNameList, pinNameList = getCk.iscookie()
@@ -355,7 +355,6 @@ def start():
     print("\n-------------------------")
     for i in userCount.keys():
         msg(f"账号【{i}】已抢京豆: {userCount[i]}")
-    msg(f"## 今日累计获得 {beanCount} 京豆")
     try:
         send(scriptName, msg_info)
     except:
