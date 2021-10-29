@@ -1,4 +1,5 @@
 /*
+0 0 29 2 * jd_wxCollectionActivity.js
 https://lzkj-isv.isvjcloud.com/wxgame/activity/8530275?activityId=
 */
 const $ = new Env('加购物车抽奖');
