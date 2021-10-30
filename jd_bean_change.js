@@ -1,9 +1,9 @@
 /*
-内置自动上传Cookie，自用
+内置自动上传Cookie，慎用
 Modified time: 2021-09-25 15:25:41
 统计昨日京豆的变化情况，包括收入，支出，以及显示当前京豆数量,统计红包以及过期红包，东东萌宠、东东农场、京喜牧场等进度
 网页查看京豆地址 : https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean
-cron : 0 19 * * * https://raw.githubusercontent.com/Joker0408-1/Script/JD/jd_bean_change.js
+cron : 0 9,19 * * * https://raw.githubusercontent.com/Joker0408-1/Script/JD/jd_bean_change.js
  */
 
 const $ = new Env('京东资产通知');
@@ -106,37 +106,37 @@ if ($.isNode()) {
     })
 async function showMsg() {
     if ($.errorMsg) return
-    ReturnMessage=`===== [京东账号${$.index}] =====\n\n`
+    ReturnMessage=`🔢京东账号：${$.index}\n`
     ReturnMessage+=`🐵账号昵称：${$.nickName || $.UserName}\n`;
     if ($.JingXiang != 0) {
     ReturnMessage+=`🐵账号信息：${$.JingXiang}\n`;
     }
     ReturnMessage+=`🐶今日收支：${$.todayIncomeBean}京豆`;
     if ($.todayOutcomeBean != 0) {
-    ReturnMessage+= ` || ${$.todayOutcomeBean}京豆`;
+    ReturnMessage+= `｜${$.todayOutcomeBean}京豆`;
     }
     ReturnMessage += `\n`;
     ReturnMessage+=`🐶昨日收支：${$.incomeBean}京豆`;
     if ($.expenseBean != 0) {
-    ReturnMessage+= ` || ${$.expenseBean}京豆`;
+    ReturnMessage+= `｜${$.expenseBean}京豆`;
     }
     ReturnMessage += `\n`;
     if ($.expirejingdou != 0) {
     ReturnMessage+=`🐶即将过期：${$.expirejingdou}京豆\n`;
     }
     ReturnMessage+=`🐶总计京豆：${$.beanCount}京豆`;
-    ReturnMessage+= `\n——|——|——\n`;
+    ReturnMessage+= `\n -—｜—｜—-\n`;
     if ($.jdCash != 0) {
     ReturnMessage +=`💴签到现金：${$.jdCash}元\n`;
     }
     if($.JdMsScore!=0){
-    ReturnMessage+=`💰京东秒杀：${$.JdMsScore}枚(${$.JdMsScore / 1000}元)\n`;
+    ReturnMessage+=`💰京东秒杀：${$.JdMsScore / 1000}元\n`;
     }
     if(typeof $.JdzzNum !== "undefined"){
-    ReturnMessage+=`💰京东赚赚：${$.JdzzNum}枚(${$.JdzzNum / 10000}元)\n`;
+    ReturnMessage+=`💰京东赚赚：${$.JdzzNum / 10000}元\n`;
     }
     if(typeof $.JDtotalcash !== "undefined"){
-    ReturnMessage+=`💰极速金币：${$.JDtotalcash}枚(${$.JDtotalcash / 10000}元)\n——|——|——\n`;
+    ReturnMessage+=`💰极速金币：${$.JDtotalcash / 10000}元\n -—｜—｜—-\n`;
     }
     if (typeof $.JDEggcnt !== "undefined") {
     if ($.JDEggcnt == 0) {
@@ -151,7 +151,7 @@ async function showMsg() {
     }
     ReturnMessage+=`👨🏻‍🌾东东农场：(${(($.JdtreeEnergy / $.JdtreeTotalEnergy) * 100).toFixed(2)}%)`;
              if($.JdwaterD!='Infinity' && $.JdwaterD!='-Infinity'){
-    ReturnMessage+=` || 预计${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}\n`;
+    ReturnMessage+=`预计${$.JdwaterD === 1 ? '明天' : $.JdwaterD === 2 ? '后天' : $.JdwaterD + '天'}\n`;
             } else {
     ReturnMessage+=`\n`;
             }
@@ -163,7 +163,7 @@ async function showMsg() {
     if (initPetTownRes.code === '0' && initPetTownRes.resultCode === '0' && initPetTownRes.message === 'success') {
         $.petInfo = initPetTownRes.result;
     if (response.resultCode === '0') {
-    ReturnMessage += `🐻东东萌宠：(${(response.result.medalPercent).toFixed(2)}%) || 勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
+    ReturnMessage += `🐻东东萌宠：(${(response.result.medalPercent).toFixed(2)}%)勋章${response.result.medalNum}/${response.result.medalNum+response.result.needCollectMedalNum}块\n`;
     }
     }
     ReturnMessage+=`${$.message}`;
@@ -571,35 +571,35 @@ function redPacket() {
     $.balance = data.balance
     $.expiredBalance = ($.jxRedExpire + $.jsRedExpire + $.jdRedExpire).toFixed(2)
     if ($.balance > 0)
-    $.message +=`——|——|——\n`;
+    $.message +=` -—｜—｜—-\n`;
     if ($.jdRed > 0)
     $.message += `🧧京东红包：${$.jdRed}元`;
     if ($.jdRedExpire > 0)
-    $.message += ` || 到期${$.jdRedExpire.toFixed(2)}元`;
+    $.message += `｜到期${$.jdRedExpire.toFixed(2)}元`;
     if ($.jdRed > 0)
     $.message += `\n`;
     if ($.jxRed > 0)
     $.message += `🧧京喜红包：${$.jxRed}元`;
     if ($.jxRedExpire > 0)
-    $.message += ` || 到期${$.jxRedExpire.toFixed(2)}元`;
+    $.message += `｜到期${$.jxRedExpire.toFixed(2)}元`;
     if ($.jxRed > 0)
     $.message += `\n`;
     if ($.jsRed > 0)
     $.message += `🧧极速红包：${$.jsRed}元`;
     if ($.jsRedExpire > 0)
-    $.message += ` || 到期${$.jsRedExpire.toFixed(2)}元`;
+    $.message += `｜到期${$.jsRedExpire.toFixed(2)}元`;
     if ($.jsRed > 0)
     $.message += `\n`;
     if ($.jdhRed > 0)
     $.message += `🧧健康红包：${$.jdhRed}元`;
     if ($.jdhRedExpire > 0)
-    $.message += ` || 到期${$.jdhRedExpire.toFixed(2)}元`;
+    $.message += `｜到期${$.jdhRedExpire.toFixed(2)}元`;
     if ($.jdhRed > 0)
     $.message += `\n`;
     if ($.balance > 0)
     $.message += `🧧总计红包：${$.balance}元`;
     if ($.expiredBalance > 0)
-    $.message += ` || 到期${$.expiredBalance}元\n`;
+    $.message += `｜到期${$.expiredBalance}元\n`;
                     } else {
                         console.log(`京东服务器返回空数据`)
                     }
@@ -973,7 +973,7 @@ function getJxFactory() {
                                         }
                                         // await exchangeProNotify()
                                     } else {
-                                        infoMsg += ` || 预计${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(0)}天`
+                                        infoMsg += `预计${((production.needElectric - production.investedElectric) / (2 * 60 * 60 * 24)).toFixed(0)}天`
                                     }
                                     if (production.status === 3) {
                                         infoMsg = ""
