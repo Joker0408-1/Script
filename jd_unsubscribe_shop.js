@@ -1,5 +1,5 @@
 /*
-30 23 * * *
+30 23 * * * jd_unsubscribe_shop.js
  */
 const $ = new Env('取关京东店铺');
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -79,9 +79,9 @@ async function jdUnsubscribe_xh() {
 
 function showMsg_xh() {
   if (!jdNotify || jdNotify === 'false') {
-    $.msg($.name, ``, `【京东账号${$.index}】${$.nickName}\n【已取消关注店铺】${unsubscribeShopsNum}个\n【已取消关注商品】${unsubscribeGoodsNum}个\n【还剩关注店铺】${$.shopsTotalNum}个\n【还剩关注商品】${$.goodsTotalNum}个\n`);
+    $.msg($.name, ``, `京东账号${$.index}：${$.nickName}\n取消关注店铺：${unsubscribeShopsNum}个\n还剩关注店铺：${$.shopsTotalNum}个\n`);
   } else {
-    $.log(`\n【京东账号${$.index}】${$.nickName}\n【已取消关注店铺】${unsubscribeShopsNum}个\n【已取消关注商品】${unsubscribeGoodsNum}个\n【还剩关注店铺】${$.shopsTotalNum}个\n【还剩关注商品】${$.goodsTotalNum}个\n`);
+    $.log(`\n京东账号${$.index}：${$.nickName}\n取消关注店铺：${unsubscribeShopsNum}个\n还剩关注店铺：${$.shopsTotalNum}个\n`);
   }
 }
 
@@ -100,7 +100,7 @@ async function goodsMain_xh() {
       await unsubscribeGoods_xh();
     }
   } else {
-    console.log(`\n您设置的是不取关商品\n`);
+    console.log(``);
   }
 }
 
