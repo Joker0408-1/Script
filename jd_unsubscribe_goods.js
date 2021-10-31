@@ -1,11 +1,7 @@
 /*
- * @Date: 2021-09-04 11:50:47
- * @LastEditTime: 2021-09-06 15:00:00
- * @Description: 批量取关京东店铺和商品
- * @Fixed: 不再支持Qx，仅支持Node.js
- * || 30 0-16/8 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_jd_unsubscribe.js
- */
-const $ = new Env('取关店铺和商品');
+30 0-16/8 * * * jd_jd_unsubscribe_goods.js
+*/
+const $ = new Env('取关京东商品');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -23,7 +19,7 @@ let args_xh = {
     isRun: process.env.JD_UNSUB || false,
     isNotify: process.env.JD_UNSEB_NOTIFY || false,
     goodPageSize: process.env.JD_UNSUB_GPAGESIZE * 1 || 20,
-    shopPageSize: process.env.JD_UNSUB_SPAGESIZE * 1 || 20,
+    shopPageSize: process.env.JD_UNSUB_SPAGESIZE * 1 || 0,
     goodsKeyWords: process.env.JD_UNSUB_GKEYWORDS && process.env.JD_UNSUB_GKEYWORDS.split('@') || [],
     shopKeyWords: process.env.JD_UNSUB_SKEYWORDS && process.env.JD_UNSUB_SKEYWORDS.split('@') || [],
     unSubscribeInterval: process.env.JD_UNSUB_INTERVAL * 1 || 1000,
