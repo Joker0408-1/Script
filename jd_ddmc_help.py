@@ -7,7 +7,7 @@ Author: Curtin
 Date: 2021/10/25 下午9:30
 TG交流 https://t.me/topstyle996
 TG频道 https://t.me/TopStyle2021
-cron: 1 0,23 * * *
+cron: 1 0,12 * * *
 new Env('东东萌宠-助力');
 '''
 
@@ -16,7 +16,7 @@ ddmc_isOrder="true"
 # 助力名单(当ddmc_isOrder="false" 才生效), ENV 环境设置 export ddmc_help="Curtinlv&用户2&用户3"
 ddmc_help = ["Curtinlv", "用户x", "用户3"]
 #是否开启通知，Ture：发送通知，False：不发送
-isNotice=True
+isNotice=False
 # UA 可自定义你的, 默认随机生成UA。
 UserAgent = ''
 
@@ -144,11 +144,11 @@ class getJDCookie(object):
             else:
                 context = f"账号{userNum}【{pinName}】Cookie 已失效！请重新获取。"
                 print(context)
-                return ck, False
+                return ck, True
         except Exception:
             context = f"账号{userNum}【{pinName}】Cookie 已失效！请重新获取。"
             print(context)
-            return ck, False
+            return ck, True
 
     def iscookie(self):
         """
