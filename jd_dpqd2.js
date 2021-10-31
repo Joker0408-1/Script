@@ -7,7 +7,7 @@ const $ = new Env('店铺签到2');
 let Joker = require("./env/Joker");
 let token = []
 if (process.env.DPQDTK) {
-  token = [...process.env.DPQDTK.split('|'),...token]
+  token = [...process.env.DPQDTK.split('@'),...token]
 }
 if (!token.length) {
   console.log('无店铺签到token,不执行.')
