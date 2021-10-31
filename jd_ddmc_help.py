@@ -1,13 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
 '''
-项目名称: JD-Script / jd_ddmc_help 
-Author: Curtin
-功能：东东萌宠-助力
-Date: 2021/10/25 下午9:30
-TG交流 https://t.me/topstyle996
-TG频道 https://t.me/TopStyle2021
-cron: 1 0,12 * * *
+cron: 5 3,12 * * *
 new Env('东东萌宠-助力');
 '''
 
