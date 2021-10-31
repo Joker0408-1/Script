@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
 '''
-项目名称: JD-Script / jd_zddd_Help
-Author: Curtin
-功能：种豆得豆-助力
-Date: 2021/10/17 下午12:12
-TG交流 https://t.me/topstyle996
-TG频道 https://t.me/TopStyle2021
 cron: 5 3,12 * * *
 new Env('种豆得豆-助力');
 '''
