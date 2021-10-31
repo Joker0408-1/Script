@@ -1,13 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
 '''
-项目名称: JD-Script / jd_ddnc_help_list 
-Author: Curtin
-功能：东东农场-仅助力使用
-Date: 2021/10/23 下午4:15
-TG交流 https://t.me/topstyle996
-TG频道 https://t.me/TopStyle2021
-cron: 0 0 * * *
+cron: 5 3,12 * * *
 new Env('东东农场-助力');
 '''
 # 是否按ck顺序助力, true: 按顺序助力 false：按指定用户助力，默认true
@@ -141,11 +135,11 @@ class getJDCookie(object):
             else:
                 context = f"账号{userNum}【{pinName}】Cookie 已失效！请重新获取。"
                 print(context)
-                return ck, False
+                return ck, True
         except Exception:
             context = f"账号{userNum}【{pinName}】Cookie 已失效！请重新获取。"
             print(context)
-            return ck, False
+            return ck, True
 
     def iscookie(self):
         """
