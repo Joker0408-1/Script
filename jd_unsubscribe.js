@@ -1,7 +1,7 @@
 /*
-30 23 * * * jd_unsubscribe_shop.js
+30 0-16/8 * * * jd_unsubscribe.js
  */
-const $ = new Env('取关京东店铺');
+const $ = new Env('取关京东商品店铺');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -18,9 +18,9 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const jdNotify = $.getdata('jdUnsubscribeNotify'); //是否关闭通知，false打开通知推送，true关闭通知推送
-let goodPageSize = $.getdata('jdUnsubscribePageSize') || 0; // 运行一次取消多全部已关注的商品。数字0表示不取关任何商品
+let goodPageSize = $.getdata('jdUnsubscribePageSize') || 20; // 运行一次取消多全部已关注的商品。数字0表示不取关任何商品
 let shopPageSize = $.getdata('jdUnsubscribeShopPageSize') || 20; // 运行一次取消全部已关注的店铺。数字0表示不取关任何店铺
-let stopGoods = $.getdata('jdUnsubscribeStopGoods') || ''; //遇到此商品不再进行取关，此处内容需去商品详情页（自营处）长按拷贝商品信息
+let stopGoods = $.getdata('jdUnsubscribeStopGoods') || 'Apple iPhone 13 Pro Max (A2644) 256GB 远峰蓝色 支持移动联通电信5G 双卡双待手机'; //遇到此商品不再进行取关，此处内容需去商品详情页（自营处）长按拷贝商品信息
 let stopShop = $.getdata('jdUnsubscribeStopShop') || ''; //遇到此店铺不再进行取关，此处内容请尽量从头开始输入店铺名称
 let unsubscribeGoodsNum = 0,
   unsubscribeShopsNum = 0;
@@ -79,9 +79,9 @@ async function jdUnsubscribe_xh() {
 
 function showMsg_xh() {
   if (!jdNotify || jdNotify === 'false') {
-    $.msg($.name, ``, `京东账号${$.index}：${$.nickName}\n取消关注店铺：${unsubscribeShopsNum}个\n还剩关注店铺：${$.shopsTotalNum}个\n`);
+    $.msg($.name, ``, `京东账号${$.index}：${$.nickName}\n取消关注店铺：${unsubscribeShopsNum}个\n取消关注商品：${unsubscribeGoodsNum}个\n还剩关注店铺：${$.shopsTotalNum}个\n还剩关注商品：${$.goodsTotalNum}个\n`);
   } else {
-    $.log(`\n京东账号${$.index}：${$.nickName}\n取消关注店铺：${unsubscribeShopsNum}个\n还剩关注店铺：${$.shopsTotalNum}个\n`);
+    $.log(`\n京东账号${$.index}：${$.nickName}\n取消关注店铺：${unsubscribeShopsNum}个\n取消关注商品：${unsubscribeGoodsNum}个\n还剩关注店铺：${$.shopsTotalNum}个\n还剩关注商品：${$.goodsTotalNum}个\n`);
   }
 }
 
