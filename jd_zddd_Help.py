@@ -5,7 +5,7 @@ cron: 5 3,12 * * *
 new Env('种豆得豆-助力');
 '''
 
-zddd_code = ["s5jt73q2hiu2ushlubzliwymbi6dw2lrile4s4y","e7lhibzb3zek2jxhrvewvxavpjyvhjl7i6zhwai","x3x7xhsua3bmjwtjil2ldak23rxjkj26phgtp3y","l4ex6vx6yynov45oari6nn2e5jw2pyptravpnjy","4npkonnsy7xi3w5boi2ty645heti4nudmgjf5ni'","mlrdw3aw26j3xtil47bpj3xk2zkl3bge3gl4lfy","mlrdw3aw26j3xtv5jap5f63zvf36kdwpigcvx2q","mlrdw3aw26j3wpprflcevaz7h7polgmls2vw34i","hzsxvtmuobdm75myvbo33clxmeczn2vkdapuloi","mlrdw3aw26j3xdesd3bmklf5iyymxkyqw5aszfi","e7lhibzb3zek3ys3wo5ruklba6bqpb7gu5vdqoq","tbyhuedblr5skl4dc2quih2lu2rpdcy22prcbta","47m36n7ro5gusgx7o4sicsldsjb4hutvtpp5yya","u72q4vdn3zes3tpynkdydibjzenaaxcc3ljjxka","gou7sxm3hztwphakhjx55ysbucg3s74e2635iiy","hzsxvtmuobdm6zcs6dem6upyai7nrhlbltyxlvi","4npkonnsy7xi32s3edaportgza6xd5wqo7ho2sa","4npkonnsy7xi2xvnogpcbevmpspzbm3zmhpg5wq"]
+zddd_code = ["s5jt73q2hiu2ushlubzliwymbi6dw2lrile4s4y",]
 
 # UA 可自定义你的，注意格式: 【 jdapp;iPhone;10.0.4;14.2;9fb54498b32e17dfc5717744b5eaecda8366223c;network/wifi;ADID/2CF597D0-10D8-4DF8-C5A2-61FD79AC8035;model/iPhone11,1;addressid/7785283669;appBuild/167707;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/null;supportJDSHWK/1 】
 UserAgent = ''
