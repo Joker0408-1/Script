@@ -1,3 +1,7 @@
+/*
+^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start url reject-200
+^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/Joker0408-1/Script/main/QX/Script/JF_Rebate1.js
+*/
 const path1 = "serverConfig";
 const path2 = "wareBusiness";
 const path2h = "wareBusiness.style";
