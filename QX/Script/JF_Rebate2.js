@@ -1,8 +1,8 @@
 /*
-QX:
-^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) url script-response-body https://raw.githubusercontent.com/Tartarus2014/Script/master/jdjf_price.js
-
-Boxjs订阅：https://raw.githubusercontent.com/githubdulong/Script/master/boxjs.json
+## > 订阅
+https://raw.githubusercontent.com/githubdulong/Script/master/boxjs.json
+## > 重写
+^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) url script-response-body https://raw.githubusercontent.com/Joker0408-1/Script/main/QX/Script/JF_Rebate2.js
 */
  
 const path1 = "serverConfig";
@@ -147,7 +147,7 @@ if (url.indexOf(path2) != -1 || url.indexOf(path4) != -1) {
 function lowerMsgs(data) {
     const lower = data.lowerPriceyh;
     const lowerDate = dateFormat(data.lowerDateyh);
-        const lowerMsg = "💴 历史最低 ➩ " + String(lower) + "¥║" + `🏷 ${lowerDate}`;
+        const lowerMsg = "〽️ 历史最低 ➩ " + String(lower) + "¥║" + ` ${lowerDate}`;
     return lowerMsg;
 }
 
@@ -360,7 +360,7 @@ function convert(url, isOriginJXURL) {
                         let r = {};
                         let scheme = autoChoose ? autoScheme : chooseScheme;
                         if (data.data.promotionUrl) {
-                            r.msg = `💴 预估返利 ➩ ${data.data.wlCommission}¥║〽️ 返利比例 ➩ ${data.data.wlCommissionShare}%`;
+                            r.msg = `💴 预估返利 ➩ ${data.data.wlCommission}¥║ 返利比例 ➩ ${data.data.wlCommissionShare}%`;
                             r.convertURL =
                                 scheme == "browser"
                                     ? chooseBrowser + data.data.promotionUrl
