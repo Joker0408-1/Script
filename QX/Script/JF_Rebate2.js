@@ -1,8 +1,8 @@
 /*
 ## > 订阅
-https://raw.githubusercontent.com/githubdulong/Script/master/boxjs.json
+https://raw.githubusercontent.com/Joker0408-1/Script/main/QX/Boxjs/jf_boxjs.json
 ## > 重写
-^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) url script-response-body https://raw.githubusercontent.com/Joker0408-1/Script/main/QX/Script/JF_Rebate2.js
+^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/Joker0408-1/Script/main/QX/Script/JF_Rebate2.js
 */
  
 const path1 = "serverConfig";
