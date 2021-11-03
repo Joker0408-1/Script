@@ -1,3 +1,25 @@
+/*
+0 0 29 2 * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_team2.js
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let jd_zdjr_activityId = ''
 let jd_zdjr_activityUrl = ''
 
