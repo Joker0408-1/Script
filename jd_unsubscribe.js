@@ -1,5 +1,5 @@
 /*
-30 0-16/8 * * * jd_unsubscribe.js
+30 23 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_unsubscribe.js
  */
 const $ = new Env('取关京东商品店铺');
 //Node.js用户请在jdCookie.js处填写京东ck;
