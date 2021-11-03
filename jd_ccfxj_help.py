@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
 '''
-cron: 0 0 * * *
+cron: 0 0 29 2 *
 new Env('城城分现金-助力');
 '''
 ccfxj_help=["Curtinlv", ]
