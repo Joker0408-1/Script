@@ -1,6 +1,16 @@
 /*
-0 0 29 2 *
+0 0 29 2 * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_team1.js
 */
+
+
+
+
+
+
+
+
+
+
 
 
 
