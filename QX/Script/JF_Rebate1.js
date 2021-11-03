@@ -1,7 +1,10 @@
 /*
-^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start url reject-200
+## > 订阅
+https://raw.githubusercontent.com/Joker0408-1/Script/main/QX/Boxjs/jf_boxjs.json
+## > 重写
 ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) url script-response-body https://raw.githubusercontent.com/Joker0408-1/Script/main/QX/Script/JF_Rebate1.js
 */
+
 const path1 = "serverConfig";
 const path2 = "wareBusiness";
 const path2h = "wareBusiness.style";
@@ -124,7 +127,7 @@ if (url.indexOf(path2) != -1 || url.indexOf(path4) != -1) {
             let msg = "";
             if (detail[1] == "useJXOrigin") detail[1] = detail[2];
             let convertmsg = detail[1].convertURL ? detail[1].msg : detail[1];
-            msg += convertmsg ? convertmsg : "该商品暂无详细返利信息";
+            msg += convertmsg ? convertmsg : "🛍️该商品暂无佣金转链信息";
             let oprnUrl = detail[1].convertURL ? detail[1].convertURL : "";
             $tool.notify("京东联盟", "", msg, oprnUrl);
         })
@@ -198,7 +201,7 @@ function convert(url, isOriginJXURL) {
                                     ? chooseBrowser + data.data.promotionUrl
                                     : `${scheme}://virtual?params=%7B%22category%22:%22jump%22,%22des%22:%22m%22,%22sourceValue%22:%22babel-act%22,%22sourceType%22:%22babel%22,%22url%22:%22${data.data.promotionUrl}%22%7D`;
                         } else {
-                            r.msg = `该商品暂无详细返利信息，${data.data.formatContext.trim()}`;
+                            r.msg = `🛍️该商品暂无佣金转链信息，${data.data.formatContext.trim()}`;
                             r.convertURL =
                                 scheme == "browser"
                                     ? chooseBrowser + data.data.originalContext
