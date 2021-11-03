@@ -1,4 +1,5 @@
 /*
+0 0 29 2 * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_shoplottery.js
 https://lzkj-isv.isvjcloud.com/lzclient/12345/cjwx/common/entry.html?activityId=xxxx
 */
 const $ = new Env('超级无线店铺抽奖');
