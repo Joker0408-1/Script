@@ -392,16 +392,16 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 
 		if (OErrorMessage) {
-			allMessage += `出错\n` + OErrorMessage + `\n`;
+			allMessage += `『出错』\n` + OErrorMessage + `\n`;
 		}
 		if (DisableMessage) {
-			allMessage += `禁用\n` + DisableMessage + `\n`;
+			allMessage += `『禁用』\n` + DisableMessage + `\n`;
 		}
 		if (EnableMessage) {
 			if (CKAutoEnable == "true") {
-				allMessage += `启用\n` + EnableMessage + `\n`;
+				allMessage += `『启用』\n` + EnableMessage + `\n`;
 			} else {
-				allMessage += `已恢复\n` + EnableMessage + `\n`;
+				allMessage += `『恢复』\n` + EnableMessage + `\n`;
 			}
 		}
 
