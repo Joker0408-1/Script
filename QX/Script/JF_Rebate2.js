@@ -290,7 +290,7 @@ function request_history_price(share_url) {
                     resolve(r);
                 }
                 if (data.ok == 0 && data.msg.length > 0) {
-                    let e = `😳 ${data.msg}`;
+                    let e = `\n😤 该商品暂无历史价格`;
                     resolve(e);
                 }
             } else {
@@ -360,7 +360,7 @@ function convert(url, isOriginJXURL) {
                         let r = {};
                         let scheme = autoChoose ? autoScheme : chooseScheme;
                         if (data.data.promotionUrl) {
-                            r.msg = `💴 预计返利：¥${data.data.wlCommission}`+ "║" + `🏷 返利率：${data.data.wlCommissionShare}%\n`;
+                            r.msg = `💴 预计返利：¥${data.data.wlCommission}`+ "║" + `🏷 返利率：${data.data.wlCommissionShare}%`;
                             r.convertURL =
                                 scheme == "browser"
                                     ? chooseBrowser + data.data.promotionUrl
