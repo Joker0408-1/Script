@@ -279,6 +279,10 @@ function signInfo() {
             if (signinfo.status == 1) {
               cash = signinfo.data.user.money
                 subTitle = `【收益总计】${signinfo.data.user.score}青豆  现金约${cash}元`;
+                if (signinfo.data.user.score >= 100000)
+                {
+                    withdraw();
+                }
                 nick = `账号: ${signinfo.data.user.nickname}`;
                 detail = `${signresult}(今天+${signinfo.data.sign_score}青豆) 已连签${signinfo.data.sign_day}天`;
                detail +='\n<本次收益>：\n'
@@ -290,6 +294,53 @@ function signInfo() {
         })
     })
 }
+
+
+
+
+function withdraw() {
+    return new Promise((resolve, reject) => {
+         const url = "https://ios.baertt.com/v5/wechat/withdraw2.json";
+         const headers = {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Host": "ios.baertt.com",
+    "User-Agent": "KDApp/2.0.2 (iPhone; iOS 14.3; Scale/2.00)",
+    "Content-Length": "862",
+    "Accept-Language": "zh-Hans-CN;q=1"
+};
+         const body = "p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_mEtDEGsOrBruuZzIpWlevTEf2n4e6SDtwtHI8jh7tGLFm1iscPtbZwlhO1--2rPMqEVay5SHQZ0Xa5om9y_QnFioIoDSg-ArtrfwznZt1IhRAOspLNm4F1Z4mRILDUTDM9AS-u45jBAgO5AsXy0ATkrR8XwEpo74k3nYLZH9_fv3LvZJzLC5dqo0DNxoXDdJV6JvEnQIvJ7ewuEDWBt6tvEj8ar06XnsXmcnjjgEpVINczy3irh1ZVutD1LXwRVKnrqJViuypPJSWo6SRVKuGHvXEPL1Pb7P8CSfxCZQUwzxumPn95BES_0NDY259ELTCg46EV4rdkaCz0bxGPz9tsg_u384P4JpXm-cjMPRF2h5yenLKT0hkHXaJt5AsDywkELmnsq640sz0B8QNyH-nA_R6xjbExJNe2je7bUt1xe2Bla2nmruLqK99r7_T0_5SvtkMxjWNnDnEbnUVfeUi3LQ9rNwK8m741RDM-m2EljFUZNC7gyPxBGolvm2MEJUft6vfOVPxigBgdejP3ICjm1Tz0dd9qpbV5v5MMpFLd25s9hLzZ7AJ7klVAf-kcJseimnyreywPG-NCboxyUOd0V_a1pfzVkGFOjb-eajlE4jUyRKzAIc_aWwsRjVHNlzXi63v0zebIN9kq1nAuiSjJIe41dgWErFrZeBGdI3kzoZwuDeYOhUmp5_ZC5UFTPqxgDD1UR3Uq0V6G-WOuBwhdAFjbcl8PXVyc4r3HBcJTOl4asZZaUZ07DApQ4qUCQ0AUe9ZFCYi1O9-BHciKJ7hw8ns_zypMbAVN9ONs0ak6g%3D";
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async(error, response, data) => {
+            try {
+            	if(error){
+            	 $.log('请求失败');
+            	 }
+            	else
+            	{
+                $.log(data);
+              }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+  
+
+
+
+
+
+
 
 //开启打卡
 function punchCard() {

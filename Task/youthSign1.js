@@ -75,7 +75,6 @@ if (isGetCookie = typeof $request !== 'undefined') {
     redpbodyVal = 'p=9NwGV8Ov71o%3DgW5NEpb6rjazbBlBp4-3VBqIE6FTR2KhfyLVi7Pl1_m0wwPJgXu-Fmh7S-5HqV6o1vMtEls8mPJh514T6M7mT424qvh8QrkxvplMO-SYOVD8eel3ty7vwxe_wa7ZfSZfXdjTiw3cbhIZT-OnIao6ZrF_hSdmQipG4Rvvz3nXQ6gK5CyHYI1D1-baeHBTpn7ijSSnjFXoXswynYfcRFREAFrzMxNsvZ-DuyuLrlKxWCfQ1TDuJlcrLSZQEGbFgI9VVlQv_jpNAu5ki2MQkkDLcV42VHwCSclx5xVz-xKjchm8-yVd-yZ3H1BNMvfpvn6kaJZrmegWjW9YJNniGQdy9mehqcCMUgFEPpOkHGP8dcaDJS-mEgdPTApQAft6g4AIQxbyh2FfFpft4PH4gz9t7_zapl78aB9s3qOOQcWe8FwTRnq2bWDh3xIh6M9ZaA8Tp2OjeFc3Vlf2LjTmnnwtsTaekisqHk8GhxBf8ZIvEFlpY4mH7MHn9dU5Cq7HGspRkDUBTS8399Hwi8mRyZEqhto1Jkia0Bse4XqlE0YlGlDGdMwZ8b4lehKTFkbF6CV2GMLT4Pmy77Qd0idtknfscHrnIzh1TjUorn_hJ3Ap5pW-0RM_up3PZYCGNhlaOgh7mTUMW86HZIwjhDk17yWcQvyHLF_FmTzGqyvl8Q5hwrbCa3LclH7WEXDpYvXKdm9kKSAG2jE-XsOMBKQjjl0QN7mchKWAtsz4mdZp8nAJGeciNAma1TAN3zzbx7_SoInNZjV8dQyfvWnCPnz0KpKuxiKILG36QUrqaUldiYGURGL5bMRV3xud56QgbKKcukrERbod1UlY5Itc8v29Am9JSA%3D%3D'
 
     console.log(`-------------------------\n\n开始【中青看点1】`)
-
     await sign();
     await signInfo();
     await friendsign();
@@ -178,6 +177,11 @@ function signInfo() {
             if (signinfo.status == 1) {
                 cash = signinfo.data.user.money
                 subTitle = `【收益总计】${signinfo.data.user.score}青豆  现金约${cash}元`;
+                if (signinfo.data.user.score >= 100000)
+                {
+                    withdraw();
+                }
+                
                 nick = `账号: ${signinfo.data.user.nickname}`;
                 detail = `${signresult}(今天+${signinfo.data.sign_score}青豆) 已连签${signinfo.data.sign_day}天`;
                 detail += '\n<本次收益>：\n'
@@ -191,27 +195,66 @@ function signInfo() {
 }
 
 
+
+
+function withdraw() {
+    return new Promise((resolve, reject) => {
+        const url = "https://ios.baertt.com/v5/wechat/withdraw2.json";
+        const headers = {
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept": "*/*",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Host": "ios.baertt.com",
+            "User-Agent": "KDApp/2.0.2 (iPhone; iOS 14.6; Scale/3.00)",
+            "Accept-Language": "zh-Hans-FR;q=1, zh-Hant-HK;q=0.9, hi-FR;q=0.8, en-FR;q=0.7"
+        };
+        const body = "p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_mEtDEGsOrBruuZzIpWlevTEf2n4e6SDtwtHI8jh7tGLFm1iscPtbZwlhO1--2rPMqEVay5SHQZ0Xa5om9y_QnFioIoDSg-ArtrfwznZt1IhRAOspLNm4F1Z4mRILDUTDM9AS-u45jBBpUjaGjZYuwf9is0r1fzrlB50f1ChzuVn7zvqGXW9xiB7n9VMUwnqohIXiAJsxFGuXTpcXHVSeoRgsAbgnGX7Vjk_rlhw7OhfLZNLFE-0Yg_es7kHuEn2F5eiOE1lDltjOcpL87eFJSEDipn0w-eopT605aajAAD1MbNtKn8oqrJb1q4AFnbggYKfUfUdm2lo8Ba_4ktI8v-ChT7PIEVrLcP6af71SxEfeNlO1TgF_9C5Ma_A2eJLd4sDB8wCeZMHvCcyWFW62Zm_wszLcha6ntD6M3-P1mV-Ncqx3__UC1I4K8z8vbGf6kzvdtRev3ESBIXADxu4QhGO_PKVxrUPGeDavjD-fztwhQummsYq1NwjbjLQzULwTOurltRlkZ01T80FpfzZlzEhy6gJrFZXN8gGQUw5E9Pn6W4wCb5ohYC26KAUTLcGkkTI5yTkbirv5cPuuh2eC61yDVXWk1NYJyJnBaOveWX8Q4-5jYe_3oAu-zscBBztfe25klFkCnA78OaIMbFkdp4PcmBwRG9teaZ1Md7Oy4GUkfekK0OfqWi5Q8oefaDCd-_dtcReKm0QqGd9DN0jSIwQz3Up8fKlqJpYVf6-6nKGJnwlseUYerrxKvubEKEYFQbmKUYlbj8vZ6XYxc7fwSvn5k2qDpD08NB_MlNTU6fg%3D";
+        const request = {
+            url: url,
+            headers: headers,
+            body: body
+        };
+
+        $.post(request, async (error, response, data) => {
+            try {
+                if (error) {
+                    $.log('请求失败');
+                }
+                else {
+                    $.log(data);
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        })
+    })
+}
+
+
+
 function readFiveMinutes() {
     return new Promise((resolve, reject) => {
-         const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=read_time_two_minutes&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630548985";
-         const headers = {
-    "Accept-Encoding": "gzip, deflate, br",
-    "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
-    "Connection": "keep-alive",
-    "Content-Type": "",
-    "Accept": "*/*",
-    "Host": "kd.youth.cn",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-    "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
-    "Accept-Language": "zh-cn",
-    "X-Requested-With": "XMLHttpRequest"
-};
+        const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=read_time_two_minutes&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630548985";
+        const headers = {
+            "Accept-Encoding": "gzip, deflate, br",
+            "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
+            "Connection": "keep-alive",
+            "Content-Type": "",
+            "Accept": "*/*",
+            "Host": "kd.youth.cn",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
+            "Accept-Language": "zh-cn",
+            "X-Requested-With": "XMLHttpRequest"
+        };
         const request = {
             url: url,
             headers: headers
         };
 
-        $.get(request, async(error, response, data) => {
+        $.get(request, async (error, response, data) => {
             try {
                 $.log(data);
             } catch (e) {
@@ -221,28 +264,28 @@ function readFiveMinutes() {
         })
     })
 }
-  
+
 function TwentyScore() {
     return new Promise((resolve, reject) => {
-         const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=watch_article_reward&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630548722";
-         const headers = {
-    "Accept-Encoding": "gzip, deflate, br",
-    "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
-    "Connection": "keep-alive",
-    "Content-Type": "",
-    "Accept": "*/*",
-    "Host": "kd.youth.cn",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-    "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
-    "Accept-Language": "zh-cn",
-    "X-Requested-With": "XMLHttpRequest"
-};
+        const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=watch_article_reward&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630548722";
+        const headers = {
+            "Accept-Encoding": "gzip, deflate, br",
+            "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
+            "Connection": "keep-alive",
+            "Content-Type": "",
+            "Accept": "*/*",
+            "Host": "kd.youth.cn",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
+            "Accept-Language": "zh-cn",
+            "X-Requested-With": "XMLHttpRequest"
+        };
         const request = {
             url: url,
             headers: headers
         };
 
-        $.get(request, async(error, response, data) => {
+        $.get(request, async (error, response, data) => {
             try {
                 $.log(data);
             } catch (e) {
@@ -252,29 +295,29 @@ function TwentyScore() {
         })
     })
 }
-  
+
 
 function WatchTenVedio() {
     return new Promise((resolve, reject) => {
-         const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=watch_video_reward&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630551199";
-         const headers = {
-    "Accept-Encoding": "gzip, deflate, br",
-    "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630551198; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630551197; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
-    "Connection": "keep-alive",
-    "Content-Type": "",
-    "Accept": "*/*",
-    "Host": "kd.youth.cn",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-    "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
-    "Accept-Language": "zh-cn",
-    "X-Requested-With": "XMLHttpRequest"
-};
+        const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=watch_video_reward&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630551199";
+        const headers = {
+            "Accept-Encoding": "gzip, deflate, br",
+            "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630551198; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630551197; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
+            "Connection": "keep-alive",
+            "Content-Type": "",
+            "Accept": "*/*",
+            "Host": "kd.youth.cn",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
+            "Accept-Language": "zh-cn",
+            "X-Requested-With": "XMLHttpRequest"
+        };
         const request = {
             url: url,
             headers: headers
         };
 
-        $.get(request, async(error, response, data) => {
+        $.get(request, async (error, response, data) => {
             try {
                 $.log(data);
             } catch (e) {
@@ -284,29 +327,29 @@ function WatchTenVedio() {
         })
     })
 }
-  
+
 
 function readSixtyMinute() {
     return new Promise((resolve, reject) => {
-         const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=read_time_sixty_minutes&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630550431";
-         const headers = {
-    "Accept-Encoding": "gzip, deflate, br",
-    "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
-    "Connection": "keep-alive",
-    "Content-Type": "",
-    "Accept": "*/*",
-    "Host": "kd.youth.cn",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-    "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
-    "Accept-Language": "zh-cn",
-    "X-Requested-With": "XMLHttpRequest"
-};
+        const url = "https://kd.youth.cn/WebApi/NewTaskIos/sendTwentyScore?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510&action=read_time_sixty_minutes&uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&=undefined&request_time=1630550431";
+        const headers = {
+            "Accept-Encoding": "gzip, deflate, br",
+            "Cookie": "Hm_lpvt_268f0a31fc0d047e5253dd69ad3a4775=1630548707; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1630473137,1630502987,1630547026,1630548707; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1630548707; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1630405792,1630502987,1630547027,1630548707; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2252492099%22%2C%22%24device_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217b7559d7731230-0b8eb1afd538888-754c1151-304500-17b7559d774118f%22%7D",
+            "Connection": "keep-alive",
+            "Content-Type": "",
+            "Accept": "*/*",
+            "Host": "kd.youth.cn",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "Referer": "https://kd.youth.cn/h5/20190301taskcenter/ios/index.html?uuid=b978812ed4eca2788de4cdbd9dcf1d6a&sign=41ffb15a4d69f925c4882fde28e350da&channel_code=80000000&uid=52492099&channel=80000000&access=WIfI&app_version=2.0.2&device_platform=iphone&cookie_id=f4bddfc4883d8117f762547178b57510&openudid=b978812ed4eca2788de4cdbd9dcf1d6a&device_type=1&device_brand=iphone&sm_device_id=20201228123402da73dceb251cd229768d9fa4abdb402a0191f0b9513f3084&device_id=49264133&version_code=202&os_version=14.6&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwzYVuhKJ2m7C4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon6ar9-uqoKfgbCEY2Ft&cookie_id=f4bddfc4883d8117f762547178b57510",
+            "Accept-Language": "zh-cn",
+            "X-Requested-With": "XMLHttpRequest"
+        };
         const request = {
             url: url,
             headers: headers
         };
 
-        $.get(request, async(error, response, data) => {
+        $.get(request, async (error, response, data) => {
             try {
                 $.log(data);
             } catch (e) {
@@ -316,7 +359,7 @@ function readSixtyMinute() {
         })
     })
 }
-  
+
 
 
 
@@ -352,12 +395,10 @@ function TimePaceket() {
                 try {
                     //$.log(data);
                     timePaceket = JSON.parse(data);
-                    if(timePaceket.code==1)
-                    {
+                    if (timePaceket.code == 1) {
                         $.log(`【定时红包】领取定时红包成功，共+${timePaceket.data.score}青豆`)
                     }
-                    if(timePaceket.code==0)
-                    {
+                    if (timePaceket.code == 0) {
                         $.log(`【定时红包】${timePaceket.msg}`)
                     }
                 } catch (e) {
