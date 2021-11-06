@@ -125,7 +125,7 @@ if (url.indexOf(path2) != -1 || url.indexOf(path4) != -1) {
     Promise.all([getHistory, convertURL, jxconvertURL])
         .then((detail) => {
             let msg = "";
-            if (detail[1] == "useJXOrigin") detail[1] = detail[2];
+            if (detail[1] == "") detail[1] = detail[2];
             if (detail[0].lower_tip) {
                 msg += detail[0].lower_tip;
                 let convertmsg = detail[1].convertURL ? detail[1].msg : detail[1];
@@ -374,7 +374,7 @@ function convert(url, isOriginJXURL) {
                         }
                         resolve(r);
                     } else if (data.code === 105) {
-                        if (autoScheme == "openapp.jdpingou") resolve("useJXOrigin");
+                        if (autoScheme == "openapp.jdpingou") resolve("");
                         else resolve("");
                     } else if (data.code === 430) {
                         $tool.setCache("false", "jfUseConvert");
