@@ -17,7 +17,7 @@ import re
 import sys
 import time
 from urllib.parse import unquote
-from sendNotify import send
+from notify import send
 import jieba.analyse
 import requests
 
