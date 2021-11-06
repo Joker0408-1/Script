@@ -125,11 +125,11 @@ if (url.indexOf(path2) != -1 || url.indexOf(path4) != -1) {
     Promise.all([getHistory, convertURL, jxconvertURL])
         .then((detail) => {
             let msg = "";
-            if (detail[1] == "😤 该商品暂无返利佣金") detail[1] = detail[2];
+            if (detail[1] == "😵 该商品暂无返利佣金") detail[1] = detail[2];
             if (detail[0].lower_tip) {
                 msg += detail[0].lower_tip;
                 let convertmsg = detail[1].convertURL ? detail[1].msg : detail[1];
-                msg += convertmsg ? convertmsg : "😤 该商品暂无返利佣金";
+                msg += convertmsg ? convertmsg : "😵 该商品暂无返利佣金";
                 // msg += "\n" + detail[0].historydetail;
             } else {
                 let convertmsg = detail[1].convertURL ? detail[1].msg : detail[1];
@@ -366,7 +366,7 @@ function convert(url, isOriginJXURL) {
                                     ? chooseBrowser + data.data.promotionUrl
                                     : `${scheme}://virtual?params=%7B%22category%22:%22jump%22,%22des%22:%22m%22,%22sourceValue%22:%22babel-act%22,%22sourceType%22:%22babel%22,%22url%22:%22${data.data.promotionUrl}%22%7D`;
                         } else {
-                            r.msg = `😤 该商品暂无返利佣金，${data.data.formatContext.trim()}`;
+                            r.msg = `😵 该商品暂无返利佣金，${data.data.formatContext.trim()}`;
                             r.convertURL =
                                 scheme == "browser"
                                     ? chooseBrowser + data.data.originalContext
@@ -374,7 +374,7 @@ function convert(url, isOriginJXURL) {
                         }
                         resolve(r);
                     } else if (data.code === 105) {
-                        if (autoScheme == "openapp.jdpingou") resolve("😤 该商品暂无返利佣金");
+                        if (autoScheme == "openapp.jdpingou") resolve("😵 该商品暂无返利佣金");
                         else resolve("");
                     } else if (data.code === 430) {
                         $tool.setCache("false", "jfUseConvert");
