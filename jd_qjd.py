@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
-# cron:1 0 * * *
+# cron:1 0 29 2 *
 """
 new Env('全民抢京豆');
 """
