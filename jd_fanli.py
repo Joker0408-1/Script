@@ -78,7 +78,7 @@ def getTaskFinishCount(ck):
 def saveTaskRecord(ck, taskId):
     url = "https://ifanli.m.jd.com/rebateapi/task/saveTaskRecord"
     headers = getheader(ck)
-    data = '{"taskId":%s,"taskType":4}' % taskId
+    data = '{"taskId":%s,"taskType":1}' % taskId
     r = requests.post(url, headers=headers, data=data, proxies=proxies)
     # printf(r.text)
     return r.json()["content"]["uid"], r.json()["content"]["tt"]
@@ -88,14 +88,19 @@ def saveTaskRecord1(ck, taskId, uid, tt):
     # tt=int(time.time()*1000)
     url = "https://ifanli.m.jd.com/rebateapi/task/saveTaskRecord"
     headers = getheader(ck)
-    data = '{"taskId":%s,"taskType":4,"uid":"%s","tt":%s}' % (taskId, uid, tt)
+    data = '{"taskId":%s,"taskType":1,"uid":"%s","tt":%s}' % (taskId, uid, tt)
     # printf(data)
     r = requests.post(url, headers=headers, data=data, proxies=proxies)
     printf(r.json()["content"]["msg"])
 
 
 if __name__ == '__main__':
-    cks = os.environ["JD_COOKIE"].split("&")
+    try:
+        cks = os.environ["JD_COOKIE"].split("&")
+    except:
+        f = open("/jd/config/config.sh", "r", encoding='utf-8')
+        cks = re.findall(r'Cookie[0-9]*="(pt_key=.*?;pt_pin=.*?;)"', f.read())
+        f.close()
     for ck in cks:
         ptpin = re.findall(r"pt_pin=(.*?);", ck)[0]
         printf("--------开始京东账号" + ptpin + "--------")
@@ -105,7 +110,7 @@ if __name__ == '__main__':
                 for times in range(count["maxTaskCount"] - count["finishCount"]):
                     tasks = getTaskList(ck)
                     for i in tasks:
-                        if i["taskType"] == 4:
+                        if i["taskType"] == 1:
                             uid, tt = saveTaskRecord(ck, i["taskId"])
                             time.sleep(10)
                             saveTaskRecord1(ck, i["taskId"], uid, tt)
