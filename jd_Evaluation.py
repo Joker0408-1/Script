@@ -96,7 +96,7 @@ Scope = []
 # 范围配置！！
 try:
     if Ev_Scope == '':
-        Scope = [1, 2, 3]
+        Scope = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
     else:
         for Sco in Ev_Scope:
             if '-' in Sco:
