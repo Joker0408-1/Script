@@ -115,5 +115,6 @@ if __name__ == '__main__':
                             uid, tt = saveTaskRecord(ck, i["taskId"], i["taskType"])
                             time.sleep(10)
                             saveTaskRecord1(ck, i["taskId"], uid, tt, i["taskType"])
+                            
         except:
             printf("发生异常错误")
