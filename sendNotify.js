@@ -117,7 +117,7 @@ let UseGroupNotify = 1;
 let strAuthor = "";
 const {
 	getEnvs
-} = require('./env/ql');
+} = require('./ql');
 const fs = require('fs');
 let strCKFile = './CKName_cache.json';
 let Fileexists = fs.existsSync(strCKFile);
@@ -1178,7 +1178,7 @@ async function sendNotify(text, desp, params = {}, author = '') {
 		]);
 }
 
-async function sendNotifybyWxPucher(text, desp, PtPin, author = '\n\n本通知 By ccwav Mod') {
+async function sendNotifybyWxPucher(text, desp, PtPin, author = '') {
 
 	try {
 		var Uid = "";
