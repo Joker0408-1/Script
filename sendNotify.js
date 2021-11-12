@@ -1208,7 +1208,7 @@ async function sendNotifybyWxPucher(text, desp, PtPin, author = '') {
 				WP_UIDS_ONE = Uid;
 				console.log("正在发送一对一通知,请稍后...");
 				if (strAuthor)
-					desp += 'strAuthor;
+					desp += strAuthor;
 				else
 					desp += author;
 				
