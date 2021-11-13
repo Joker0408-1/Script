@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
 '''
-cron: 5 6 * * *
+cron: 45 6 * * *
 new Env('东东农场-助力');
 '''
 # 是否按ck顺序助力, true: 按顺序助力 false：按指定用户助力，默认true
