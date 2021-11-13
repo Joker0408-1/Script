@@ -1,5 +1,5 @@
 /*
-0 0 * * * jd_dpqd2.js
+0 0 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_dpqd2.js
 */
 const $ = new Env('店铺签到2');
 let Joker = require("./env/Joker");
