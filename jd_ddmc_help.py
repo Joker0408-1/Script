@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
 '''
-cron: 5 3,12 * * *
+cron: 5 0 * * *
 new Env('东东萌宠-助力');
 '''
 
