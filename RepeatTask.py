@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 '''
-cron: 58 23 * * 1
+cron: 58 23 29 2 * RepeatTask.py
 new Env('禁用重复任务');
 '''
 
@@ -16,9 +16,9 @@ def loadSend():
     global send
     cur_path = os.path.abspath(os.path.dirname(__file__))
     sys.path.append(cur_path)
-    if os.path.exists(cur_path + "/deleteDuplicateTasksNotify.py"):
+    if os.path.exists(cur_path + "/RepeatTaskNotify.py"):
         try:
-            from deleteDuplicateTasksNotify import send
+            from RepeatTaskNotify import send
         except:
             print("加载通知服务失败~")
 
@@ -63,7 +63,7 @@ def getData(duplicateID):
     rawData += "]"
     return rawData
 
-def disableDuplicateTasks(duplicateID):
+def RepeatTask(duplicateID):
     t = round(time.time() * 1000)
     url = "http://%s:5700/api/crons/disable?t=%d" % (ip, t)
     data = json.dumps(duplicateID)
@@ -108,6 +108,6 @@ if __name__ == '__main__':
     if len(duplicateID)==0:
         print("没有重复任务")
     else:
-        disableDuplicateTasks(duplicateID)
+        RepeatTask(duplicateID)
     send("禁用重复任务成功","%s\n%s"%(before,after))
         # print("禁用结束！")
