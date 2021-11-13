@@ -1,9 +1,9 @@
 
 /*
-0 0 * * * jd_dpqd2.js
+0 0 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_dpqd1.js
 DPQDTK: token1&token2
 */
-const $ = new Env('店铺签到2');
+const $ = new Env('店铺签到1');
 let Joker = require("./env/Joker");
 let token = []
 if (process.env.DPQDTK) {
