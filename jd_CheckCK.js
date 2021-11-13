@@ -9,8 +9,9 @@ const got = require('got');
 const {
 	getEnvs,
 	DisableCk,
-	EnableCk
-} = require('./env/ql');
+	EnableCk,
+	getstatus
+} = require('./ql');
 const api = got.extend({
 	retry: {
 		limit: 0
@@ -151,17 +152,17 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			if (userIndex2 != -1) {
 				console.log(`账号属于分组2`);
 				IndexGp2 += 1;
-				ReturnMessageTitle = `【账号${IndexGp2}🆔】${$.UserName2}`;
+				ReturnMessageTitle = `京东账号：${IndexGp2}\n账号昵称：${$.UserName2}`;
 			}
 			if (userIndex3 != -1) {
 				console.log(`账号属于分组3`);
 				IndexGp3 += 1;
-				ReturnMessageTitle = `【账号${IndexGp3}🆔】${$.UserName2}`;
+				ReturnMessageTitle = `京东账号：${IndexGp3}\n账号昵称：${$.UserName2}`;
 			}
 			if (userIndex4 != -1) {
 				console.log(`账号属于分组4`);
 				IndexGp4 += 1;
-				ReturnMessageTitle = `【账号${IndexGp4}🆔】${$.UserName2}`;
+				ReturnMessageTitle = `京东账号：${IndexGp4}\n账号昵称：${$.UserName2}`;
 			}
 			if (userIndex4 == -1 && userIndex2 == -1 && userIndex3 == -1) {
 				console.log(`账号没有分组`);
@@ -189,21 +190,24 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 				TempOErrorMessage = $.error;
 
 			} else {
-
+				const strnowstatus = await getstatus(envs[i]._id);				
+				if (strnowstatus == 99) {
+					strnowstatus=envs[i].status;
+				}
 				if (!$.isLogin) {
 
-					if (envs[i].status == 0) {
+					if (strnowstatus == 0) {
 						const DisableCkBody = await DisableCk(envs[i]._id);
 						if (DisableCkBody.code == 200) {
 							if ($.isNode() && WP_APP_TOKEN_ONE) {
-								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效║禁用成功!\n`,`${$.UserName}`);
+								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效,自动禁用成功!\n如果要继续挂机，请联系管理员重新登录账号，账号有效期为30天.`, `${$.UserName2}`);
 							}
-							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效║禁用成功!\n`);
+							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效║禁用成功\n`);
 							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效║禁用成功\n\n`;
 							TempErrorMessage = ReturnMessageTitle + ``;
 						} else {
 							if ($.isNode() && WP_APP_TOKEN_ONE) {
-								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效║禁用失败!\n`,`${$.UserName}`);
+								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效!\n如果要继续挂机，请联系管理员重新登录账号，账号有效期为30天.`, `${$.UserName2}`);
 							}
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效║禁用失败!\n`);
 							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效║禁用失败\n\n`;
@@ -214,20 +218,20 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 						TempErrorMessage = ReturnMessageTitle + `检测结果：已失效║已禁用\n\n`;
 					}
 				} else {
-					if (envs[i].status == 1) {
+					if (strnowstatus == 1) {
 
 						if (CKAutoEnable == "true") {
 							const EnableCkBody = await EnableCk(envs[i]._id);
 							if (EnableCkBody.code == 200) {
 								if ($.isNode() && WP_APP_TOKEN_ONE) {
-									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复║启用成功!\n`,`${$.UserName}`);
+									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,自动启用成功!\n祝您挂机愉快...`, `${$.UserName2}`);
 								}
 								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复║启用成功!\n`);
 								TempEnableMessage = ReturnMessageTitle + `检测结果：已恢复║启用成功\n\n`;
 								TempSuccessMessage = ReturnMessageTitle + `检测结果：已恢复║启用成功\n\n`;
 							} else {
 								if ($.isNode() && WP_APP_TOKEN_ONE) {
-									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复║启用失败!\n`,`${$.UserName}`);
+									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,但自动启用失败!\n请联系管理员处理...`, `${$.UserName2}`);
 								}
 								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复║启用失败\n`);
 								TempEnableMessage = ReturnMessageTitle + `检测结果：已恢复║启动失败\n\n`;
@@ -281,27 +285,27 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 	if ($.isNode()) {
 		if (MessageUserGp2) {
 			if (OErrorMessageGp2) {
-				allMessageGp2 += `👇👇👇👇👇检测出错账号👇👇👇👇👇\n` + OErrorMessageGp2 + `\n\n`;
+				allMessageGp2 += `『出错』\n` + OErrorMessageGp2 + `\n\n`;
 			}
 			if (DisableMessageGp2) {
-				allMessageGp2 += `👇👇👇👇👇自动禁用账号👇👇👇👇👇\n` + DisableMessageGp2 + `\n\n`;
+				allMessageGp2 += `『禁用』\n` + DisableMessageGp2 + `\n\n`;
 			}
 			if (EnableMessageGp2) {
 				if (CKAutoEnable == "true") {
-					allMessageGp2 += `👇👇👇👇👇自动启用账号👇👇👇👇👇\n` + EnableMessageGp2 + `\n\n`;
+					allMessageGp2 += `『启用』\n` + EnableMessageGp2 + `\n\n`;
 				} else {
-					allMessageGp2 += `👇👇👇👇👇账号已恢复👇👇👇👇👇\n` + EnableMessageGp2 + `\n\n`;
+					allMessageGp2 += `『恢复』\n` + EnableMessageGp2 + `\n\n`;
 				}
 			}
 
 			if (ErrorMessageGp2) {
-				allMessageGp2 += `👇👇👇👇👇失效账号👇👇👇👇👇\n` + ErrorMessageGp2 + `\n\n`;
+				allMessageGp2 += `` + ErrorMessageGp2 + `\n\n`;
 			} else {
-				allMessageGp2 += `👇👇👇👇👇失效账号👇👇👇👇👇\n 一个失效的都没有呢，羡慕啊...\n\n`;
+				allMessageGp2 += ``;
 			}
 
 			if (ShowSuccess == "true" && SuccessMessage) {
-				allMessageGp2 += `👇👇👇👇👇有效账号👇👇👇👇👇\n` + SuccessMessageGp2 + `\n`;
+				allMessageGp2 += `『有效』\n` + SuccessMessageGp2 + `\n`;
 			}
 
 			if (NoWarnError == "true") {
@@ -318,27 +322,27 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 		if (MessageUserGp3) {
 			if (OErrorMessageGp3) {
-				allMessageGp3 += `👇👇👇👇👇检测出错账号👇👇👇👇👇\n` + OErrorMessageGp3 + `\n\n`;
+				allMessageGp3 += `『出错』\n` + OErrorMessageGp3 + `\n\n`;
 			}
 			if (DisableMessageGp3) {
-				allMessageGp3 += `👇👇👇👇👇自动禁用账号👇👇👇👇👇\n` + DisableMessageGp3 + `\n\n`;
+				allMessageGp3 += `『禁用』\n` + DisableMessageGp3 + `\n\n`;
 			}
 			if (EnableMessageGp3) {
 				if (CKAutoEnable == "true") {
-					allMessageGp3 += `👇👇👇👇👇自动启用账号👇👇👇👇👇\n` + EnableMessageGp3 + `\n\n`;
+					allMessageGp3 += `『启用』\n` + EnableMessageGp3 + `\n\n`;
 				} else {
-					allMessageGp3 += `👇👇👇👇👇账号已恢复👇👇👇👇👇\n` + EnableMessageGp3 + `\n\n`;
+					allMessageGp3 += `『恢复』\n` + EnableMessageGp3 + `\n\n`;
 				}
 			}
 
 			if (ErrorMessageGp3) {
-				allMessageGp3 += `👇👇👇👇👇失效账号👇👇👇👇👇\n` + ErrorMessageGp3 + `\n\n`;
+				allMessageGp3 += `` + ErrorMessageGp3 + `\n\n`;
 			} else {
-				allMessageGp3 += `👇👇👇👇👇失效账号👇👇👇👇👇\n 一个失效的都没有呢，羡慕啊...\n\n`;
+				allMessageGp3 += ``;
 			}
 
 			if (ShowSuccess == "true" && SuccessMessage) {
-				allMessageGp3 += `👇👇👇👇👇有效账号👇👇👇👇👇\n` + SuccessMessageGp3 + `\n`;
+				allMessageGp3 += `『有效』\n` + SuccessMessageGp3 + `\n`;
 			}
 
 			if (NoWarnError == "true") {
@@ -355,27 +359,27 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 		if (MessageUserGp4) {
 			if (OErrorMessageGp4) {
-				allMessageGp4 += `👇👇👇👇👇检测出错账号👇👇👇👇👇\n` + OErrorMessageGp4 + `\n\n`;
+				allMessageGp4 += `『出错』\n` + OErrorMessageGp4 + `\n\n`;
 			}
 			if (DisableMessageGp4) {
-				allMessageGp4 += `👇👇👇👇👇自动禁用账号👇👇👇👇👇\n` + DisableMessageGp4 + `\n\n`;
+				allMessageGp4 += `『禁用』\n` + DisableMessageGp4 + `\n\n`;
 			}
 			if (EnableMessageGp4) {
 				if (CKAutoEnable == "true") {
-					allMessageGp4 += `👇👇👇👇👇自动启用账号👇👇👇👇👇\n` + EnableMessageGp4 + `\n\n`;
+					allMessageGp4 += `『启用』\n` + EnableMessageGp4 + `\n\n`;
 				} else {
-					allMessageGp4 += `👇👇👇👇👇账号已恢复👇👇👇👇👇\n` + EnableMessageGp4 + `\n\n`;
+					allMessageGp4 += `『恢复』\n` + EnableMessageGp4 + `\n\n`;
 				}
 			}
 
 			if (ErrorMessageGp4) {
-				allMessageGp4 += `👇👇👇👇👇失效账号👇👇👇👇👇\n` + ErrorMessageGp4 + `\n\n`;
+				allMessageGp4 += `` + ErrorMessageGp4 + `\n\n`;
 			} else {
-				allMessageGp4 += `👇👇👇👇👇失效账号👇👇👇👇👇\n 一个失效的都没有呢，羡慕啊...\n\n`;
+				allMessageGp4 += ``;
 			}
 
 			if (ShowSuccess == "true" && SuccessMessage) {
-				allMessageGp4 += `👇👇👇👇👇有效账号👇👇👇👇👇\n` + SuccessMessageGp4 + `\n`;
+				allMessageGp4 += `『有效』\n` + SuccessMessageGp4 + `\n`;
 			}
 
 			if (NoWarnError == "true") {
@@ -392,27 +396,27 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 
 		if (OErrorMessage) {
-			allMessage += `『出错』\n` + OErrorMessage + `\n`;
+			allMessage += `『出错』\n` + OErrorMessage + `\n\n`;
 		}
 		if (DisableMessage) {
-			allMessage += `『禁用』\n` + DisableMessage + `\n`;
+			allMessage += `『禁用』\n` + DisableMessage + `\n\n`;
 		}
 		if (EnableMessage) {
 			if (CKAutoEnable == "true") {
-				allMessage += `『启用』\n` + EnableMessage + `\n`;
+				allMessage += `『启用』\n` + EnableMessage + `\n\n`;
 			} else {
-				allMessage += `『恢复』\n` + EnableMessage + `\n`;
+				allMessage += `『恢复』\n` + EnableMessage + `\n\n`;
 			}
 		}
 
 		if (ErrorMessage) {
-			allMessage += ``;
+			allMessage += `` + ErrorMessage + `\n\n`;
 		} else {
 			allMessage += ``;
 		}
 
 		if (ShowSuccess == "true" && SuccessMessage) {
-			allMessage += `有效\n` + SuccessMessage + `\n`;
+			allMessage += `『有效』\n` + SuccessMessage + `\n`;
 		}
 
 		if (NoWarnError == "true") {
