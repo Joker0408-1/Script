@@ -1,7 +1,7 @@
 /*
-0 0 * * * jd_dpqd1.js
+0 0 * * * jd_dpqd2.js
 */
-const $ = new Env('店铺签到1');
+const $ = new Env('店铺签到2');
 let Joker = require("./env/Joker");
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
