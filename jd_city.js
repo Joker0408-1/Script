@@ -1,5 +1,5 @@
 /*
-0 12,21 29 2 * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_city.js
+cron：0 12,21 29 2 * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_city.js
 */
 
 const $ = new Env('城城领现金');
