@@ -204,7 +204,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 							}
 							console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已失效║禁用成功\n`);
 							TempDisableMessage = ReturnMessageTitle + `检测结果：已失效║禁用成功\n\n`;
-							TempErrorMessage = ReturnMessageTitle + ``;
+							TempErrorMessage =``;
 						} else {
 							if ($.isNode() && WP_APP_TOKEN_ONE) {
 								await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已失效!\n如果要继续挂机，请联系管理员重新登录账号，账号有效期为30天.`, `${$.UserName2}`);
@@ -228,7 +228,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 								}
 								console.log(`京东账号${$.index} : ${$.nickName || $.UserName2} 已恢复║启用成功!\n`);
 								TempEnableMessage = ReturnMessageTitle + `检测结果：已恢复║启用成功\n\n`;
-								TempSuccessMessage = ReturnMessageTitle + `检测结果：已恢复║启用成功\n\n`;
+								TempSuccessMessage = ``;
 							} else {
 								if ($.isNode() && WP_APP_TOKEN_ONE) {
 									await notify.sendNotifybyWxPucher(`${$.name}`, `京东账号: ${$.nickName || $.UserName2} 已恢复,但自动启用失败!\n请联系管理员处理...`, `${$.UserName2}`);
