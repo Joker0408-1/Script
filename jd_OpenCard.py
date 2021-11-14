@@ -427,47 +427,10 @@ def message(str_msg):
 # 获取通知，
 if PUSH_PLUS_TOKEN:
     notify_mode.append('pushplus')
-if TG_BOT_TOKEN and TG_USER_ID:
-    notify_mode.append('telegram_bot')
 if QYWX_AM:
     notify_mode.append('wecom_app')
 if BARK:
     notify_mode.append('bark')
-
-# tg通知
-def telegram_bot(title, content):
-    try:
-        print("\n")
-        bot_token = TG_BOT_TOKEN
-        user_id = TG_USER_ID
-        if not bot_token or not user_id:
-            print("tg服务的bot_token或者user_id未设置!!\n取消推送")
-            return
-        print("tg服务启动")
-        if TG_API_HOST:
-            if 'http' in TG_API_HOST:
-                url = f"{TG_API_HOST}/bot{TG_BOT_TOKEN}/sendMessage"
-            else:
-                url = f"https://{TG_API_HOST}/bot{TG_BOT_TOKEN}/sendMessage"
-        else:
-            url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage"
-
-        headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-        payload = {'chat_id': str(TG_USER_ID), 'text': f'{title}\n\n{content}', 'disable_web_page_preview': 'true'}
-        proxies = None
-        if TG_PROXY_IP and TG_PROXY_PORT:
-            proxyStr = "http://{}:{}".format(TG_PROXY_IP, TG_PROXY_PORT)
-            proxies = {"http": proxyStr, "https": proxyStr}
-        try:
-            response = requests.post(url=url, headers=headers, params=payload, proxies=proxies).json()
-        except:
-            print('推送失败！')
-        if response['ok']:
-            print('推送成功！')
-        else:
-            print('推送失败！')
-    except Exception as e:
-        print(e)
 
 # push推送
 def pushplus_bot(title, content):
