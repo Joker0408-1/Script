@@ -9,6 +9,7 @@ const got = require('got');
 const {
 	getEnvs,
 	DisableCk,
+    getEnvById,
 	EnableCk,
 	getstatus
 } = require('./ql');
@@ -122,7 +123,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 
 	for (let i = 0; i < envs.length; i++) {
 		if (envs[i].value) {
-			cookie = envs[i].value;
+			cookie = await getEnvById(envs[i]._id);
 			$.UserName = (cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
 			$.UserName2 = decodeURIComponent($.UserName);
 			$.index = i + 1;
