@@ -337,7 +337,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			}
 
 			if (ErrorMessageGp3) {
-				allMessageGp3 += `` + ErrorMessageGp3 + `\n\n`;
+				allMessageGp3 += `『已失效』` + ErrorMessageGp3 + `\n\n`;
 			} else {
 				allMessageGp3 += ``;
 			}
@@ -374,7 +374,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			}
 
 			if (ErrorMessageGp4) {
-				allMessageGp4 += `` + ErrorMessageGp4 + `\n\n`;
+				allMessageGp4 += `『已失效』` + ErrorMessageGp4 + `\n\n`;
 			} else {
 				allMessageGp4 += ``;
 			}
@@ -411,7 +411,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 
 		if (ErrorMessage) {
-			allMessage += `` + ErrorMessage + `\n\n`;
+			allMessage += `『已失效』` + ErrorMessage + `\n\n`;
 		} else {
 			allMessage += ``;
 		}
