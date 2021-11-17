@@ -300,7 +300,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			}
 
 			if (ErrorMessageGp2) {
-				allMessageGp2 += `` + ErrorMessageGp2 + `\n\n`;
+				allMessageGp2 += `『已失效』` + ErrorMessageGp2 + `\n\n`;
 			} else {
 				allMessageGp2 += ``;
 			}
