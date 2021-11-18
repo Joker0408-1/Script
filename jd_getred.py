@@ -1,5 +1,5 @@
 """
-cron：0 0 29 2 *
+cron：0 0 29 2 * jd_getred.py
 
 const $ = new Env("统计京东历史红包");
 
