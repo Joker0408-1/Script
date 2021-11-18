@@ -56,7 +56,7 @@ def getinfo(ck):
         if r['data']['unUseRedInfo']['redList'] == None:
             print('【最近六个月】\n累计红包总数', count, '\n累计红包总额 %.2f' % sum, '\n已使用红包总额 %.2f' % usedsum)
             print(
-                '京东红包：总金额%.2f 已使用：%.2f\n京喜红包：总金额%.2f 已使用：%.2f\n极速红包：总金额%.2f 已使用：%.2f\n通用红包：总金额%.2f 已使用：%.2f\n' % (
+                '京东红包：总金额%.2f 已使用：%.2f\n京喜红包：总金额%.2f 已使用：%.2f\n极速红包：总金额%.2f 已使用：%.2f\n京东健康：总金额%.2f 已使用：%.2f\n通用红包：总金额%.2f 已使用：%.2f\n' % (
                 jdsum, usedjd, jxsum, usedjx, litesum, usedlite, healthsum, usedhealth, tysum, usedty))
             isNext = False
         else:
