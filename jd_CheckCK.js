@@ -300,7 +300,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			}
 
 			if (ErrorMessageGp2) {
-				allMessageGp2 += `『失效』` + ErrorMessageGp2 + `\n\n`;
+				allMessageGp2 += `『失效』\n` + ErrorMessageGp2 + `\n\n`;
 			} else {
 				allMessageGp2 += ``;
 			}
@@ -337,7 +337,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			}
 
 			if (ErrorMessageGp3) {
-				allMessageGp3 += `『失效』` + ErrorMessageGp3 + `\n\n`;
+				allMessageGp3 += `『失效』\n` + ErrorMessageGp3 + `\n\n`;
 			} else {
 				allMessageGp3 += ``;
 			}
@@ -374,7 +374,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 			}
 
 			if (ErrorMessageGp4) {
-				allMessageGp4 += `『失效』` + ErrorMessageGp4 + `\n\n`;
+				allMessageGp4 += `『失效』\n` + ErrorMessageGp4 + `\n\n`;
 			} else {
 				allMessageGp4 += ``;
 			}
@@ -411,7 +411,7 @@ if ($.isNode() && process.env.CHECKCK_CKNOWARNERROR) {
 		}
 
 		if (ErrorMessage) {
-			allMessage += `『失效』` + ErrorMessage + `\n\n`;
+			allMessage += `『失效』\n` + ErrorMessage + `\n\n`;
 		} else {
 			allMessage += ``;
 		}
