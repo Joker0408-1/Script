@@ -3,6 +3,8 @@
  */
 //此处填写京东账号cookie。
 let CookieJDs = [
+  '',//账号一ck,例:pt_key=XXX;pt_pin=XXX;
+  '',//账号二ck,例:pt_key=XXX;pt_pin=XXX;如有更多,依次类推
 ]
 // 判断环境变量里面是否有京东ck
 if (process.env.JD_COOKIE) {
@@ -13,13 +15,6 @@ if (process.env.JD_COOKIE) {
   } else {
     CookieJDs = [process.env.JD_COOKIE];
   }
-}
-if (JSON.stringify(process.env).indexOf('GITHUB')>-1) {
-  console.log(``);
-  !(async () => {
-    await require('./sendNotify').sendNotify('`)
-    await process.exit(0);
-  })()
 }
 CookieJDs = [...new Set(CookieJDs.filter(item => !!item))]
 console.log(`\n==========共${CookieJDs.length}个京东账号Cookie==========\n`);
