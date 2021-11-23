@@ -10,7 +10,7 @@ ddmc_isOrder="true"
 # 助力名单(当ddmc_isOrder="false" 才生效), ENV 环境设置 export ddmc_help="Curtinlv&用户2&用户3"
 ddmc_help = ["Curtinlv", "用户x", "用户3"]
 #是否开启通知，Ture：发送通知，False：不发送
-isNotice=True
+isNotice=False
 # UA 可自定义你的, 默认随机生成UA。
 UserAgent = ''
 
