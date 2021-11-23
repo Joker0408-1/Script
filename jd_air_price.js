@@ -1,10 +1,10 @@
 /*
-const $ = new Env('京东保价');
+const $ = new Env('京东价保');
 30 4,12,20 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_price.js
 */
 let common = require("./function/common");
 let jsdom = require("jsdom");
-let $ = new common.env('京东保价');
+let $ = new common.env('京东价保');
 let min = 1,
     help = $.config[$.filename(__filename)] || Math.min(min, $.config.JdMain) || min;
 $.setOptions({
