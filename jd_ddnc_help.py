@@ -9,7 +9,7 @@ ddnc_isOrder="true"
 # 东东农场助力名单(当ddnc_isOrder="false" 才生效), ENV 环境设置 export ddnc_help_list="Curtinlv&用户2&用户3"
 ddnc_help_list = ["Curtinlv", "用户2", "用户3"]
 #是否开启通知，Ture：发送通知，False：不发送
-isNotice=False
+isNotice=True
 # UA 可自定义你的, 默认随机生成UA。
 UserAgent = ''
 
@@ -135,6 +135,13 @@ def buildHeaders(ck):
         'User-Agent': userAgent()
     }
     return headers
+def farmA(ck):
+    url1 = 'https://api.m.jd.com/client.action?functionId=farmAssistInit&body=%7B%22version%22%3A14%2C%22channel%22%3A1%2C%22babelChannel%22%3A%22120%22%7D&appid=wh5'
+    resp = requests.get(url1, headers=buildHeaders(ck), timeout=10).json()
+    if resp['status'] == 2:
+        return False
+    else:
+        return False
 def getSuccess(ck, user):
     global count
     url = 'https://api.m.jd.com/client.action?functionId=receiveStageEnergy&body=%7B%22version%22%3A14%2C%22channel%22%3A1%2C%22babelChannel%22%3A%22120%22%7D&appid=wh5'
