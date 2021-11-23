@@ -9,7 +9,7 @@ ddnc_isOrder="true"
 # 东东农场助力名单(当ddnc_isOrder="false" 才生效), ENV 环境设置 export ddnc_help_list="Curtinlv&用户2&用户3"
 ddnc_help_list = ["Curtinlv", "用户2", "用户3"]
 #是否开启通知，Ture：发送通知，False：不发送
-isNotice=True
+isNotice=False
 # UA 可自定义你的, 默认随机生成UA。
 UserAgent = ''
 
