@@ -9,11 +9,13 @@ ddnc_isOrder="true"
 # 东东农场助力名单(当ddnc_isOrder="false" 才生效), ENV 环境设置 export ddnc_help_list="Curtinlv&用户2&用户3"
 ddnc_help_list = ["Curtinlv", "用户2", "用户3"]
 #是否开启通知，Ture：发送通知，False：不发送
-isNotice=False
+isNotice=True
 # UA 可自定义你的, 默认随机生成UA。
 UserAgent = ''
 
-import os, re, sys
+count = {}
+
+import os, sys
 import random
 try:
     import requests
@@ -21,7 +23,14 @@ except Exception as e:
     print(e, "\n缺少requests 模块，请执行命令安装：pip3 install requests")
     exit(3)
 from urllib.parse import unquote
-# requests.packages.urllib3.disable_warnings()
+import time
+try:
+    from jd_cookie import getJDCookie
+    getCk = getJDCookie()
+except:
+    print("请先下载依赖脚本，\n下载链接：https://ghproxy.com/https://raw.githubusercontent.com/curtinlv/JD-Script/main/jd_tool_dl.py")
+    sys.exit(3)
+requests.packages.urllib3.disable_warnings()
 pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
 
 
@@ -45,144 +54,6 @@ def userAgent():
         return f'jdapp;iPhone;10.0.4;{iosVer};{uuid};network/wifi;ADID/{ADID};model/iPhone{iPhone},1;addressid/{addressid};appBuild/167707;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS {iosV} like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/null;supportJDSHWK/1'
     else:
         return UserAgent
-class getJDCookie(object):
-    # 适配各种平台环境ck
-
-    def getckfile(self):
-        global v4f
-        curf = pwd + 'JDCookies.txt'
-        v4f = '/jd/config/config.sh'
-        ql_new = '/ql/config/env.sh'
-        ql_old = '/ql/config/cookie.sh'
-        if os.path.exists(curf):
-            with open(curf, "r", encoding="utf-8") as f:
-                cks = f.read()
-                f.close()
-            r = re.compile(r"pt_key=.*?pt_pin=.*?;", re.M | re.S | re.I)
-            cks = r.findall(cks)
-            if len(cks) > 0:
-                return curf
-            else:
-                pass
-        if os.path.exists(ql_new):
-            print("当前环境青龙面板新版")
-            return ql_new
-        elif os.path.exists(ql_old):
-            print("当前环境青龙面板旧版")
-            return ql_old
-        elif os.path.exists(v4f):
-            print("当前环境V4")
-            return v4f
-        return curf
-
-    # 获取cookie
-    def getCookie(self):
-        global cookies
-        ckfile = self.getckfile()
-        try:
-            if os.path.exists(ckfile):
-                with open(ckfile, "r", encoding="utf-8") as f:
-                    cks = f.read()
-                    f.close()
-                if 'pt_key=' in cks and 'pt_pin=' in cks:
-                    r = re.compile(r"pt_key=.*?pt_pin=.*?;", re.M | re.S | re.I)
-                    cks = r.findall(cks)
-                    if len(cks) > 0:
-                        if 'JDCookies.txt' in ckfile:
-                            print("当前获取使用 JDCookies.txt 的cookie")
-                        cookies = ''
-                        for i in cks:
-                            if 'pt_key=xxxx' in i:
-                                pass
-                            else:
-                                cookies += i
-                        return
-            else:
-                with open(pwd + 'JDCookies.txt', "w", encoding="utf-8") as f:
-                    cks = "#多账号换行，以下示例：（通过正则获取此文件的ck，理论上可以自定义名字标记ck，也可以随意摆放ck）\n账号1【Curtinlv】cookie1;\n账号2【TopStyle】cookie2;"
-                    f.write(cks)
-                    f.close()
-            if "JD_COOKIE" in os.environ:
-                if len(os.environ["JD_COOKIE"]) > 10:
-                    cookies = os.environ["JD_COOKIE"]
-                    print("已获取并使用Env环境 Cookie")
-        except Exception as e:
-            print(f"【getCookie Error】{e}")
-
-        # 检测cookie格式是否正确
-
-    def getUserInfo(self, ck, pinName, userNum):
-        url = 'https://me-api.jd.com/user_new/info/GetJDUserInfoUnion?orgFlag=JD_PinGou_New&callSource=mainorder&channel=4&isHomewhite=0&sceneval=2&sceneval=2&callback='
-        headers = {
-            'Cookie': ck,
-            'Accept': '*/*',
-            'Connection': 'close',
-            'Referer': 'https://home.m.jd.com/myJd/home.action',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Host': 'me-api.jd.com',
-            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Mobile/15E148 Safari/604.1',
-            'Accept-Language': 'zh-cn'
-        }
-        try:
-            if sys.platform == 'ios':
-                requests.packages.urllib3.disable_warnings()
-                resp = requests.get(url=url, verify=False, headers=headers, timeout=60).json()
-            else:
-                resp = requests.get(url=url, headers=headers, timeout=60).json()
-            if resp['retcode'] == "0":
-                nickname = resp['data']['userInfo']['baseInfo']['nickname']
-                return ck, nickname
-            else:
-                context = f"账号{userNum}【{pinName}】Cookie 已失效！请重新获取。"
-                print(context)
-                return ck, True
-        except Exception:
-            context = f"账号{userNum}【{pinName}】Cookie 已失效！请重新获取。"
-            print(context)
-            return ck, True
-
-    def iscookie(self):
-        """
-        :return: cookiesList,userNameList,pinNameList
-        """
-        cookiesList = []
-        userNameList = []
-        pinNameList = []
-        if 'pt_key=' in cookies and 'pt_pin=' in cookies:
-            r = re.compile(r"pt_key=.*?pt_pin=.*?;", re.M | re.S | re.I)
-            result = r.findall(cookies)
-            if len(result) >= 1:
-                print("您已配置{}个账号".format(len(result)))
-                u = 1
-                for i in result:
-                    r = re.compile(r"pt_pin=(.*?);")
-                    pinName = r.findall(i)
-                    pinName = unquote(pinName[0])
-                    # 获取账号名
-                    ck, nickname = self.getUserInfo(i, pinName, u)
-                    if nickname != False:
-                        cookiesList.append(ck)
-                        userNameList.append(nickname)
-                        pinNameList.append(pinName)
-                    else:
-                        u += 1
-                        continue
-                    u += 1
-                if len(cookiesList) > 0 and len(userNameList) > 0:
-                    return cookiesList, userNameList, pinNameList
-                else:
-                    print("没有可用Cookie，已退出")
-                    exit(3)
-            else:
-                print("cookie 格式错误！...本次操作已退出")
-                exit(4)
-        else:
-            print("cookie 格式错误！...本次操作已退出")
-            exit(4)
-
-
-getCk = getJDCookie()
-getCk.getCookie()
 if "ddnc_isOrder" in os.environ:
     if len(os.environ["ddnc_isOrder"]) > 1:
         ddnc_isOrder = os.environ["ddnc_isOrder"]
@@ -264,11 +135,25 @@ def buildHeaders(ck):
         'User-Agent': userAgent()
     }
     return headers
+def farmA(ck):
+    url1 = 'https://api.m.jd.com/client.action?functionId=farmAssistInit&body=%7B%22version%22%3A14%2C%22channel%22%3A1%2C%22babelChannel%22%3A%22120%22%7D&appid=wh5'
+    resp = requests.get(url1, headers=buildHeaders(ck), timeout=10).json()
+    if resp['status'] == 2:
+        return True
+    else:
+        return False
+def getSuccess(ck, user):
+    global count
+    url = 'https://api.m.jd.com/client.action?functionId=receiveStageEnergy&body=%7B%22version%22%3A14%2C%22channel%22%3A1%2C%22babelChannel%22%3A%22120%22%7D&appid=wh5'
+    resp = requests.get(url,  headers=buildHeaders(ck), timeout=10).json()
+    if resp['code'] == '0':
+        print(f"☺️{user}, 收货水滴【{resp['amount']}g】")
+        try:
+            count[user] += resp['amount']
+        except:
+            count[user] = resp['amount']
+    # print(resp)
 
-def awardInviteFriendForFarm(ck):
-    url = f'https://api.m.jd.com/client.action?functionId=awardInviteFriendForFarm&body=%7B%7D&appid=wh5'
-    response = requests.get(url=url, headers=buildHeaders(ck), timeout=10).json()
-    print(response)
 def getShareCode(ck):
     url = f'https://api.m.jd.com/client.action?functionId=initForFarm&body=%7B%22shareCode%22%3A%22%22%2C%22imageUrl%22%3A%22%22%2C%22nickName%22%3A%22%22%2C%22version%22%3A14%2C%22channel%22%3A2%2C%22babelChannel%22%3A3%7D&appid=wh5'
     response = requests.get(url=url, headers=buildHeaders(ck), timeout=10).json()
@@ -278,11 +163,6 @@ def ddnc_help(ck, nickname, shareCode, masterName):
     try:
         url = f'https://api.m.jd.com/client.action?functionId=initForFarm&body=%7B%22shareCode%22%3A%22{shareCode}%22%2C%22imageUrl%22%3A%22%22%2C%22nickName%22%3A%22%22%2C%22version%22%3A14%2C%22channel%22%3A2%2C%22babelChannel%22%3A3%7D&appid=wh5'
         response = requests.get(url=url, headers=buildHeaders(ck), timeout=10).json()
-        # print(response['farmUserPro'])
-        # print("\n")
-        # print(response['helpResult'])
-        # print("\n")
-        # masterUserName = response['helpResult']['masterUserInfo']['nickName']
         help_result = response['helpResult']['code']
         if help_result == "0":
             print(f"\t└👌{nickname} 助力成功～")
@@ -290,7 +170,6 @@ def ddnc_help(ck, nickname, shareCode, masterName):
             print(f"\t└😆{nickname} 已没有助力机会~  ")
         elif help_result == "10":
             msg(f"\t└☺️ {masterName} 今天好友助力已满～")
-            # awardInviteFriendForFarm(ck)
             return True
         else:
             print(f"\t└😄 {nickname} 助力 {masterName} ")
@@ -304,11 +183,12 @@ def start():
     try:
         scriptName = '### 东东农场-助力 ###'
         print(scriptName)
-        global cookiesList, userNameList, pinNameList, ckNum
-        cookiesList, userNameList, pinNameList = getCk.iscookie()
+        global cookiesList, userNameList, ckNum
+        cookiesList, userNameList = getCk.iscookie()
         if ddnc_isOrder == "true":
             for ck,user in zip(cookiesList,userNameList):
-                msg(f"开始助力 {user}")
+                m_ck = ck
+                print(f"开始助力 {user}")
                 try:
                     shareCode = getShareCode(ck)
                 except Exception as e:
@@ -319,7 +199,13 @@ def start():
                         print(f"\t└😓{user} 不能助力自己，跳过~")
                         continue
                     result = ddnc_help(ck, nickname, shareCode, user)
+                    if farmA(m_ck):
+                        getSuccess(m_ck, user)
                     if result:
+                        for n in range(4):
+                            if farmA(m_ck):
+                                time.sleep(2)
+                                getSuccess(m_ck, user)
                         break
         elif ddnc_isOrder == "false":
             if not ddnc_help_list:
@@ -330,22 +216,33 @@ def start():
                     ckNum = userNameList.index(ckname)
                 except Exception as e:
                     try:
-                        ckNum = pinNameList.index(unquote(ckname))
+                        ckNum = userNameList.index(unquote(ckname))
                     except:
                         msg(f"请检查被助力账号【{ckname}】名称是否正确？提示：助力名字可填pt_pin的值、也可以填账号名。")
                         continue
                 masterName = userNameList[ckNum]
                 shareCode = getShareCode(cookiesList[ckNum])
-                msg(f"开始助力 {masterName}")
+                print(f"开始助力 {masterName}")
                 for ck, nickname in zip(cookiesList, userNameList):
                     if nickname == masterName:
                         print(f"\t└😓{masterName} 不能助力自己，跳过~")
                         continue
                     result = ddnc_help(ck, nickname, shareCode, masterName)
+                    if farmA(cookiesList[ckNum]):
+                        getSuccess(cookiesList[ckNum], masterName)
                     if result:
+                        for n in range(4):
+                            if farmA(cookiesList[ckNum]):
+                                time.sleep(2)
+                                getSuccess(cookiesList[ckNum], masterName)
                         break
+
         else:
-            print("请检查ddnc_isOrder 变量参数是否正确填写。")
+            print("😓请检查ddnc_isOrder 变量参数是否正确填写。")
+        print("*"*30)
+        for i in count:
+            msg(f"💧账号【{i}】本次助力收获水滴:{count[i]}g 💧")
+        print("*" * 30)
         if isNotice:
             send(scriptName, msg_info)
     except Exception as e:
@@ -353,4 +250,3 @@ def start():
 
 if __name__ == '__main__':
     start()
-
