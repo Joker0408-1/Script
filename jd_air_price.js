@@ -1,6 +1,6 @@
 /*
 const $ = new Env('京东保价');
-30 0,8,16 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_price.js
+30 4,12,20 * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_air_price.js
 */
 let common = require("./function/common");
 let jsdom = require("jsdom");
