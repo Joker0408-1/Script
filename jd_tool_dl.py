@@ -5,8 +5,8 @@ Author: Curtin
 功能：脚本依赖下载
 TG交流 https://t.me/topstyle996
 TG频道 https://t.me/TopStyle2021
-cron: 0 5 * * 1
-new Env('脚本依赖下载 for Curtinlv 仓库');
+cron: 0 5 * * *
+new Env('Curtinlv脚本依赖');
 '''
 
 try:
