@@ -135,13 +135,6 @@ def buildHeaders(ck):
         'User-Agent': userAgent()
     }
     return headers
-def farmA(ck):
-    url1 = 'https://api.m.jd.com/client.action?functionId=farmAssistInit&body=%7B%22version%22%3A14%2C%22channel%22%3A1%2C%22babelChannel%22%3A%22120%22%7D&appid=wh5'
-    resp = requests.get(url1, headers=buildHeaders(ck), timeout=10).json()
-    if resp['status'] == 2:
-        return True
-    else:
-        return False
 def getSuccess(ck, user):
     global count
     url = 'https://api.m.jd.com/client.action?functionId=receiveStageEnergy&body=%7B%22version%22%3A14%2C%22channel%22%3A1%2C%22babelChannel%22%3A%22120%22%7D&appid=wh5'
