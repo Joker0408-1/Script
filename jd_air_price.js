@@ -4,19 +4,19 @@ const $ = new Env('京东价保');
 */
 let common = require("./function/common");
 let jsdom = require("jsdom");
-let $ = new common.env('京东价保');
+let $ = new common.env('京东保价');
 let min = 1,
     help = $.config[$.filename(__filename)] || Math.min(min, $.config.JdMain) || min;
 $.setOptions({
     headers: {
         'content-type': 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0',
-        'referer': 'https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu?sid=0b5a9d5564059f36ed16a8967c37e24w',
+        'referer': 'https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu',
     }
 });
 $.readme = `
 48 */8 * * * task ${$.runfile}
-export ${$.runfile}=1  #输出购买订单保价内容,没什么用
+exprot ${$.runfile}=1  #输出购买订单保价内容,没什么用
 `
 eval(common.eval.mainEval($));
 async function prepare() {}
@@ -38,7 +38,7 @@ async function main(id) {
         };
         h = await $.curl(p)
         console.log(h)
-        console.log("等待20s获取保价信息")
+        console.log("等待20s,获取保价订单")
         await $.wait(20000)
         // 获取保价信息
         let p2 = {
@@ -134,17 +134,21 @@ async function main(id) {
         }
     } catch (e) {}
 }
+async function extra() {
+    $.dom.window.close()
+}
 async function jstoken() {
     let {
         JSDOM
     } = jsdom;
     let resourceLoader = new jsdom.ResourceLoader({
         userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0',
-        referrer: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu?sid=0b5a9d5564059f36ed16a8967c37e24w",
+        referrer: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu",
     });
     let virtualConsole = new jsdom.VirtualConsole();
     var options = {
-        referrer: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu?sid=0b5a9d5564059f36ed16a8967c37e24w",
+        url: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu",
+        referrer: "https://msitepp-fm.jd.com/rest/priceprophone/priceProPhoneMenu",
         userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:91.0) Gecko/20100101 Firefox/91.0',
         runScripts: "dangerously",
         resources: resourceLoader,
