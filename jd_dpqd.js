@@ -4,7 +4,6 @@
 DPQDTK: token1&token2
 */
 const $ = new Env('店铺签到1');
-let Joker = require("./env/Joker");
 let token = []
 if (process.env.DPQDTK) {
   token = [...process.env.DPQDTK.split('@'),...token]
