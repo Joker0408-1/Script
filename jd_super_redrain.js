@@ -5,7 +5,6 @@ cron: 0 * * * * https://raw.githubusercontent.com/Joker0408-1/Script/main/jd_sup
 export RAIN_NOTIFY_CONTROL="false"
  */
 const $ = new Env('整点京豆雨');
-let Joker = require("./env/Joker");
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
