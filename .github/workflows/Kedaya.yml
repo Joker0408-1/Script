@@ -1,12 +1,12 @@
-name: airacg
+name: Kedaya
 on:
   schedule:
-    - cron: '30 23 * * *'
+    - cron: '0 0,12 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: airacg-jd_task
+    types: qitoqito-kedaya
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync airacg-jd_task
+      - name: sync qitoqito-kedaya
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/airacg/jd_task.git"
+          source_repo: "https://github.com/qitoqito/kedaya.git"
           source_branch: "main"
-          destination_branch: "airacg"
+          destination_branch: "Kedaya"
           github_token: ${{ secrets.PAT }}
