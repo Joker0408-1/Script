@@ -187,9 +187,9 @@ if __name__ == "__main__":
         ids = dup_ids
         logger.info("你选择保留除了设置的前缀以外的其他任务")
 
-    sum = f"总计任务数量为：{len(tasklist)}"
-    filter = f"过滤任务数量为：{len(res_list)}"
-    disable = f"禁用任务数量为：{len(ids)}"
+    sum = f"总计任务：{len(tasklist)}"
+    filter = f"过滤任务：{len(res_list)}"
+    disable = f"禁用任务：{len(ids)}"
     logging.info("\n=== 禁用数量统计 ===\n" + disable + "\n" + filter + "\n" + sum)
 
     if len(ids) == 0:
