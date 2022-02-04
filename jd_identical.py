@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 """
-cron: 50 * * * *
+cron: 30 */2 * * *
 new Env('禁用重复任务');
 """
 
@@ -28,7 +28,7 @@ if not ipport:
     ipport = "localhost:5700"
 else:
     ipport = ipport.lstrip("http://").rstrip("/")
-sub_str = os.getenv("RES_SUB", "kedaya")
+sub_str = os.getenv("RES_SUB", "okyyds_yydspure_master")
 sub_list = sub_str.split("&")
 res_only = os.getenv("RES_ONLY", True)
 headers = {
@@ -150,7 +150,7 @@ def disable_duplicate_tasks(ids: list) -> None:
     if datas.get("code") != 200:
         logger.info(f"❌出错!!!错误信息为：{datas}")
     else:
-        logger.info("🎉成功禁用重复任务~")
+        logger.info("禁用执行成功")
 
 
 def get_token() -> str or None:
@@ -159,7 +159,7 @@ def get_token() -> str or None:
             data = json.load(f)
     except Exception:
         logger.info(f"❌无法获取 token!!!\n{traceback.format_exc()}")
-        send("💔禁用重复任务失败", "无法获取 token!!!")
+        send("禁用执行失败", "无法获取 token!!!")
         exit(1)
     return data.get("token")
 
@@ -190,7 +190,7 @@ if __name__ == "__main__":
     sum = f"总计任务数量为：{len(tasklist)}"
     filter = f"过滤任务数量为：{len(res_list)}"
     disable = f"禁用任务数量为：{len(ids)}"
-    logging.info("\n=== 禁用数量统计 ===\n" + sum + "\n" + filter + "\n" + disable)
+    logging.info("\n=== 禁用数量统计 ===\n" + disable + "\n" + filter + "\n" + sum)
 
     if len(ids) == 0:
         logger.info("没有重复任务")
