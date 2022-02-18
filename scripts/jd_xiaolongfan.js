@@ -1,7 +1,7 @@
 /**
  一次性活动。概率蚊子腿豆子
  需要入会晓龙，差不多都入会过了。。
- cron 23 1-28 2 * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_xiaolongfan.js
+ cron 23 2 1-28 2 * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_xiaolongfan.js
  */
 const $ = new Env('翻卡对对碰');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
