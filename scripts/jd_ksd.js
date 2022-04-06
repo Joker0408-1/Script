@@ -1,3 +1,9 @@
+/**
+ 卡萨帝 ￥R8FAX2QRMI￥/
+ 活动需要开一张卡：卡萨帝
+ 活动期间可以抽6次，跑2天够抽一次
+ cron 23 8,22 1-11 4 * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_ksd.js
+ */
 const $ = new Env('卡萨帝');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [];
